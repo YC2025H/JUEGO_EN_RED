@@ -56,3 +56,64 @@ dos ratitas, donde transcurrirá todo el juego.
 | **Duración de una partida** | 5-10 minutos dependiendo de la buena/mala colaboración que tengan los jugadores |
 | **Representación** | 2D |
 | **Licencia** | Apache 2.0 |
+
+---
+
+## 7. Interfaz y diagrama de flujo
+
+### 7.1. Pantallas
+
+**Menú principal**
+
+![Boceto del menú principal](img/boceto_menu_principal.png)
+
+*Figura 6. Menú principal: Inicio del juego, cuenta con el título y 3 botones: (cooperativo local, cooperativo online y créditos)*
+
+**Pantalla del mapa**
+
+![Boceto del mapa](img/boceto_menu_principal.png)
+
+*Figura 6. Mapa: Los niveles se muestras en un libro de recetas que funciona como mapa de niveles*
+
+**Pantalla de juego (HUD)**
+
+![Boceto de la pantalla de juego](img/boceto_pantalla_juego.png)
+
+*Figura 7. Pantalla de juego: Se visualiza todo el nivel nada más entrar al juego, la cámara es fija*
+
+**Pantalla de créditos**
+
+![Boceto de la pantalla de créditos](img/boceto_pantalla_juego.png)
+
+*Figura 8. Pantalla créditos: Pantalla donde se muestra el nombre de todos las colaboradoras con sus funciones y todas las referencias usadas.*
+
+### 7.2. Diagrama de flujo
+
+> *Rúbrica — Documento / Diagrama de flujo.* Podéis usar Mermaid (GitHub lo renderiza directamente) o una imagen exportada.
+
+**Opción 1 — Mermaid** (se dibuja automáticamente en GitHub):
+
+```mermaid
+flowchart TD
+    A[Pantalla de carga] --> B[Menú principal]
+    B --> C[Jugar]
+    B --> D[Ajustes]
+    B --> E[Ayuda]
+    B --> F[Créditos]
+    D --> B
+    E --> B
+    F --> B
+    C --> G[Partida]
+    G -->|Esc| H[Pausa]
+    H -->|Reanudar| G
+    H -->|Salir| B
+    G -->|Condición de victoria| I[Fin de partida]
+    I -->|Revancha| G
+    I -->|Volver| B
+```
+
+**Opción 2 — Imagen** exportada desde draw.io, Excalidraw, Figma...:
+
+![Diagrama de flujo del juego](img/diagrama_flujo.png)
+
+*Figura 9. Diagrama de flujo entre pantallas.*
