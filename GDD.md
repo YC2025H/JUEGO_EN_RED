@@ -8,7 +8,7 @@
 
 1. [Introducción](#1-introducción)
 2. [Especificaciones básicas](#2-especificaciones-básicas)
-3. [Jugabilidad](#3-jugabilidad)
+3. [Mecánicas](#3-mecánicas)
 4. [Narrativa](#4-narrativa)
 5. [Imagen y diseño visual](#5-imagen-y-diseño-visual)
 6. [Sonido](#6-sonido)
@@ -57,7 +57,34 @@ dos ratitas, donde transcurrirá todo el juego.
 | **Representación** | 2D |
 | **Licencia** | Apache 2.0 |
 
----
+## 3. Mecánicas
+
+Haciendo uso de sus habilidades, ambos ratones deberán colaborar en equipo para poder crear una magnífica obra culinaria en la gran cocina, llevando los ingredientes faltantes a la olla de cocción. Haciendo uso del trabajo en equipo y la comunicación entre los jugadores, se deberán de resolver una serie de puzzles para avanzar en los niveles y así completar el juego.
+
+## 3.1. Características
+
+La ratoncita más pequeña (Kika) podrá saltar más alto pero tendrá menos fuerza. Ello permitirá sobrepasar obstáculos altos y entrar por recovecos que se puedan encontrar en el escenario fácilmente.
+
+El ratón más grande (Kiko) tendrá más fuerza pero no podrá saltar más alto. Esto le permitirá empujar bloques pesados o abrir puertas que se puedan presentar en los niveles
+
+## 3.2. Controles
+
+Ambos ratones serán controlados con las teclas A, D, SPACE del teclado en cada dispositivo.
+
+A: Movimiento hacia la izquierda.
+D: Movimiento hacia la derecha.
+SPACE: Salto.
+
+## 3.3. ¿Cómo completar el nivel?
+
+Ambos jugadores deberán introducir en la olla situada al final del nivel los ingredientes del escenario sobrepasando en su camino diversos puzzles y obstáculos a través de sus habilidades.
+
+## 3.4. PowerUps
+
+Cuando Kika consume un powerUp, adquiere la habilidad de saltar mucho más alto, ello durará un tiempo limitado dentro del escenario.
+
+Cuando Kiko consume un powerUp, adquiere la habilidad de romper los obstáculos en su camino, ello durará un tiempo limitado dentro del escenario.
+
 
 ## 7. Interfaz y diagrama de flujo
 
@@ -118,4 +145,4 @@ flowchart TD
 
 *Figura 9. Diagrama de flujo entre pantallas.*
 
-## 8. Interfaz y diagrama de flujo
+
