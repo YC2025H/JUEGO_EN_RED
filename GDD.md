@@ -80,6 +80,27 @@ Cuando Kika consume un powerUp, adquiere la habilidad de saltar mucho más alto,
 
 Cuando Kiko consume un powerUp, adquiere la habilidad de romper los obstáculos en su camino, ello durará un tiempo limitado dentro del escenario.
 
+## 4. Narrativa
+
+### 4.1. Historia
+
+Un día de invierno, la abuela Esperanza cae enferma. Se encuentra en cama tood el día sin nadie que la pueda cuidar. Sin embargo, sus dos ratitas Kiko y Kika deciden cocinarle todos los días hasta que Esperanza se recupere por completo.
+
+### 4.2. Personajes
+
+Los personajes que pueden controlar los usuarios son dos ratitas, cada una con sus propias características y habilidades. Las ratitas Kiko y Kika son dos hermanos que viven en la casa de la abuela Esperanza.
+
+#### KIKO (Jugador 1)
+
+Kiko tiene una composición corporal robusta con un pelaje claro y grueso. Respecto a su personalidad, es un ratón calmado, inteligente y perezoso. Gracias a su gran altura y peso puede mover diversos elementos de la cocina.
+
+#### KIKA (Jugador 2)
+
+Kika es una ratona pequeña con unas orejas grandes. Ella es muy energética y valiente. Gracias a su pequeña altura y ligereza puede entrar en sitios pequeños, correr más rápido y saltar más alto.
+
+#### ABUELITA (Personaje secundario)
+
+Esperanza es una persona anciana con el pelo corto rizado y gris. Ella es muy generosa, trabajadora y amante de los animales. Debido al comienzo del frío, cayó enferma sin poder levantarse de la cama.
 
 ## 7. Interfaz y diagrama de flujo
 
