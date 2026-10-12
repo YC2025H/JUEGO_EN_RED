@@ -117,3 +117,5 @@ flowchart TD
 ![Diagrama de flujo del juego](img/diagrama_flujo.png)
 
 *Figura 9. Diagrama de flujo entre pantallas.*
+
+## 8. Interfaz y diagrama de flujo

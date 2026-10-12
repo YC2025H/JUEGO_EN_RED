@@ -19,7 +19,7 @@ Kiko y Kika es un juego colaborativo de plataformas en 2D que trata sobre dos ra
 | :--- | :--- | :--- |
 | Yi Chen | a.uno.20XX@alumnos.urjc.es | `@alumno1-ejemplo` |
 | Sofía García de Vinuesa Castaño | a.dos.20XX@alumnos.urjc.es | `@alumno2-ejemplo` |
-| Luisa Baeza Rodríguez | a.tres.20XX@alumnos.urjc.es | `@alumno3-ejemplo` |
+| Luisa Baeza Rodríguez | l.baeza.2024@alumnos.urjc.es | `@alumno3-ejemplo` |
 | Mireya Vargas Sánchez | m.vargas.2024@alumnos.urjc.es | `@mireyaavargas@gmail.com` |
 
 **Repositorio:** `https://github.com/YC2025H/JUEGO_EN_RED.git`
