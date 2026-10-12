@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/logo.png" alt="Logotipo de AAA" width="400">
+  <img src="img/Titulo.png" alt="Logotipo de AAA" width="400">
 </p>
 
 # JUEGO_EN_RED
