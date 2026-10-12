@@ -13,7 +13,6 @@
 5. [Imagen y diseño visual](#5-imagen-y-diseño-visual)
 6. [Sonido](#6-sonido)
 7. [Interfaz y diagrama de flujo](#7-interfaz-y-diagrama-de-flujo)
-8. [Comunicación y marketing](#8-comunicación-y-marketing)
 9. [Referencias](#9-referencias)
 
 ## 1. Introducción
@@ -106,10 +105,6 @@ Cuando Kiko consume un powerUp, adquiere la habilidad de romper los obstáculos 
 
 ### 7.2. Diagrama de flujo
 
-> *Rúbrica — Documento / Diagrama de flujo.* Podéis usar Mermaid (GitHub lo renderiza directamente) o una imagen exportada.
-
-**Opción 1 — Mermaid** (se dibuja automáticamente en GitHub):
-
 ```mermaid
 flowchart TD
     A[Menú principal]
@@ -119,19 +114,5 @@ flowchart TD
     B --> E[Partida]
     C --> E
     E --> |Condición de victoria| F[Siguiente nivel]
-    F --> B
-    C --> G[Partida]
-    G -->|Esc| H[Pausa]
-    H -->|Reanudar| G
-    H -->|Salir| B
-    G -->|Condición de victoria| I[Fin de partida]
-    I -->|Revancha| G
-    I -->|Volver| B
 ```
-
-**Opción 2 — Imagen** exportada desde draw.io, Excalidraw, Figma...:
-
-![Diagrama de flujo del juego](img/diagrama_flujo.png)
-
-*Figura 9. Diagrama de flujo entre pantallas.*
 
