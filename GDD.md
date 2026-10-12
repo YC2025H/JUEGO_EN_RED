@@ -13,7 +13,7 @@
 5. [Imagen y diseño visual](#5-imagen-y-diseño-visual)
 6. [Sonido](#6-sonido)
 7. [Interfaz y diagrama de flujo](#7-interfaz-y-diagrama-de-flujo)
-9. [Referencias](#9-referencias)
+8. [Referencias](#8-referencias)
 
 ## 1. Introducción
 
@@ -95,13 +95,19 @@ Cuando Kiko consume un powerUp, adquiere la habilidad de romper los obstáculos 
 
 ![Boceto de la pantalla de juego](img/boceto_pantalla_juego.png)
 
-*Figura 7. Pantalla de juego: Se visualiza el nivel, hay dos cámaras, una para cada jugador*
+*Figura 7. Pantalla de juego: Se visualiza el nivel/los niveles, hay dos cámaras, una para cada jugador*
 
 **Pantalla de créditos**
 
 ![Boceto de la pantalla de créditos](img/boceto_pantalla_juego.png)
 
 *Figura 8. Pantalla créditos: Pantalla donde se muestra el nombre de todos las colaboradoras con sus funciones y todas las referencias usadas.*
+
+**Pantalla final**
+
+![Boceto final](img/boceto_pantalla_juego.png)
+
+*Figura 8. Pantalla final: Pantalla donde se ve a la abuelita cocinando con las ratitas.*
 
 ### 7.2. Diagrama de flujo
 
@@ -114,5 +120,7 @@ flowchart TD
     B --> E[Partida]
     C --> E
     E --> |Condición de victoria| F[Siguiente nivel]
+    F --> E
+    E --> |Último nivel| G[Pantalla final]
 ```
 
