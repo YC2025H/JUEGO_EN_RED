@@ -20,13 +20,11 @@
 
 ## 1.1. Concepto principal
 
-Kiko y kika trata sobre dos ratas cocineras que se ayudan mutuamente para llegar a los 
-diferentes ingredientes que les hacen falta para superar el nivel hasta la meta y terminar la receta. 
+Kiko y Kika trata sobre dos ratas cocineras que se ayudan mutuamente para llegar a los diferentes ingredientes que les hacen falta para superar el nivel hasta la meta y terminar la receta. 
 
 ## 1.2. Características principales
 
-Las características principales del juego serían que dos personajes, Kiko y Kika, 
-tienen que cooperar para poder avanzar por el nivel y asi poder superarlo.
+Las características principales del juego serían que dos personajes, Kiko y Kika, tienen que cooperar para poder avanzar por el nivel y asi poder superarlo.
 
 ## 1.3. Propósito y público objetivo
 
@@ -43,11 +41,9 @@ dos ratitas, donde transcurrirá todo el juego.
 
 ## 2. Especificaciones básicas
 
-> *Rúbrica — Documento / Especificaciones básicas:* género, público objetivo/edad y plataforma.
-
 | Aspecto | Descripción |
 | :--- | :--- |
-| **Título** | AAA |
+| **Título** | Kiko y Kika |
 | **Género** | Juego colaborativo de plataformas 
 | **Número de jugadores** | 2 (en red, tiempo real) |
 | **Público objetivo** | Personas a las que les gusten los juegos colaborativos y multijugador |
@@ -96,17 +92,11 @@ Cuando Kiko consume un powerUp, adquiere la habilidad de romper los obstáculos 
 
 *Figura 6. Menú principal: Inicio del juego, cuenta con el título y 3 botones: (cooperativo local, cooperativo online y créditos)*
 
-**Pantalla del mapa**
-
-![Boceto del mapa](img/boceto_menu_principal.png)
-
-*Figura 6. Mapa: Los niveles se muestras en un libro de recetas que funciona como mapa de niveles*
-
 **Pantalla de juego (HUD)**
 
 ![Boceto de la pantalla de juego](img/boceto_pantalla_juego.png)
 
-*Figura 7. Pantalla de juego: Se visualiza todo el nivel nada más entrar al juego, la cámara es fija*
+*Figura 7. Pantalla de juego: Se visualiza el nivel, hay dos cámaras, una para cada jugador*
 
 **Pantalla de créditos**
 
@@ -122,13 +112,13 @@ Cuando Kiko consume un powerUp, adquiere la habilidad de romper los obstáculos 
 
 ```mermaid
 flowchart TD
-    A[Pantalla de carga] --> B[Menú principal]
-    B --> C[Jugar]
-    B --> D[Ajustes]
-    B --> E[Ayuda]
-    B --> F[Créditos]
-    D --> B
-    E --> B
+    A[Menú principal]
+    A --> B[Local]
+    A --> C[En red]
+    A --> D[Créditos]
+    B --> E[Partida]
+    C --> E
+    E --> |Condición de victoria| F[Siguiente nivel]
     F --> B
     C --> G[Partida]
     G -->|Esc| H[Pausa]
@@ -144,5 +134,4 @@ flowchart TD
 ![Diagrama de flujo del juego](img/diagrama_flujo.png)
 
 *Figura 9. Diagrama de flujo entre pantallas.*
-
 
