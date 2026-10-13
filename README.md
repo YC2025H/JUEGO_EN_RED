@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/Logo Chimis.png" alt="Logotipo de Empresa" width="400">
+  <img src="img/logo_Chimis.png" alt="Logotipo de Empresa" width="400">
 </p>
 
 # JUEGO_EN_RED
@@ -17,10 +17,10 @@ Kiko y Kika es un juego colaborativo de plataformas en 2D que trata sobre dos ra
 
 | Nombre y apellidos | Correo URJC | GitHub |
 | :--- | :--- | :--- |
-| Yi Chen | y.chen2.2024@alumnos.urjc.es | `@alumno1-ejemplo` |
-| Sofía García de Vinuesa Castaño | s.garciaca.2024@alumnos.urjc.es | `vinuesavideos@gmail.com` |
+| Yi Chen | y.chen2.2024@alumnos.urjc.es | `YC2025H` |
+| Sofía García de Vinuesa Castaño | s.garciaca.2024@alumnos.urjc.es | `estrellavinuesa` |
 | Luisa Baeza Rodríguez | l.baeza.2024@alumnos.urjc.es | `Luluss2` |
-| Mireya Vargas Sánchez | m.vargas.2024@alumnos.urjc.es | `@mireyaavargas@gmail.com` |
+| Mireya Vargas Sánchez | m.vargas.2024@alumnos.urjc.es | `MireyaaVargas.com` |
 
 **Repositorio:** `https://github.com/YC2025H/JUEGO_EN_RED.git`
 
