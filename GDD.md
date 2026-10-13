@@ -18,6 +18,7 @@
 ## 1. Introducción
 
 ![Título juego](img/Titulo.png)
+
 *Figura 2. Logo del juego*
 
 ### 1.1. Concepto principal
@@ -126,14 +127,17 @@ Esperanza es una persona anciana con el pelo corto rizado y gris. Ella es muy ge
 **Pantalla de juego (HUD)**
 
 ![Boceto de la pantalla de juego](img/boceto_pantalla_juego.png)
-![Boceto de la pantalla de juego](img/boceto_pantalla_juego_ruta_trazada.png)
 
 *Figura 5. Pantalla de juego: Se visualiza el nivel/los niveles donde habrá una cámara que se alejará y acercará en función de la posición de los jugadores*
+
+![Boceto de la pantalla de juego](img/boceto_pantalla_juego_ruta_trazada.png)
+
+
 *Figura 6. Pantalla de juego: Se visualiza el nivel/los niveles donde se ve la ruta que deberán llevar los jugadores para superar el nivel*
 
 **Pantalla de créditos**
 
-![Boceto de la pantalla de créditos](img/boceto_pantalla_juego.png)
+![Boceto de la pantalla de créditos](img/boceto_pantalla_créditos.png)
 
 *Figura 7. Pantalla créditos: Pantalla donde se muestra el nombre de todos las colaboradoras con sus funciones y todas las referencias usadas.*
 
@@ -151,6 +155,7 @@ flowchart TD
     A --> B[Local]
     A --> C[En red]
     A --> D[Créditos]
+    D --> A
     B --> E[Partida]
     C --> E
     E --> |Condición de victoria| F[Siguiente nivel]
