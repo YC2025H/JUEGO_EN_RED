@@ -81,7 +81,7 @@ E: Activar hablilidad de PowerUp.
 
 ### 3.3. ¿Cómo completar el nivel?
 
-Ambos jugadores deberán recoger todos los ingredientes del escenario sobrepasando en su camino diversos puzzles y obstáculos a través de sus habilidades.
+Ambos jugadores deberán recoger todos los ingredientes del escenario sobrepasando en su camino diversos puzzles y obstáculos a través de sus habilidades. Para completar el nivel, las dos ratitas deberán llegar a la olla.
 
 ### 3.4. PowerUps
 
