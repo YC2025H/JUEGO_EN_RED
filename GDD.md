@@ -17,7 +17,7 @@
 
 ## 1. Introducción
 
-![Título juego](img/Titulo.png)
+![Título juego](img/titulo_juego.PNG)
 
 *Figura 2. Logo del juego*
 
@@ -120,7 +120,7 @@ Esperanza es una persona anciana con el pelo corto rizado y gris. Ella es muy ge
 
 **Menú principal**
 
-![Boceto del menú principal](img/boceto_menu_principal.png)
+![Boceto del menú principal](img/boceto_menu_principal.PNG)
 
 *Figura 4. Menú principal: Inicio del juego, cuenta con el título y 3 botones: (cooperativo local, cooperativo online y créditos)*
 
