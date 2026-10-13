@@ -30,14 +30,14 @@ Las características principales del juego serían que dos personajes, Kiko y Ki
 
 ### 1.3. Propósito y público objetivo
 
-El pricipal propósito del juego sería intentar impulsar la comunicación y la cooperación entre
+El principal propósito del juego sería intentar impulsar la comunicación y la cooperación entre
 los jugadores para poder superar los niveles en equipo.
 El público objetivo serían las personas que disfruten los juegos cooperativos/multijugador.
 
 ### 1.4. Estilo visual
 
-El estilo visual del juego se basa en intentar retrasmitir una estética tierna y graciosa
-mediante el diseño de nuestros personajes cariturizados y unos colores pastel, además, todo el fondo y los niveles estarán 
+El estilo visual del juego se basa en intentar transmitir una estética tierna y graciosa
+mediante el diseño de nuestros personajes caricaturizados y unos colores pastel, además, todo el fondo y los niveles estarán 
 ambientados en una cocina, siendo esta muy grande a comparación de los personajes principales que son 
 dos ratitas, donde transcurrirá todo el juego.  
 
@@ -80,7 +80,7 @@ E: Activar hablilidad de PowerUp.
 
 ### 3.3. ¿Cómo completar el nivel?
 
-Ambos jugadores deberán recoger todoslos ingredientes del escenario sobrepasando en su camino diversos puzzles y obstáculos a través de sus habilidades.
+Ambos jugadores deberán recoger todos los ingredientes del escenario sobrepasando en su camino diversos puzzles y obstáculos a través de sus habilidades.
 
 ### 3.4. PowerUps
 
