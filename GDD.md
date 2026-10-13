@@ -68,7 +68,11 @@ Ambos ratones serán controlados con las teclas A, D, SPACE del teclado en cada 
 
 A: Movimiento hacia la izquierda.
 D: Movimiento hacia la derecha.
-SPACE: Salto.
+W: Salto.
+
+←: Movimiento hacia la izquierda.
+→: Movimiento hacia la derecha.
+↑: Salto.
 
 ## 3.3. ¿Cómo completar el nivel?
 
