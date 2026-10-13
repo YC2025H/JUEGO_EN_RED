@@ -4,34 +4,35 @@
 
 **Grupo C** ·  Yi Chen, Sofía García de Vinuesa Castaño, Luisa Baeza Rodríguez, Mireya Vargas Sánchez 
 
+![Logo](img/logo_chimis.png)
+
 ## Índice
 
 1. [Introducción](#1-introducción)
 2. [Especificaciones básicas](#2-especificaciones-básicas)
 3. [Mecánicas](#3-mecánicas)
 4. [Narrativa](#4-narrativa)
-5. [Imagen y diseño visual](#5-imagen-y-diseño-visual)
-6. [Sonido](#6-sonido)
-7. [Interfaz y diagrama de flujo](#7-interfaz-y-diagrama-de-flujo)
-8. [Referencias](#8-referencias)
+5. [Interfaz y diagrama de flujo](#5-interfaz-y-diagrama-de-flujo)
 
 ## 1. Introducción
+
 ![Título juego](img/Titulo.png)
-## 1.1. Concepto principal
+
+### 1.1. Concepto principal
 
 Kiko y Kika trata sobre dos ratas cocineras que se ayudan mutuamente para llegar a los diferentes ingredientes que les hacen falta para superar el nivel hasta la meta y terminar la receta. 
 
-## 1.2. Características principales
+### 1.2. Características principales
 
 Las características principales del juego serían que dos personajes, Kiko y Kika, tienen que cooperar para poder avanzar por el nivel y asi poder superarlo.
 
-## 1.3. Propósito y público objetivo
+### 1.3. Propósito y público objetivo
 
 El pricipal propósito del juego sería intentar impulsar la comunicación y la cooperación entre
 los jugadores para poder superar los niveles en equipo.
 El público objetivo serían las personas que disfruten los juegos cooperativos/multijugador.
 
-## 1.4. Estilo visual
+### 1.4. Estilo visual
 
 El estilo visual del juego se basa en intentar retrasmitir una estética tierna y graciosa
 mediante el diseño de nuestros personajes cariturizados y unos colores pastel, además, todo el fondo y los niveles estarán 
@@ -56,29 +57,30 @@ dos ratitas, donde transcurrirá todo el juego.
 
 Haciendo uso de sus habilidades, ambos ratones deberán colaborar en equipo para poder crear una magnífica obra culinaria en la gran cocina, llevando los ingredientes faltantes a la olla de cocción. Haciendo uso del trabajo en equipo y la comunicación entre los jugadores, se deberán de resolver una serie de puzzles para avanzar en los niveles y así completar el juego.
 
-## 3.1. Características
+### 3.1. Características
 
 La ratoncita más pequeña (Kika) podrá saltar más alto pero tendrá menos fuerza. Ello permitirá sobrepasar obstáculos altos y entrar por recovecos que se puedan encontrar en el escenario fácilmente.
 
 El ratón más grande (Kiko) tendrá más fuerza pero no podrá saltar más alto. Esto le permitirá empujar bloques pesados o abrir puertas que se puedan presentar en los niveles
 
-## 3.2. Controles
+### 3.2. Controles
 
 Ambos ratones serán controlados con las teclas A, D, SPACE del teclado en cada dispositivo.
 
 A: Movimiento hacia la izquierda.
 D: Movimiento hacia la derecha.
 W: Salto.
+E: Activar hablilidad de PowerUp.
 
 ←: Movimiento hacia la izquierda.
 →: Movimiento hacia la derecha.
 ↑: Salto.
 
-## 3.3. ¿Cómo completar el nivel?
+### 3.3. ¿Cómo completar el nivel?
 
 Ambos jugadores deberán introducir en la olla situada al final del nivel los ingredientes del escenario sobrepasando en su camino diversos puzzles y obstáculos a través de sus habilidades.
 
-## 3.4. PowerUps
+### 3.4. PowerUps
 
 Cuando Kika consume un powerUp, adquiere la habilidad de saltar mucho más alto, ello durará un tiempo limitado dentro del escenario.
 
@@ -102,13 +104,15 @@ Kiko tiene una composición corporal robusta con un pelaje claro y grueso. Respe
 
 Kika es una ratona pequeña con unas orejas grandes. Ella es muy energética y valiente. Gracias a su pequeña altura y ligereza puede entrar en sitios pequeños, correr más rápido y saltar más alto.
 
+![Kiko y Kika](img/diseño_kiko_kika.jpg)
+
 #### ABUELITA (Personaje secundario)
 
 Esperanza es una persona anciana con el pelo corto rizado y gris. Ella es muy generosa, trabajadora y amante de los animales. Debido al comienzo del frío, cayó enferma sin poder levantarse de la cama.
 
-## 7. Interfaz y diagrama de flujo
+## 5. Interfaz y diagrama de flujo
 
-### 7.1. Pantallas
+### 5.1. Pantallas
 
 **Menú principal**
 
@@ -130,11 +134,11 @@ Esperanza es una persona anciana con el pelo corto rizado y gris. Ella es muy ge
 
 **Pantalla final**
 
-![Boceto final](img/boceto_pantalla_juego.png)
+![Boceto final](img/boceto_pantalla_final.png)
 
 *Figura 8. Pantalla final: Pantalla donde se ve a la abuelita cocinando con las ratitas.*
 
-### 7.2. Diagrama de flujo
+### 5.2. Diagrama de flujo
 
 ```mermaid
 flowchart TD
@@ -147,5 +151,6 @@ flowchart TD
     E --> |Condición de victoria| F[Siguiente nivel]
     F --> E
     E --> |Último nivel| G[Pantalla final]
+    G --> A
 ```
 
