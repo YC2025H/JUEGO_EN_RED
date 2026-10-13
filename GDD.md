@@ -5,6 +5,7 @@
 **Grupo C** ·  Yi Chen, Sofía García de Vinuesa Castaño, Luisa Baeza Rodríguez, Mireya Vargas Sánchez 
 
 ![Logo](img/logo_chimis.png)
+*Figura 1. Logo de empresa*
 
 ## Índice
 
@@ -17,6 +18,7 @@
 ## 1. Introducción
 
 ![Título juego](img/Titulo.png)
+*Figura 2. Logo del juego*
 
 ### 1.1. Concepto principal
 
@@ -78,7 +80,7 @@ E: Activar hablilidad de PowerUp.
 
 ### 3.3. ¿Cómo completar el nivel?
 
-Ambos jugadores deberán introducir en la olla situada al final del nivel los ingredientes del escenario sobrepasando en su camino diversos puzzles y obstáculos a través de sus habilidades.
+Ambos jugadores deberán recoger todoslos ingredientes del escenario sobrepasando en su camino diversos puzzles y obstáculos a través de sus habilidades.
 
 ### 3.4. PowerUps
 
@@ -105,6 +107,7 @@ Kiko tiene una composición corporal robusta con un pelaje claro y grueso. Respe
 Kika es una ratona pequeña con unas orejas grandes. Ella es muy energética y valiente. Gracias a su pequeña altura y ligereza puede entrar en sitios pequeños, correr más rápido y saltar más alto.
 
 ![Kiko y Kika](img/diseño_kiko_kika.jpg)
+*Figura 3. Diseño de personajes de Kiko y Kika*
 
 #### ABUELITA (Personaje secundario)
 
@@ -118,19 +121,21 @@ Esperanza es una persona anciana con el pelo corto rizado y gris. Ella es muy ge
 
 ![Boceto del menú principal](img/boceto_menu_principal.png)
 
-*Figura 6. Menú principal: Inicio del juego, cuenta con el título y 3 botones: (cooperativo local, cooperativo online y créditos)*
+*Figura 4. Menú principal: Inicio del juego, cuenta con el título y 3 botones: (cooperativo local, cooperativo online y créditos)*
 
 **Pantalla de juego (HUD)**
 
 ![Boceto de la pantalla de juego](img/boceto_pantalla_juego.png)
+![Boceto de la pantalla de juego](img/boceto_pantalla_juego_ruta_trazada.png)
 
-*Figura 7. Pantalla de juego: Se visualiza el nivel/los niveles, hay dos cámaras, una para cada jugador*
+*Figura 5. Pantalla de juego: Se visualiza el nivel/los niveles donde habrá una cámara que se alejará y acercará en función de la posición de los jugadores*
+*Figura 6. Pantalla de juego: Se visualiza el nivel/los niveles donde se ve la ruta que deberán llevar los jugadores para superar el nivel*
 
 **Pantalla de créditos**
 
 ![Boceto de la pantalla de créditos](img/boceto_pantalla_juego.png)
 
-*Figura 8. Pantalla créditos: Pantalla donde se muestra el nombre de todos las colaboradoras con sus funciones y todas las referencias usadas.*
+*Figura 7. Pantalla créditos: Pantalla donde se muestra el nombre de todos las colaboradoras con sus funciones y todas las referencias usadas.*
 
 **Pantalla final**
 
