@@ -16,7 +16,7 @@
 8. [Referencias](#8-referencias)
 
 ## 1. Introducción
-
+![Título juego](img/Titulo.png)
 ## 1.1. Concepto principal
 
 Kiko y Kika trata sobre dos ratas cocineras que se ayudan mutuamente para llegar a los diferentes ingredientes que les hacen falta para superar el nivel hasta la meta y terminar la receta. 

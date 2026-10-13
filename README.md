@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/Titulo.png" alt="Logotipo de AAA" width="400">
+  <img src="img/Logo Chimis.png" alt="Logotipo de Empresa" width="400">
 </p>
 
 # JUEGO_EN_RED
@@ -25,3 +25,31 @@ Kiko y Kika es un juego colaborativo de plataformas en 2D que trata sobre dos ra
 **Repositorio:** `https://github.com/YC2025H/JUEGO_EN_RED.git`
 
 **Licencia:** [Apache 2.0](LICENSE)
+
+---
+
+## Game Design Document
+
+📄 El documento de diseño completo está en **[GDD.md](GDD.md)**.
+
+Apartados principales:
+
+- [Especificaciones básicas](GDD.md#2-especificaciones-básicas)
+- [Mecánicas](GDD.md#3-mecánicas)
+- [Narrativa](GDD.md#4-narrativa)
+- [Imagen y diseño visual](GDD.md#5-imagen-y-diseño-visual)
+- [Sonido](GDD.md#6-sonido)
+- [Interfaz y diagrama de flujo](GDD.md#7-interfaz-y-diagrama-de-flujo)
+- [Comunicación y marketing](GDD.md#8-comunicación-y-marketing)
+- [Referencias](GDD.md#9-referencias)
+
+---
+
+## Fases del proyecto
+
+| Fase | Contenido | Estado |
+| :--- | :--- | :--- |
+| Fase 1 | Equipo, temática y GDD | ✅ Entregada (tag `fase-1`) |
+| Fase 2 | Juego en local | ⏳ Pendiente |
+| Fase 3 | API REST | ⏳ Pendiente |
+| Fase 4 | WebSockets | ⏳ Pendiente |
