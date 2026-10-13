@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/logo_Chimis.png" alt="Logotipo de Empresa" width="400">
+  <img src="img/logo_chimis.png" alt="Logotipo de Empresa" width="400">
 </p>
 
 # JUEGO_EN_RED
