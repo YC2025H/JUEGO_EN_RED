@@ -68,13 +68,13 @@ El ratón más grande (Kiko) tendrá más fuerza pero no podrá saltar más alto
 
 ### 3.2. Controles
 
-Ambos ratones serán controlados con las teclas A, D, SPACE del teclado en cada dispositivo.
-
+#### Jugador 1 (Kiko)
 A: Movimiento hacia la izquierda.
 D: Movimiento hacia la derecha.
 W: Salto.
 E: Activar hablilidad de PowerUp.
 
+#### Jugador 2 (Kika)
 ←: Movimiento hacia la izquierda.
 →: Movimiento hacia la derecha.
 ↑: Salto.
