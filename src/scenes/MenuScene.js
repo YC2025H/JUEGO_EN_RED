@@ -13,7 +13,7 @@ export class MenuScene extends Phaser.Scene {
 
         const localBtn = this.add.text(400, 320, 'Local Play', {
             fontSize: '32px',
-            color: '#00ff00'
+            color: '#00a6ff'
         }).setOrigin(0.5)
             .setInteractive({ useHandCursor: true })
             .on('pointerover', () => localBtn.setStyle({ color: '#ffff00' }))
