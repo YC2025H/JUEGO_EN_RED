@@ -39,7 +39,7 @@ export class PauseScene extends Phaser.Scene
 		pauseBtn.on('pointerout', () => {pauseBtn.setScale(0.7)});
 		pauseBtn.on('pointerdown', () => {
             this.scene.stop();
-            this.scene.resume('MenuScene');
+            this.scene.resume('GameScene');
         });
 		
 		
