@@ -22,6 +22,7 @@ export class PauseScene extends Phaser.Scene
 
 		this.add.text(centroX + 50, centroY - 260, 'PAUSA', { fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
 		
+		//Botones
 		const pauseBtn = this.add.image(centroX, centroY - 80, 'pauseBtn')
 		.setOrigin(0.5).setScale(0.7)
 		.setInteractive({ useHandCursor: true });
@@ -34,13 +35,28 @@ export class PauseScene extends Phaser.Scene
 		.setOrigin(0.5).setScale(0.7)
 		.setInteractive({ useHandCursor: true });
 		
-		
+		//Hover Botones
 		pauseBtn.on('pointerover', () => {pauseBtn.setScale(0.8)});
 		pauseBtn.on('pointerout', () => {pauseBtn.setScale(0.7)});
 		pauseBtn.on('pointerdown', () => {
             this.scene.stop();
             this.scene.resume('GameScene');
         });
+		
+		pauseBtn2.on('pointerover', () => {pauseBtn2.setScale(0.8)});
+		pauseBtn2.on('pointerout', () => {pauseBtn2.setScale(0.7)});
+		pauseBtn2.on('pointerdown', () => {
+            this.scene.stop();
+            this.scene.resume('SettingScene');
+        });
+
+		pauseBtn3.on('pointerover', () => {pauseBtn3.setScale(0.8)});
+		pauseBtn3.on('pointerout', () => {pauseBtn3.setScale(0.7)});
+		pauseBtn3.on('pointerdown', () => {
+            this.scene.stop();
+            this.scene.resume('MenuScene');
+        });
+		
 		
 		
 		//const reanudarBtn = this.add.rectangle(100, 100, 800, 600, 0x31dbd5);
