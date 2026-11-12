@@ -11,6 +11,7 @@ export class SettingsScene extends Phaser.Scene
 	{
 		this.load.image('pauseNote', 'assets/img/pause_note.png');
 		this.load.image('pauseBtn', 'assets/img/pause_btn.png');
+		this.load.audio('audio', 'assets/audio/audio_prueba.mp3');
 	}
 	create()
 	{
@@ -18,8 +19,9 @@ export class SettingsScene extends Phaser.Scene
 		const centroY = this.scale.height / 2;
 		const MAX_MUSIC_VALUE = 10;
 		const MIN_MUSIC_VALUE = 0;
-		let MusicVolume = 6; //variable del volumen
-
+		let MusicVolume = 4; //variable del volumen
+		const audio = this.sound.add('audio', { loop: true, volume: 0.3 });
+		audio.play();
 		//fondo nota
 		this.add.image(centroX, centroY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7);
 
@@ -41,6 +43,7 @@ export class SettingsScene extends Phaser.Scene
 			if(MusicVolume < MIN_MUSIC_VALUE)
 				MusicVolume = MIN_MUSIC_VALUE;
 			MusicText.setText(`${MusicVolume}`);
+			audio.setVolume(MusicVolume / 10);
 		});
 
 		MusicBtnUp.on('pointerdown', () => {
@@ -48,6 +51,7 @@ export class SettingsScene extends Phaser.Scene
 			if(MusicVolume > MAX_MUSIC_VALUE)
 				MusicVolume = MAX_MUSIC_VALUE;
 			MusicText.setText(`${MusicVolume}`);
+			audio.setVolume(MusicVolume / 10);
 		});
 	}
 }
