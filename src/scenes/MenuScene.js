@@ -1,5 +1,7 @@
 import Phaser from 'phaser';
 
+import { AssetsPreloader } from '../preloader/AssetsPreloader.js';
+
 export class MenuScene extends Phaser.Scene 
 {
     constructor() {
@@ -20,5 +22,13 @@ export class MenuScene extends Phaser.Scene
             .on('pointerover', () => localBtn.setStyle({ color: '#ffff00' }))
             .on('pointerout', () => localBtn.setStyle({ color: '#00ff00' }))
             //.on('pointerdown', () => this.scene.start('GameScene'));
+
+
+            //Sofi
+            //const settingsBtn = this.add.image(960, 540, 'settingsBtn').setOrigin(0.5).setInteractive({ useHandCursor: true });
+            //settingsBtn.on('pointerdown', () => {
+            //    this.scene.pause();
+            //    this.scene.launch('SettingsScene');
+            //});
     }
 }
