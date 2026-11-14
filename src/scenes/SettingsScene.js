@@ -34,14 +34,10 @@ export class SettingsScene extends Phaser.Scene
 		const SettingsText = this.add.text(centroX + 50, centroY - 260, 'AJUSTES', { fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
 
 		const MenuBtn = this.add.image(centroX, centroY + 120, 'menuBtn').setOrigin(0.5).setScale(0.2).setInteractive({ useHandCursor: true });;
-		const MenuBtnText =  this.add.text(centroX + 50, centroY + 120, 'MENÚ', { fontSize: '60px', color: '#070707'  }).setOrigin(0.5);
+		const MenuBtnText =  this.add.text(centroX + 50, centroY + 120, 'ATRÁS', { fontSize: '60px', color: '#070707'  }).setOrigin(0.5);
 		const MusicText = this.add.text(centroX + 50, centroY - 10, `${MusicVolume}`, { fontSize: '50px', color: '#070707'  }).setOrigin(0.5);
 		
-		//Boton de salir al menu
-		MenuBtn.on('pointerdown', () =>{
-			this.scene.stop(); 
-			this.scene.resume('MenuScene');
-		});
+		
 		
 		//Botones de audio
 		const MusicBtnUp = this.add.image(centroX + 260, centroY - 20, 'pauseBtn')
@@ -72,8 +68,8 @@ export class SettingsScene extends Phaser.Scene
 
 		//Boton salir
 		MenuBtn.on('pointerdown', () => {
-            this.scene.stop();
-            this.scene.resume('MenuScene');
+            this.scene.launch('PauseScene');
+			this.scene.stop();
 		})
 	}
 }

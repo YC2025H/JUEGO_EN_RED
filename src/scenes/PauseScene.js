@@ -35,26 +35,54 @@ export class PauseScene extends Phaser.Scene
 		.setOrigin(0.5).setScale(0.7)
 		.setInteractive({ useHandCursor: true });
 		
-		//Hover Botones
-		pauseBtn.on('pointerover', () => {pauseBtn.setScale(0.8)});
-		pauseBtn.on('pointerout', () => {pauseBtn.setScale(0.7)});
+		//HOVER BUTTONS
+
+		// Pause - Continue
+		const pause_Game_Btn = this.add.text(centroX + 20, centroY - 70, 'Reanudar', { fontSize: '50px', color: '#070707'  }).setScale(0.8).setOrigin(0.5);
+		pauseBtn.on('pointerover', () => {
+			pauseBtn.setScale(0.8);
+			pause_Game_Btn.setScale(0.9);
+		});
+		pauseBtn.on('pointerout', () => {
+			pauseBtn.setScale(0.7);
+			pause_Game_Btn.setScale(0.8);
+		});
 		pauseBtn.on('pointerdown', () => {
+            this.scene.launch('GameScene');
             this.scene.stop();
-            this.scene.resume('GameScene');
-        });
-		
-		pauseBtn2.on('pointerover', () => {pauseBtn2.setScale(0.8)});
-		pauseBtn2.on('pointerout', () => {pauseBtn2.setScale(0.7)});
-		pauseBtn2.on('pointerdown', () => {
-            this.scene.stop();
-            this.scene.resume('SettingScene');
         });
 
-		pauseBtn3.on('pointerover', () => {pauseBtn3.setScale(0.8)});
-		pauseBtn3.on('pointerout', () => {pauseBtn3.setScale(0.7)});
-		pauseBtn3.on('pointerdown', () => {
+		
+		
+		// Pause - Settings
+		const pause_Settings_Btn = this.add.text(centroX + 20, centroY + 20, 'Ajustes', { fontSize: '50px', color: '#070707'  }).setScale(0.8).setOrigin(0.5);
+		pauseBtn2.on('pointerover', () => {
+			pauseBtn2.setScale(0.8);
+			pause_Settings_Btn.setScale(0.8);
+		});
+		pauseBtn2.on('pointerout', () => {
+			pauseBtn2.setScale(0.7);
+			pause_Settings_Btn.setScale(0.7);
+		});
+		pauseBtn2.on('pointerdown', () => {
+            this.scene.launch('SettingsScene');
+			this.scene.bringToTop('SettingsScene');
             this.scene.stop();
-            this.scene.resume('MenuScene');
+        });
+
+		// Pause - Menu
+		const pause_Menu_Btn = this.add.text(centroX + 20, centroY + 110, 'Menu', { fontSize: '50px', color: '#070707'  }).setScale(0.8).setOrigin(0.5);
+		pauseBtn3.on('pointerover', () => {
+			pauseBtn3.setScale(0.8);
+			pause_Menu_Btn.setScale(0.8);
+		});
+		pauseBtn3.on('pointerout', () => {
+			pauseBtn3.setScale(0.7);
+			pause_Menu_Btn.setScale(0.7);
+		});
+		pauseBtn3.on('pointerdown', () => {
+            this.scene.launch('MenuScene');
+            this.scene.stop();
         });
 		
 		

@@ -27,6 +27,14 @@ export class GameScene extends Phaser.Scene
 
         const kiko = new Kiko(this, 'kiko', centroX - 200, centroY);
 
+
+		//Sofi
+        const menuSettingsBtn = this.add.image(1500, 60, 'menu_settings_Btn').setOrigin(0.5).setScale(0.1).setInteractive({ useHandCursor: true });
+        menuSettingsBtn.on('pointerdown', () => {
+            this.scene.pause();
+            this.scene.launch('PauseScene');
+			this.scene.bringToTop('PauseScene');
+        });
 	}
 /*
     setUpPlayers() {
