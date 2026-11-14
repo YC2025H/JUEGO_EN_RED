@@ -39,7 +39,7 @@ export class SettingsScene extends Phaser.Scene
 		
 		//Boton de salir al menu
 		MenuBtn.on('pointerdown', () =>{
-			this.scene.stop();
+			this.scene.stop(); 
 			this.scene.resume('MenuScene');
 		});
 		
