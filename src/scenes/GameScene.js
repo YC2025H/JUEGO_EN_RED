@@ -27,9 +27,6 @@ export class GameScene extends Phaser.Scene
 
         const kiko = new Kiko(this, 'kiko', centroX - 200, centroY);
 
-
-		/*const idleKiko_1 = this.add.image(centroX, centroY + 20, 'IDLE Kiko_1')
-		.setOrigin(0.5).setScale(0.7);*/
 	}
 /*
     setUpPlayers() {
