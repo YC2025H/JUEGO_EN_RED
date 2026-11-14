@@ -86,7 +86,8 @@ export class AssetsPreloader {
 		// MENU SCENE
 
 		scene.load.image('menu_settings_Btn', 'assets/img/BUTTONS/Menu_Settings_Btn.png');
-
+        scene.load.image('menu_background', 'assets/img/MENU_ASSETS/Menu_Background.png');
+        scene.load.image('Bottom', 'assets/img/BUTTONS/bottom.png');
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

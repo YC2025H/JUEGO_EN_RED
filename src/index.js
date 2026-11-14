@@ -8,13 +8,18 @@ const config = {
     type: Phaser.AUTO,      // WebGL if available; otherwise, Canvas
     width: 1920,
     height: 1080,
+    scale: {
+        //paara centar el juego en el centro
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH
+    },
     physics: {
         default: 'arcade',
         arcade: {
             gravity: { y: 300 }, debug: true
         }
     },
-    scene: [GameScene, PauseScene, SettingsScene, MenuScene]      // The first scene starts automatically
+    scene: [MenuScene, GameScene, PauseScene, SettingsScene]      // The first scene starts automatically
 };
 
 const game = new Phaser.Game(config);
