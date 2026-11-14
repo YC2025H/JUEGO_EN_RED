@@ -11,10 +11,10 @@ const config = {
     physics: {
         default: 'arcade',
         arcade: {
-            gravity: { y: 9.8 }
+            gravity: { y: 300 }, debug: true
         }
     },
-    scene: [PauseScene, SettingsScene, GameScene, MenuScene]      // The first scene starts automatically
+    scene: [GameScene, PauseScene, SettingsScene, MenuScene]      // The first scene starts automatically
 };
 
 const game = new Phaser.Game(config);

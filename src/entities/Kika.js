@@ -5,22 +5,22 @@ export class Kika {
         this.scene = scene;
         this.score = 0;
         this.speed = 300;
+        this.speedY = 300;
 
         this.sprite = scene.physics.add.sprite(x, y, 'idleKika1');
 
         this.sprite.setImmovable(true);
-        this.sprite.body.allowGravity = false;
-        this.sprite.setVelocity(0, 0);
-
+        this.sprite.body.allowGravity = true;
+        this.sprite.setVelocity(0, this.speedY);
 
         //this.sprite.setDisplaySize(5, 5);
-        this.sprite.setScale(0.5);
+        this.sprite.setScale(0.3);
         //this.sprite.setImmovable(true);
         this.sprite.setCollideWorldBounds(true);
 
         this.sprite.play('idleKika');
     }
-    animaciones(){
+    animaciones() {
 
         // IDLE
         this.scene.anims.create({
@@ -41,14 +41,14 @@ export class Kika {
         this.scene.anims.create({
             key: 'runKika',
             frames: [
-                { key: 'runKika1'},
-                { key: 'runKika2'},
-                { key: 'runKika3'},
-                { key: 'runKika4'}
+                { key: 'runKika1' },
+                { key: 'runKika2' },
+                { key: 'runKika3' },
+                { key: 'runKika4' }
             ],
             frameRate: 10,
             repeat: -1
         });
     }
-    
+
 }
