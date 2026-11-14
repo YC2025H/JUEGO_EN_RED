@@ -19,16 +19,15 @@ export class GameScene extends Phaser.Scene {
     }
 
     create() {
-
+        
         const centroX = this.scale.width / 2;
         const centroY = this.scale.height / 2;
 
-        this.add.image(centroX, centroY + 50, 'background_Game').setOrigin(0.5).setScale(0.6);
+        this.background = this.add.image(centroX, centroY, 'background_Game').setOrigin(0.5);
 
         this.setUpPlayers();
 
-
-
+        //
         //Sofi
         const menuSettingsBtn = this.add.image(1500, 60, 'menu_settings_Btn').setOrigin(0.5).setScale(0.1).setInteractive({ useHandCursor: true });
         menuSettingsBtn.on('pointerdown', () => {
@@ -39,11 +38,18 @@ export class GameScene extends Phaser.Scene {
     }
 
     setUpPlayers() {
+        
+        //camera
+        var camera = this.cameras.main;
+
+        var x = camera.centerX;
+        var y = camera.centerY;
+
         const centroX = this.scale.width / 2;
         const centroY = this.scale.height / 2;
-        const kika = new Kika(this, 'kika', centroX - 500, centroY);
+        this.kika = new Kika(this, 'kika', centroX - 500, centroY);
 
-        const kiko = new Kiko(this, 'kiko', centroX - 200, centroY);
+        this.kiko = new Kiko(this, 'kiko', centroX - 200, centroY);
 
         this.ground = this.physics.add.staticImage(
             this.scale.width / 2,
@@ -53,8 +59,8 @@ export class GameScene extends Phaser.Scene {
 
         const Keys = Phaser.Input.Keyboard.KeyCodes;
         this.inputMappings = [
-            { players: kiko, up: Keys.W, left: Keys.A, right: Keys.D },
-            { players: kika, up: Keys.UP, left: Keys.LEFT, right: Keys.RIGHT }
+            { players: this.kiko, up: Keys.W, left: Keys.A, right: Keys.D },
+            { players: this.kika, up: Keys.UP, left: Keys.LEFT, right: Keys.RIGHT }
         ].map(mapping => ({
             players: mapping.players,
             upKey: this.input.keyboard.addKey(mapping.up),
@@ -79,6 +85,37 @@ export class GameScene extends Phaser.Scene {
                 players.sprite.setVelocityY(-players.speedY);
             }
         });
+
+        //coger los personajes
+        const kika = this.kika.sprite;
+        const kiko = this.kiko.sprite; 
+
+        //camera
+        const camera = this.cameras.main;
+
+        const maxDisX = 1920;
+
+        //dis max entre los jugadores 
+        const disPlayers = Math.abs(kiko.x - kika.x);
+
+        if(disPlayers > maxDisX)
+        {
+            //se frena al jugador que se este adelantando demasiado
+            if(kiko.x > kika.x)
+            {
+                kiko.setVelocityX(0);
+            }
+            else
+            {
+                kika.setVelocityX(0);
+            }
+        }
+
+        //camara en el medio de ambos
+        const middleX = (kika.x + kiko.x) /2;
+        camera.centerOn(middleX, this.scale.height/2);
+
+
     }
 
 
