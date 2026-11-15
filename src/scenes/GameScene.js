@@ -44,6 +44,17 @@ export class GameScene extends Phaser.Scene {
 
         var x = camera.centerX;
         var y = camera.centerY;
+        camera.setSize(1920, 1080);
+
+        //límites de la cámara para que no se salga de la imágen de fondo
+        const bounds = this.background.getBounds();
+
+        camera.setBounds(
+            bounds.x,
+            bounds.y,
+            bounds.width,
+            bounds.height
+        );
 
         const centroX = this.scale.width / 2;
         const centroY = this.scale.height / 2;
@@ -93,7 +104,7 @@ export class GameScene extends Phaser.Scene {
         //camera
         const camera = this.cameras.main;
 
-        const maxDisX = 1920;
+        const maxDisX = this.background.width;
 
         //dis max entre los jugadores 
         const disPlayers = Math.abs(kiko.x - kika.x);
@@ -113,9 +124,8 @@ export class GameScene extends Phaser.Scene {
 
         //camara en el medio de ambos
         const middleX = (kika.x + kiko.x) /2;
-        camera.centerOn(middleX, this.scale.height/2);
 
-
+        camera.centerOn(middleX, this.background.y);
     }
 
 
