@@ -19,7 +19,7 @@ export class GameScene extends Phaser.Scene {
     }
 
     create() {
-        
+
         const centroX = this.scale.width / 2;
         const centroY = this.scale.height / 2;
 
@@ -38,13 +38,16 @@ export class GameScene extends Phaser.Scene {
     }
 
     setUpPlayers() {
-        
+
+        let platforms = this.physics.add.staticGroup();
+
         //camera
         var camera = this.cameras.main;
 
         var x = camera.centerX;
         var y = camera.centerY;
         camera.setSize(1920, 1080);
+
 
         //límites de la cámara para que no se salga de la imágen de fondo
         const bounds = this.background.getBounds();
@@ -56,18 +59,44 @@ export class GameScene extends Phaser.Scene {
             bounds.height
         );
 
+        //límites del canvas
+        this.physics.world.setBounds(
+            bounds.x,
+            bounds.y,
+            bounds.width,
+            bounds.height
+        );
+
+
         const centroX = this.scale.width / 2;
         const centroY = this.scale.height / 2;
-        this.kika = new Kika(this, 'kika', centroX - 500, centroY);
 
-        this.kiko = new Kiko(this, 'kiko', centroX - 200, centroY);
+        //los jugadores
+        this.kika = new Kika(this, 'kika', centroX - 1000, centroY);
 
+        this.kiko = new Kiko(this, 'kiko', centroX - 600, centroY);
+
+        // Añadir plataformas
+        const floor = platforms.create(centroX, 540, 'floor');
+        floor.body.setSize(0,100);
+        floor.body.setOffset(0, 1000);
+
+        platforms.create(600, 800, 'platform1');
+        platforms.create(50, 250, 'platform2');
+        platforms.create(10, 250, 'platform3');
+
+        // Colisión con todas
+        this.physics.add.collider(this.kika.sprite, platforms);
+        this.physics.add.collider(this.kiko.sprite, platforms);
+
+/*
         this.ground = this.physics.add.staticImage(
             this.scale.width / 2,
             this.scale.height - 50,
             'ground'
         );
-
+*/
+        //las teclas de movimiento
         const Keys = Phaser.Input.Keyboard.KeyCodes;
         this.inputMappings = [
             { players: this.kiko, up: Keys.W, left: Keys.A, right: Keys.D },
@@ -79,6 +108,7 @@ export class GameScene extends Phaser.Scene {
             rightKey: this.input.keyboard.addKey(mapping.right),
         }));
     }
+
 
     update(time, delta) {
 
@@ -110,7 +140,7 @@ export class GameScene extends Phaser.Scene {
 
             if (Phaser.Input.Keyboard.JustDown(mapping.upKey) && players.sprite.body.onFloor()) {
                 //if (players.jump) {
-                    players.jump();
+                players.jump();
                 /*} else {
                     players.sprite.setVelocityY(-players.speedY);
                 }*/
@@ -123,7 +153,7 @@ export class GameScene extends Phaser.Scene {
 
         //coger los personajes
         const kika = this.kika.sprite;
-        const kiko = this.kiko.sprite; 
+        const kiko = this.kiko.sprite;
 
         //camera
         const camera = this.cameras.main;
@@ -133,21 +163,18 @@ export class GameScene extends Phaser.Scene {
         //dis max entre los jugadores 
         const disPlayers = Math.abs(kiko.x - kika.x);
 
-        if(disPlayers > maxDisX)
-        {
+        if (disPlayers > maxDisX) {
             //se frena al jugador que se este adelantando demasiado
-            if(kiko.x > kika.x)
-            {
+            if (kiko.x > kika.x) {
                 kiko.setVelocityX(0);
             }
-            else
-            {
+            else {
                 kika.setVelocityX(0);
             }
         }
 
         //camara en el medio de ambos
-        const middleX = (kika.x + kiko.x) /2;
+        const middleX = (kika.x + kiko.x) / 2;
 
         camera.centerOn(middleX, this.background.y);
     }

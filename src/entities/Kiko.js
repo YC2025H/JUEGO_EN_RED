@@ -13,10 +13,9 @@ export class Kiko {
         this.landing = false;
         this.animations();
 
-
         this.sprite = scene.physics.add.sprite(x, y, 'idleKiko1');
 
-        this.sprite.setImmovable(true);
+        //this.sprite.setImmovable(true);
         this.sprite.body.allowGravity = true;
         //this.sprite.setVelocity(0, this.speedY);
         this.sprite.setVelocity(0, 0);
@@ -156,7 +155,7 @@ export class Kiko {
 
     updateJump() {
         if (!this.jumping) {
-        return;
+            return;
         }
 
         if (!this.sprite.body.onFloor()) {

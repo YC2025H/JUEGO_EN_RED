@@ -98,8 +98,20 @@ export class AssetsPreloader {
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        // SETTINGS SCENE
+        // GAME SCENE
 
-        scene.load.image('background_Game', 'assets/img/Background_Game.PNG')
+        scene.load.image('background_Game', 'assets/img/GAME_ASSETS/Background_Game.PNG');
+        scene.load.image('floor', 'assets/img/GAME_ASSETS/floor.png');
+        scene.load.image('can', 'assets/img/GAME_ASSETS/can.png');
+        scene.load.image('cupboard', 'assets/img/GAME_ASSETS/cupboard.png');
+        scene.load.image('platform1', 'assets/img/GAME_ASSETS/platform1.png');
+        scene.load.image('platform2', 'assets/img/GAME_ASSETS/platform2.png');
+        scene.load.image('platform3', 'assets/img/GAME_ASSETS/platform3.png');
+        scene.load.image('cookies', 'assets/img/GAME_ASSETS/cookies.png');
+        scene.load.image('teacup', 'assets/img/GAME_ASSETS/teacup.png');
+        scene.load.image('vase', 'assets/img/GAME_ASSETS/vase.png');
+        scene.load.image('pot', 'assets/img/GAME_ASSETS/pot.png');
+        scene.load.image('pot_final', 'assets/img/GAME_ASSETS/pot_final.png');
+
     }
 }

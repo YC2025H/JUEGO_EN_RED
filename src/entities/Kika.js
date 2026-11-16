@@ -17,7 +17,7 @@ export class Kika {
 
         this.sprite = scene.physics.add.sprite(x, y, 'idleKika1');
 
-        this.sprite.setImmovable(true);
+        //this.sprite.setImmovable(true);
         this.sprite.body.allowGravity = true;
         //this.sprite.setVelocity(0, this.speedY);
         this.sprite.setVelocity(0, 0);
@@ -40,6 +40,9 @@ export class Kika {
             this.landing = false;
             this.sprite.play('idleKika');
         });
+
+
+
     }
     animations() {
 
