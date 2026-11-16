@@ -17,20 +17,20 @@ export class AssetsPreloader {
         scene.load.image('runKika4', 'assets/img/ASSETS KIKA & KIKO/KIKA/RUN Kika/RUN Kika_4.PNG');
 
         // INIT JUMP KIKA
-        scene.load.image('initJumpKika1', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/INIT JUMP Kika_1.PNG');
-        scene.load.image('initJumpKika2', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/INIT JUMP Kika_2.PNG');
-        scene.load.image('initJumpKika3', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/INIT JUMP Kika_3.PNG');
-        scene.load.image('initJumpKika4', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/INIT JUMP Kika_4.PNG');
+        scene.load.image('initJumpKika1', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/INIT JUMP Kika/INIT JUMP Kika_1.PNG');
+        scene.load.image('initJumpKika2', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/INIT JUMP Kika/INIT JUMP Kika_2.PNG');
+        scene.load.image('initJumpKika3', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/INIT JUMP Kika/INIT JUMP Kika_3.PNG');
+        scene.load.image('initJumpKika4', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/INIT JUMP Kika/INIT JUMP Kika_4.PNG');
         
         // FLY JUMP KIKA
-        scene.load.image('flyJumpKika1', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/FLY JUMP Kika_1.PNG');
-        scene.load.image('flyJumpKika2', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/FLY JUMP Kika_2.PNG');
-        scene.load.image('flyJumpKika3', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/FLY JUMP Kika_3.PNG');
+        scene.load.image('flyJumpKika1', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/FLY JUMP Kika/FLY JUMP Kika_1.PNG');
+        scene.load.image('flyJumpKika2', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/FLY JUMP Kika/FLY JUMP Kika_2.PNG');
+        scene.load.image('flyJumpKika3', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/FLY JUMP Kika/FLY JUMP Kika_3.PNG');
 
         // GROUND JUMP KIKA
-        scene.load.image('groundJumpKika1', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/GROUND JUMP Kika_1.PNG');
-        scene.load.image('groundJumpKika2', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/GROUND JUMP Kika_2.PNG');
-        scene.load.image('groundJumpKika3', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/GROUND JUMP Kika_3.PNG');
+        scene.load.image('groundJumpKika1', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/GROUND JUMP Kika/GROUND JUMP Kika_1.PNG');
+        scene.load.image('groundJumpKika2', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/GROUND JUMP Kika/GROUND JUMP Kika_2.PNG');
+        scene.load.image('groundJumpKika3', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/GROUND JUMP Kika/GROUND JUMP Kika_3.PNG');
 
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -51,35 +51,34 @@ export class AssetsPreloader {
         scene.load.image('runKiko2', 'assets/img/ASSETS KIKA & KIKO/KIKO/RUN Kiko/RUN Kiko_2.PNG');
         scene.load.image('runKiko3', 'assets/img/ASSETS KIKA & KIKO/KIKO/RUN Kiko/RUN Kiko_3.PNG');
         scene.load.image('runKiko4', 'assets/img/ASSETS KIKA & KIKO/KIKO/RUN Kiko/RUN Kiko_4.PNG');
+        scene.load.image('runKiko5', 'assets/img/ASSETS KIKA & KIKO/KIKO/RUN Kiko/RUN Kiko_5.PNG');
 
         // INIT JUMP KIKO
-        scene.load.image('initJumpKiko1', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/INIT JUMP Kiko_1.PNG');
-        scene.load.image('initJumpKiko2', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/INIT JUMP Kiko_2.PNG');
-        scene.load.image('initJumpKiko3', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/INIT JUMP Kiko_3.PNG');
-        scene.load.image('initJumpKiko4', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/INIT JUMP Kiko_4.PNG');
+        scene.load.image('initJumpKiko1', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/INIT JUMP Kiko/INIT JUMP Kiko_1.PNG');
+        scene.load.image('initJumpKiko2', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/INIT JUMP Kiko/INIT JUMP Kiko_2.PNG');
+        scene.load.image('initJumpKiko3', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/INIT JUMP Kiko/INIT JUMP Kiko_3.PNG');
         
         // FLY JUMP KIKO
-        scene.load.image('flyJumpKiko1', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/FLY JUMP Kiko_1.PNG');
-        scene.load.image('flyJumpKiko2', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/FLY JUMP Kiko_2.PNG');
-        scene.load.image('flyJumpKiko3', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/FLY JUMP Kiko_3.PNG');
+        scene.load.image('flyJumpKiko1', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/FLY JUMP Kiko/FLY JUMP Kiko_1.PNG');
+        scene.load.image('flyJumpKiko2', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/FLY JUMP Kiko/FLY JUMP Kiko_2.PNG');
+        scene.load.image('flyJumpKiko3', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/FLY JUMP Kiko/FLY JUMP Kiko_3.PNG');
 
         // GROUND JUMP KIKO
-        scene.load.image('groundJumpKiko1', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/GROUND JUMP Kiko_1.PNG');
-        scene.load.image('groundJumpKiko2', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/GROUND JUMP Kiko_2.PNG');
-        scene.load.image('groundJumpKiko3', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/GROUND JUMP Kiko_3.PNG');
+        scene.load.image('groundJumpKiko1', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/GROUND JUMP Kiko/GROUND JUMP Kiko_1.PNG');
+        scene.load.image('groundJumpKiko2', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/GROUND JUMP Kiko/GROUND JUMP Kiko_2.PNG');
 
         // INIT PUSH KIKO
-        scene.load.image('initPushKiko1', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/INIT PUSH Kiko_1.PNG');
-        scene.load.image('initPushKiko2', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/INIT PUSH Kiko_2.PNG');
-        scene.load.image('initPushKiko3', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/INIT PUSH Kiko_3.PNG');
+        scene.load.image('initPushKiko1', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/INIT PUSH Kiko/INIT PUSH Kiko_1.PNG');
+        scene.load.image('initPushKiko2', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/INIT PUSH Kiko/INIT PUSH Kiko_2.PNG');
+        scene.load.image('initPushKiko3', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/INIT PUSH Kiko/INIT PUSH Kiko_3.PNG');
 
         // WALK PUSH KIKO
-        scene.load.image('walkPushKiko1', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/WALK PUSH Kiko_1.PNG');
-        scene.load.image('walkPushKiko2', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/WALK PUSH Kiko_2.PNG');
-        scene.load.image('walkPushKiko3', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/WALK PUSH Kiko_3.PNG');
-        scene.load.image('walkPushKiko4', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/WALK PUSH Kiko_4.PNG');
-        scene.load.image('walkPushKiko5', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/WALK PUSH Kiko_5.PNG');
-        scene.load.image('walkPushKiko6', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/WALK PUSH Kiko_6.PNG');
+        scene.load.image('walkPushKiko1', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/WALK PUSH Kiko/WALK PUSH Kiko_1.PNG');
+        scene.load.image('walkPushKiko2', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/WALK PUSH Kiko/WALK PUSH Kiko_2.PNG');
+        scene.load.image('walkPushKiko3', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/WALK PUSH Kiko/WALK PUSH Kiko_3.PNG');
+        scene.load.image('walkPushKiko4', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/WALK PUSH Kiko/WALK PUSH Kiko_4.PNG');
+        scene.load.image('walkPushKiko5', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/WALK PUSH Kiko/WALK PUSH Kiko_5.PNG');
+        scene.load.image('walkPushKiko6', 'assets/img/ASSETS KIKA & KIKO/KIKO/PUSH Kiko/WALK PUSH Kiko/WALK PUSH Kiko_6.PNG');
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -87,14 +87,38 @@ export class GameScene extends Phaser.Scene {
 
             if (mapping.leftKey.isDown) {
                 players.sprite.setVelocityX(-players.speed);
+                players.sprite.setFlipX(false);
+
+                if (!players.jumping && !players.landing && !players.noGround) {
+                    players.run();
+                }
             } else if (mapping.rightKey.isDown) {
                 players.sprite.setVelocityX(players.speed);
+                players.sprite.setFlipX(true);
+
+                if (!players.jumping && !players.landing && !players.noGround) {
+                    players.run();
+                }
+
             } else {
                 players.sprite.setVelocityX(0);
+
+                if (!players.jumping && !players.landing && !players.noGround) {
+                    players.idle();
+                }
             }
-            if (mapping.upKey.isDown && players.sprite.body.onFloor()) {
-                players.sprite.setVelocityY(-players.speedY);
+
+            if (Phaser.Input.Keyboard.JustDown(mapping.upKey) && players.sprite.body.onFloor()) {
+                //if (players.jump) {
+                    players.jump();
+                /*} else {
+                    players.sprite.setVelocityY(-players.speedY);
+                }*/
             }
+
+            players.updateJump();
+
+
         });
 
         //coger los personajes
