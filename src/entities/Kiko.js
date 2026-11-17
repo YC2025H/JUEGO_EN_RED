@@ -5,7 +5,7 @@ export class Kiko {
         this.scene = scene;
         this.score = 0;
         this.speed = 300;
-        this.speedY = 200;
+        this.speedY = 300;
 
         // JUMP
         this.jumping = false;
@@ -15,7 +15,7 @@ export class Kiko {
 
         this.sprite = scene.physics.add.sprite(x, y, 'idleKiko1');
 
-        //this.sprite.setImmovable(true);
+        //this.sprite.setImmovable(tsrue);
         this.sprite.body.allowGravity = true;
         //this.sprite.setVelocity(0, this.speedY);
         this.sprite.setVelocity(0, 0);
@@ -26,6 +26,10 @@ export class Kiko {
         this.sprite.setCollideWorldBounds(true);
 
         this.sprite.play('idleKiko');
+
+        //cambiar tamaño collider
+        this.sprite.body.setSize(450,500);
+        this.sprite.body.setOffset(80,20);
 
         // FLY JUMP after INIT JUMP
         this.sprite.on('animationcomplete-initJumpKiko', () => {
