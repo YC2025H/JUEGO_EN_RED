@@ -14,7 +14,6 @@ export class Kika {
         this.landing = false;
         this.animations();
 
-
         this.sprite = scene.physics.add.sprite(x, y, 'idleKika1');
 
         //this.sprite.setImmovable(true);
@@ -33,6 +32,8 @@ export class Kika {
         this.sprite.body.setSize(400,400);
         this.sprite.body.setOffset(130,120);
 
+
+        //this.sprite.body.setGravityY(300);
         // FLY JUMP after INIT JUMP
         this.sprite.on('animationcomplete-initJumpKika', () => {
             if (this.jumping && this.noGround) {

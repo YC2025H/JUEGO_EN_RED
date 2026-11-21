@@ -131,7 +131,7 @@ export class GameScene extends Phaser.Scene {
         const pot = platforms.create(600, 175, 'pot');
         pot.body.setSize(295, 180);
         pot.body.setOffset(30, 20);
-        
+
         const cookies = platforms.create(1400, 875, 'cookies');
         cookies.body.setSize(210, 265);
         cookies.body.setOffset(30, 20);
@@ -154,25 +154,23 @@ export class GameScene extends Phaser.Scene {
         let pasta = this.physics.add.image(400, 200, 'pasta').setScale(0.2).refreshBody();
         pasta.body.setSize(880, 550);
         let tomato = this.physics.add.image(1900, 190, 'tomato').setScale(0.15).refreshBody();
-        
+
         //colisiones entre objetosplataformas
         this.physics.add.collider(platforms, teacupMovable);
         this.physics.add.collider(platforms, pasta);
         this.physics.add.collider(platforms, carrot);
         this.physics.add.collider(platforms, tomato);
-
         // Colisión con todas
         this.physics.add.collider(this.kika.sprite, platforms);
         this.physics.add.collider(this.kiko.sprite, platforms);
-        
+
         this.physics.add.collider(this.kiko.sprite, teacupMovable);
-        this.physics.add.collider(this.kika.sprite, teacupMovable, (k,t) => 
-            {
-                if(t.body.touching.right || t.body.touching.left)
-                {
-                  
-                }
-            });
+
+        this.physics.add.collider(this.kika.sprite, teacupMovable, (k, t) => {
+            if (t.body.touching.right || t.body.touching.left) {
+                
+            }
+        });
 
         //colision comida    
         //pasta

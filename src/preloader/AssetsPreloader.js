@@ -3,13 +3,13 @@ export class AssetsPreloader {
         // KIKA
 
         // IDLE KIKA
-		scene.load.image('idleKika1', 'assets/img/ASSETS KIKA & KIKO/KIKA/IDLE Kika/IDLE Kika_1.PNG');
+        scene.load.image('idleKika1', 'assets/img/ASSETS KIKA & KIKO/KIKA/IDLE Kika/IDLE Kika_1.PNG');
         scene.load.image('idleKika2', 'assets/img/ASSETS KIKA & KIKO/KIKA/IDLE Kika/IDLE Kika_2.PNG');
         scene.load.image('idleKika3', 'assets/img/ASSETS KIKA & KIKO/KIKA/IDLE Kika/IDLE Kika_3.PNG');
         scene.load.image('idleKika4', 'assets/img/ASSETS KIKA & KIKO/KIKA/IDLE Kika/IDLE Kika_4.PNG');
         scene.load.image('idleKika5', 'assets/img/ASSETS KIKA & KIKO/KIKA/IDLE Kika/IDLE Kika_5.PNG');
         scene.load.image('idleKika6', 'assets/img/ASSETS KIKA & KIKO/KIKA/IDLE Kika/IDLE Kika_6.PNG');
-		
+
         // RUN KIKA
         scene.load.image('runKika1', 'assets/img/ASSETS KIKA & KIKO/KIKA/RUN Kika/RUN Kika_1.PNG');
         scene.load.image('runKika2', 'assets/img/ASSETS KIKA & KIKO/KIKA/RUN Kika/RUN Kika_2.PNG');
@@ -21,7 +21,7 @@ export class AssetsPreloader {
         scene.load.image('initJumpKika2', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/INIT JUMP Kika/INIT JUMP Kika_2.PNG');
         scene.load.image('initJumpKika3', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/INIT JUMP Kika/INIT JUMP Kika_3.PNG');
         scene.load.image('initJumpKika4', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/INIT JUMP Kika/INIT JUMP Kika_4.PNG');
-        
+
         // FLY JUMP KIKA
         scene.load.image('flyJumpKika1', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/FLY JUMP Kika/FLY JUMP Kika_1.PNG');
         scene.load.image('flyJumpKika2', 'assets/img/ASSETS KIKA & KIKO/KIKA/JUMP Kika/FLY JUMP Kika/FLY JUMP Kika_2.PNG');
@@ -57,7 +57,7 @@ export class AssetsPreloader {
         scene.load.image('initJumpKiko1', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/INIT JUMP Kiko/INIT JUMP Kiko_1.PNG');
         scene.load.image('initJumpKiko2', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/INIT JUMP Kiko/INIT JUMP Kiko_2.PNG');
         scene.load.image('initJumpKiko3', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/INIT JUMP Kiko/INIT JUMP Kiko_3.PNG');
-        
+
         // FLY JUMP KIKO
         scene.load.image('flyJumpKiko1', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/FLY JUMP Kiko/FLY JUMP Kiko_1.PNG');
         scene.load.image('flyJumpKiko2', 'assets/img/ASSETS KIKA & KIKO/KIKO/JUMP Kiko/FLY JUMP Kiko/FLY JUMP Kiko_2.PNG');
@@ -82,19 +82,31 @@ export class AssetsPreloader {
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		// MENU SCENE
+        // MENU SCENE
 
-		scene.load.image('menu_settings_Btn', 'assets/img/BUTTONS/Menu_Settings_Btn.png');
+        scene.load.image('menu_settings_Btn', 'assets/img/BUTTONS/Menu_Settings_Btn.png');
         scene.load.image('menu_background', 'assets/img/MENU_ASSETS/Menu_Background.png');
-        scene.load.image('Bottom', 'assets/img/BUTTONS/bottom.png');
+        scene.load.image('Button', 'assets/img/BUTTONS/button.png');
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		// PAUSE SCENE
+        // PAUSE SCENE
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		// SETTINGS SCENE
+        // CREDITS SCENE
+
+        scene.load.image('credits_background', 'assets/img/CREDITS_ASSETS/credits_background.png');
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // FINALSCENE
+        scene.load.image('final_background', 'assets/img/FINAL_ASSETS/final_background.png');
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // SETTINGS SCENE
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
