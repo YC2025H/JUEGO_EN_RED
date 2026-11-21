@@ -16,6 +16,7 @@ export class GameScene extends Phaser.Scene {
 
     preload() {
         AssetsPreloader.preload(this);
+        this.load.font('Font', 'assets/fonts/kindergarten.ttf', 'truetype');
     }
 
     create() {
@@ -122,27 +123,85 @@ export class GameScene extends Phaser.Scene {
         const cupboard = platforms.create(1950, 500, 'cupboard');
         cupboard.body.setSize(620, 287);
         cupboard.body.setOffset(10, 14);
-
-
+        /*
+        const teacup = platforms.create(850, 925, 'teacup').setScale(1.5);
+        teacup.body.setSize(250, 145);
+        teacup.body.setOffset(-25, 5); 
+        */
         const pot = platforms.create(600, 175, 'pot');
         pot.body.setSize(295, 180);
         pot.body.setOffset(30, 20);
-        const teacup = platforms.create(850, 925, 'teacup').setScale(1.5);
-        teacup.body.setSize(250, 145);
-        teacup.body.setOffset(-25, 5);
+        
         const cookies = platforms.create(1400, 875, 'cookies');
         cookies.body.setSize(210, 265);
         cookies.body.setOffset(30, 20);
-        const can = platforms.create(1200, 600, 'can');
+        const can = platforms.create(1555, 850, 'can');
         can.body.setSize(116, 280);
         can.body.setOffset(25, 20);
         const vase = platforms.create(1800, 900, 'vase');
         vase.body.setSize(225, 195);
         vase.body.setOffset(25, 20);
 
+
+        //obejtos movibles 
+        let teacupMovable = this.physics.add.image(850, 925, 'teacup').setScale(1.5);
+        teacupMovable.body.setSize(170, 100);
+
+        //recoger comida
+        const sumaComida = 0;
+
+        let carrot = this.physics.add.image(1200, 190, 'carrot').setScale(0.15).refreshBody();
+        let pasta = this.physics.add.image(400, 200, 'pasta').setScale(0.2).refreshBody();
+        pasta.body.setSize(880, 550);
+        let tomato = this.physics.add.image(1900, 190, 'tomato').setScale(0.15).refreshBody();
+        
+        //colisiones entre objetosplataformas
+        this.physics.add.collider(platforms, teacupMovable);
+        this.physics.add.collider(platforms, pasta);
+        this.physics.add.collider(platforms, carrot);
+        this.physics.add.collider(platforms, tomato);
+
         // Colisión con todas
         this.physics.add.collider(this.kika.sprite, platforms);
         this.physics.add.collider(this.kiko.sprite, platforms);
+        
+        this.physics.add.collider(this.kiko.sprite, teacupMovable);
+        this.physics.add.collider(this.kika.sprite, teacupMovable, (k,t) => 
+            {
+                if(t.body.touching.right || t.body.touching.left)
+                {
+                  
+                }
+            });
+
+        //colision comida    
+        //pasta
+        this.physics.add.overlap(this.kiko.sprite, pasta, (j, p) => {
+            p.destroy();// Lo destruye ya que no se vuelve a usar
+            this.sumaComida++;
+        });
+        this.physics.add.overlap(this.kika.sprite, pasta, (j, p) => {
+            p.destroy();// Lo destruye ya que no se vuelve a usar
+            this.sumaComida++;
+        });
+        //tomate
+        this.physics.add.overlap(this.kiko.sprite, tomato, (j, t) => {
+            t.destroy();// Lo destruye ya que no se vuelve a usar
+            this.sumaComida++;
+        });
+        this.physics.add.overlap(this.kika.sprite, tomato, (j, t) => {
+            t.destroy();// Lo destruye ya que no se vuelve a usar
+            this.sumaComida++;
+        });
+        //zanahoria
+        this.physics.add.overlap(this.kiko.sprite, carrot, (j, c) => {
+            c.destroy();// Lo destruye ya que no se vuelve a usar
+            this.sumaComida++;
+        });
+        this.physics.add.overlap(this.kika.sprite, carrot, (j, c) => {
+            c.destroy();// Lo destruye ya que no se vuelve a usar
+            this.sumaComida++;
+        });
 
     }
 
