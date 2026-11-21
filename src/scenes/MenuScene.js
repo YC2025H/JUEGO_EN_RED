@@ -12,6 +12,7 @@ export class MenuScene extends Phaser.Scene
 	{
 		this.load.image('menu_background', 'assets/img/MENU_ASSETS/Menu_Background.png');
         this.load.image('localBtn', 'assets/img/BUTTONS/bottom.png');
+        this.load.font('Font', 'assets/fonts/kindergarten.ttf', 'truetype');
 	}
     create() {
 
@@ -21,7 +22,7 @@ export class MenuScene extends Phaser.Scene
         this.add.image(centroX, centroY, 'menu_background').setOrigin(0.5);
 
         this.add.text(centroX + 400, 270, 'Menú', {
-            fontFamily: 'Font',
+            fontFamily:'Font',
             fontSize: '100px',
             color: '#000000'
         }).setOrigin(0.5);
@@ -31,6 +32,7 @@ export class MenuScene extends Phaser.Scene
 		.setInteractive({ useHandCursor: true });
 
         const LocalBotton = this.add.text(centroX + 400, 500, 'Local Play', {
+            fontFamily:'Font',
             fontSize: '40px',
             color: '#000000'
         }).setOrigin(0.5)

@@ -113,5 +113,9 @@ export class AssetsPreloader {
         scene.load.image('pot', 'assets/img/GAME_ASSETS/pot.png');
         scene.load.image('pot_final', 'assets/img/GAME_ASSETS/pot_final.png');
 
+        // FOOD
+        scene.load.image('carrot', 'assets/img/FOOD_ASSETS/Carrot.png');
+        scene.load.image('pasta', 'assets/img/FOOD_ASSETS/Pasta.png');
+        scene.load.image('tomato', 'assets/img/FOOD_ASSETS/Tomato.png');
     }
 }

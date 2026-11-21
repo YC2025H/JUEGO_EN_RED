@@ -21,7 +21,10 @@ module.exports = {
     }),
     // Copies the assets (audio, images...) to dist/assets
     new CopyWebpackPlugin({
-      patterns: [{ from: 'public/assets', to: 'assets' }]
+      patterns: [
+        { from: 'public/assets', to: 'assets' },
+        { from: 'public/style.css', to: 'style.css'}
+      ]
     })
   ],
 
