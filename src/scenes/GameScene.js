@@ -27,6 +27,19 @@ export class GameScene extends Phaser.Scene {
         this.background = this.add.image(centroX, centroY, 'background_Game').setOrigin(0.5);
 
         this.setUpPlayers();
+
+        //obejtos movibles 
+        this.teacupMovable = this.physics.add.image(850, 910, 'teacup').setScale(1.5);
+        this.teacupMovable.body.setSize(170, 100);
+
+        this.teacupPositioned = false;
+
+        this.carrot = this.physics.add.image(1200, 190, 'carrot').setScale(0.15).refreshBody();
+        this.pasta = this.physics.add.image(400, 200, 'pasta').setScale(0.2).refreshBody();
+        this.pasta.body.setSize(880, 550);
+        this.tomato = this.physics.add.image(1900, 190, 'tomato').setScale(0.15).refreshBody();
+
+
         this.setUpPlatforms();
 
         //
@@ -37,6 +50,7 @@ export class GameScene extends Phaser.Scene {
             this.scene.launch('PauseScene');
             this.scene.bringToTop('PauseScene');
         });
+
     }
 
     setUpPlayers() {
@@ -142,67 +156,68 @@ export class GameScene extends Phaser.Scene {
         vase.body.setSize(225, 195);
         vase.body.setOffset(25, 20);
 
-
-        //obejtos movibles 
-        let teacupMovable = this.physics.add.image(850, 925, 'teacup').setScale(1.5);
-        teacupMovable.body.setSize(170, 100);
-
-        //recoger comida
-        const sumaComida = 0;
-
-        let carrot = this.physics.add.image(1200, 190, 'carrot').setScale(0.15).refreshBody();
-        let pasta = this.physics.add.image(400, 200, 'pasta').setScale(0.2).refreshBody();
-        pasta.body.setSize(880, 550);
-        let tomato = this.physics.add.image(1900, 190, 'tomato').setScale(0.15).refreshBody();
-
         //colisiones entre objetosplataformas
-        this.physics.add.collider(platforms, teacupMovable);
-        this.physics.add.collider(platforms, pasta);
-        this.physics.add.collider(platforms, carrot);
-        this.physics.add.collider(platforms, tomato);
+        this.physics.add.collider(platforms, this.teacupMovable);
+        this.physics.add.collider(platforms, this.pasta);
+        this.physics.add.collider(platforms, this.carrot);
+        this.physics.add.collider(platforms, this.tomato);
         // Colisión con todas
         this.physics.add.collider(this.kika.sprite, platforms);
         this.physics.add.collider(this.kiko.sprite, platforms);
 
-        this.physics.add.collider(this.kiko.sprite, teacupMovable);
+        this.physics.add.collider(this.kiko.sprite, this.teacupMovable);
 
+        /*
         this.physics.add.collider(this.kika.sprite, teacupMovable, (k, t) => {
             if (t.body.touching.right || t.body.touching.left) {
                 
             }
         });
-
+    */
+        
+    }
+    pickUpFood()
+    {
+        //recoger comida
+        const sumaComida = 0;
         //colision comida    
         //pasta
-        this.physics.add.overlap(this.kiko.sprite, pasta, (j, p) => {
+        this.physics.add.overlap(this.kiko.sprite, this.pasta, (j, p) => {
             p.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
         });
-        this.physics.add.overlap(this.kika.sprite, pasta, (j, p) => {
+        this.physics.add.overlap(this.kika.sprite, this.pasta, (j, p) => {
             p.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
         });
         //tomate
-        this.physics.add.overlap(this.kiko.sprite, tomato, (j, t) => {
+        this.physics.add.overlap(this.kiko.sprite, this.tomato, (j, t) => {
             t.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
         });
-        this.physics.add.overlap(this.kika.sprite, tomato, (j, t) => {
+        this.physics.add.overlap(this.kika.sprite, this.tomato, (j, t) => {
             t.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
         });
         //zanahoria
-        this.physics.add.overlap(this.kiko.sprite, carrot, (j, c) => {
+        this.physics.add.overlap(this.kiko.sprite, this.carrot, (j, c) => {
             c.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
         });
-        this.physics.add.overlap(this.kika.sprite, carrot, (j, c) => {
+        this.physics.add.overlap(this.kika.sprite, this.carrot, (j, c) => {
             c.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
         });
 
+        
     }
-
+    teacup()//método que añade la colisión de kika con la taza
+    {
+        if(this.teacupPositioned)
+        {
+            this.physics.add.collider(this.kika.sprite, this.teacupMovable);
+        }
+    }
     update(time, delta) {
 
         this.inputMappings.forEach(mapping => {
@@ -239,9 +254,15 @@ export class GameScene extends Phaser.Scene {
                 }*/
             }
 
+        //kika solo podrá colisionar con la taza cuando esté colocada por Kiko
+        if(this.teacupMovable.body.right >= 1165)
+        {
+            this.teacupPositioned = true;
+            this.teacup();
+        }
+
+            this.pickUpFood();
             players.updateJump();
-
-
         });
 
         //coger los personajes
