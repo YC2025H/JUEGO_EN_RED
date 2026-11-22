@@ -13,6 +13,7 @@ export class SettingsScene extends Phaser.Scene
 		this.load.image('pauseBtn', 'assets/img/pause_btn.png');
 		this.load.image('menuBtn', 'assets/img/menu_btn.png');
 		this.load.audio('audio', 'assets/audio/audio_prueba.mp3');
+		this.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
 	}
 	create()
 	{
@@ -31,11 +32,11 @@ export class SettingsScene extends Phaser.Scene
 		//fondo nota
 		this.add.image(centroX, centroY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7);
 		//titulo
-		const SettingsText = this.add.text(centroX + 50, centroY - 260, 'AJUSTES', { fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
+		const SettingsText = this.add.text(centroX + 50, centroY - 260, 'AJUSTES', { fontFamily: 'Font', fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
 
 		const MenuBtn = this.add.image(centroX, centroY + 120, 'menuBtn').setOrigin(0.5).setScale(0.2).setInteractive({ useHandCursor: true });;
-		const MenuBtnText =  this.add.text(centroX + 50, centroY + 120, 'ATRÁS', { fontSize: '60px', color: '#070707'  }).setOrigin(0.5);
-		const MusicText = this.add.text(centroX + 50, centroY - 10, `${MusicVolume}`, { fontSize: '50px', color: '#070707'  }).setOrigin(0.5);
+		const MenuBtnText =  this.add.text(centroX + 50, centroY + 120, 'ATRÁS', {fontFamily: 'Font', fontSize: '60px', color: '#070707'  }).setOrigin(0.5);
+		const MusicText = this.add.text(centroX + 50, centroY - 10, `${MusicVolume}`, { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setOrigin(0.5);
 		
 		
 		

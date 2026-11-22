@@ -9,7 +9,7 @@ export class CreditsScene extends Phaser.Scene {
 
     preload() {
         AssetsPreloader.preload(this);
-        this.load.font('Font', 'assets/fonts/kindergarten.ttf', 'truetype');
+        this.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
     }
 
     create() {

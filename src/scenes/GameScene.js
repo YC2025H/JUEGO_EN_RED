@@ -16,7 +16,7 @@ export class GameScene extends Phaser.Scene {
 
     preload() {
         AssetsPreloader.preload(this);
-        this.load.font('Font', 'assets/fonts/kindergarten.ttf', 'truetype');
+        this.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
     }
 
     create() {
@@ -38,7 +38,12 @@ export class GameScene extends Phaser.Scene {
         this.pasta = this.physics.add.image(400, 200, 'pasta').setScale(0.2).refreshBody();
         this.pasta.body.setSize(880, 550);
         this.tomato = this.physics.add.image(1900, 190, 'tomato').setScale(0.15).refreshBody();
-
+        this.meat = this.physics.add.image(1900, 190, 'tomato').setScale(0.15).refreshBody();
+        this.cheese = this.physics.add.image(1900, 190, 'tomato').setScale(0.15).refreshBody();
+        
+        
+        //recoger comida
+        this.sumaComida = 0;
 
         this.setUpPlatforms();
 
@@ -137,11 +142,7 @@ export class GameScene extends Phaser.Scene {
         const cupboard = platforms.create(1950, 500, 'cupboard');
         cupboard.body.setSize(620, 287);
         cupboard.body.setOffset(10, 14);
-        /*
-        const teacup = platforms.create(850, 925, 'teacup').setScale(1.5);
-        teacup.body.setSize(250, 145);
-        teacup.body.setOffset(-25, 5); 
-        */
+        
         const pot = platforms.create(600, 175, 'pot');
         pot.body.setSize(295, 180);
         pot.body.setOffset(30, 20);
@@ -161,25 +162,16 @@ export class GameScene extends Phaser.Scene {
         this.physics.add.collider(platforms, this.pasta);
         this.physics.add.collider(platforms, this.carrot);
         this.physics.add.collider(platforms, this.tomato);
-        // Colisión con todas
+        this.physics.add.collider(platforms, this.meat);
+        this.physics.add.collider(platforms, this.cheese);
         this.physics.add.collider(this.kika.sprite, platforms);
         this.physics.add.collider(this.kiko.sprite, platforms);
-
         this.physics.add.collider(this.kiko.sprite, this.teacupMovable);
 
-        /*
-        this.physics.add.collider(this.kika.sprite, teacupMovable, (k, t) => {
-            if (t.body.touching.right || t.body.touching.left) {
-                
-            }
-        });
-    */
         
     }
     pickUpFood()
     {
-        //recoger comida
-        const sumaComida = 0;
         //colision comida    
         //pasta
         this.physics.add.overlap(this.kiko.sprite, this.pasta, (j, p) => {
@@ -208,7 +200,29 @@ export class GameScene extends Phaser.Scene {
             c.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
         });
+        //carne
+         this.physics.add.overlap(this.kiko.sprite, this.meat, (j, m) => {
+            m.destroy();// Lo destruye ya que no se vuelve a usar
+            this.sumaComida++;
+        });
+        this.physics.add.overlap(this.kika.sprite, this.meat, (j, m) => {
+            m.destroy();// Lo destruye ya que no se vuelve a usar
+            this.sumaComida++;
+        });
+        //queso
+         this.physics.add.overlap(this.kiko.sprite, this.cheese, (j, c) => {
+            c.destroy();// Lo destruye ya que no se vuelve a usar
+            this.sumaComida++;
+        });
+        this.physics.add.overlap(this.kika.sprite, this.carrot, (j, c) => {
+            c.destroy();// Lo destruye ya que no se vuelve a usar
+            this.sumaComida++;
+        });
 
+        if(this.sumaComida == 5)
+        {
+            this.scene.start('CreditScene');
+        }
         
     }
     teacup()//método que añade la colisión de kika con la taza

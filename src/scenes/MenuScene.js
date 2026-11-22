@@ -9,7 +9,7 @@ export class MenuScene extends Phaser.Scene {
 
     preload() {
         AssetsPreloader.preload(this);
-        this.load.font('Font', 'assets/fonts/kindergarten.ttf', 'truetype');
+        this.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
     }
     create() {
 
@@ -33,7 +33,7 @@ export class MenuScene extends Phaser.Scene {
             .setInteractive({ useHandCursor: true });
 
         const LocalBotton = this.add.text(centroX + 400, 500, 'Local Play', {
-            fontFamily: 'Font',
+            fontFamily: 'Font', 
             fontSize: '40px',
             color: '#000000'
         }).setOrigin(0.5)
