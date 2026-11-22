@@ -34,18 +34,36 @@ export class GameScene extends Phaser.Scene {
 
         this.teacupPositioned = false;
 
-        this.carrot = this.physics.add.image(1200, 190, 'carrot').setScale(0.15).refreshBody();
+        this.carrot = this.physics.add.image(1350, 190, 'carrot').setScale(0.15).refreshBody();
         this.pasta = this.physics.add.image(400, 200, 'pasta').setScale(0.2).refreshBody();
-        this.pasta.body.setSize(880, 550);
-        this.tomato = this.physics.add.image(1900, 190, 'tomato').setScale(0.15).refreshBody();
+        this.pasta.body.setSize(880, 700);
+        this.tomato = this.physics.add.image(2200, 50, 'tomato').setScale(0.15).refreshBody();
         this.meat = this.physics.add.image(1900, 190, 'tomato').setScale(0.15).refreshBody();
         this.cheese = this.physics.add.image(1900, 190, 'tomato').setScale(0.15).refreshBody();
-        
-        
+
+        //cambiar tamaño colliders
+        this.tomato.body.setSize(720, 800);
+        this.tomato.body.setOffset(200, 170);
+
         //recoger comida
         this.sumaComida = 0;
 
         this.setUpPlatforms();
+
+        this.pot_final = this.physics.add.staticImage(2130, 870, 'pot_final').setScale(0.8);
+        this.pot_final.body.setSize(400, 265);
+        this.pot_final.body.setOffset(120, 60);
+
+        //Condición de victoria
+        this.kikaInFinal = false;
+        this.kikoInFinal = false;
+
+        this.physics.add.overlap(this.pot_final, this.kika.sprite, () => {
+            this.kikaInFinal = true;
+        });
+        this.physics.add.overlap(this.pot_final, this.kiko.sprite, () => {
+            this.kikoInFinal = true;
+        });
 
         //
         //Sofi
@@ -91,8 +109,9 @@ export class GameScene extends Phaser.Scene {
 
         //los jugadores
         this.kika = new Kika(this, 'kika', -300, 200);
-
+        //this.kika = new Kika(this, 'kika', 1000, 200);
         this.kiko = new Kiko(this, 'kiko', centroX - 600, centroY);
+        //this.kiko = new Kiko(this, 'kiko', centroX + 500, centroY);
 
         /*
                 this.ground = this.physics.add.staticImage(
@@ -128,9 +147,9 @@ export class GameScene extends Phaser.Scene {
         floor1.body.setSize(500, 500);
         floor1.body.setOffset(456, 930);
         //plataforma con los utensilios
-        const platform1 = platforms.create(1200, 460, 'platform1');
-        platform1.body.setSize(430, 75);
-        platform1.body.setOffset(20, 30);
+        const platform1 = platforms.create(1250, 520, 'platform1').setScale(0.9);
+        platform1.body.setSize(383, 63);
+        platform1.body.setOffset(41, 48);
         //plataforma con los platos
         const platform2 = platforms.create(500, 320, 'platform2');
         platform2.body.setSize(400, 110);
@@ -139,21 +158,32 @@ export class GameScene extends Phaser.Scene {
         const platform3 = platforms.create(-190, 500, 'platform3');
         platform3.body.setSize(395, 110);
         platform3.body.setOffset(5, 45);
-        const cupboard = platforms.create(1950, 500, 'cupboard');
-        cupboard.body.setSize(620, 287);
-        cupboard.body.setOffset(10, 14);
-        
-        const pot = platforms.create(600, 175, 'pot');
-        pot.body.setSize(295, 180);
-        pot.body.setOffset(30, 20);
+        const cupboard = platforms.create(2025, 300, 'cupboard').setScale(0.9);
+        cupboard.body.setSize(560, 258);
+        cupboard.body.setOffset(40, 27);
+        //plataformaX
+        const platform4 = platforms.create(1850, 600, 'platform3');
+        platform4.body.setSize(395, 110);
+        platform4.body.setOffset(5, 45);
+        const platform5 = platforms.create(700, 720, 'platform2');
+        platform5.body.setSize(400, 110);
+        platform5.body.setOffset(10, 20);
+        const platform6 = platforms.create(200, 550, 'platform3');
+        platform6.body.setSize(395, 110);
+        platform6.body.setOffset(5, 45);
+
+        const pot = platforms.create(1150, 310, 'pot').setScale(0.7);
+        pot.body.setSize(200, 125);
+        pot.body.setOffset(80, 50);
 
         const cookies = platforms.create(1400, 875, 'cookies');
         cookies.body.setSize(210, 265);
         cookies.body.setOffset(30, 20);
-        const can = platforms.create(1555, 850, 'can');
-        can.body.setSize(116, 280);
-        can.body.setOffset(25, 20);
-        const vase = platforms.create(1800, 900, 'vase');
+
+        const can = platforms.create(1555, 945, 'can').setRotation(Math.PI / 2);
+        can.body.setSize(250, 120);
+        can.body.setOffset(-40, 93);
+        const vase = platforms.create(650, 165, 'vase');
         vase.body.setSize(225, 195);
         vase.body.setOffset(25, 20);
 
@@ -168,10 +198,9 @@ export class GameScene extends Phaser.Scene {
         this.physics.add.collider(this.kiko.sprite, platforms);
         this.physics.add.collider(this.kiko.sprite, this.teacupMovable);
 
-        
+
     }
-    pickUpFood()
-    {
+    pickUpFood() {
         //colision comida    
         //pasta
         this.physics.add.overlap(this.kiko.sprite, this.pasta, (j, p) => {
@@ -201,7 +230,7 @@ export class GameScene extends Phaser.Scene {
             this.sumaComida++;
         });
         //carne
-         this.physics.add.overlap(this.kiko.sprite, this.meat, (j, m) => {
+        this.physics.add.overlap(this.kiko.sprite, this.meat, (j, m) => {
             m.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
         });
@@ -210,7 +239,7 @@ export class GameScene extends Phaser.Scene {
             this.sumaComida++;
         });
         //queso
-         this.physics.add.overlap(this.kiko.sprite, this.cheese, (j, c) => {
+        this.physics.add.overlap(this.kiko.sprite, this.cheese, (j, c) => {
             c.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
         });
@@ -219,16 +248,14 @@ export class GameScene extends Phaser.Scene {
             this.sumaComida++;
         });
 
-        if(this.sumaComida == 5)
-        {
+        if (this.sumaComida == 5) {
             this.scene.start('CreditScene');
         }
-        
+
     }
     teacup()//método que añade la colisión de kika con la taza
     {
-        if(this.teacupPositioned)
-        {
+        if (this.teacupPositioned) {
             this.physics.add.collider(this.kika.sprite, this.teacupMovable);
         }
     }
@@ -268,15 +295,20 @@ export class GameScene extends Phaser.Scene {
                 }*/
             }
 
-        //kika solo podrá colisionar con la taza cuando esté colocada por Kiko
-        if(this.teacupMovable.body.right >= 1165)
-        {
-            this.teacupPositioned = true;
-            this.teacup();
-        }
+            //kika solo podrá colisionar con la taza cuando esté colocada por Kiko
+            if (this.teacupMovable.body.right >= 1165) {
+                this.teacupPositioned = true;
+                this.teacup();
+            }
 
             this.pickUpFood();
             players.updateJump();
+
+            //Condición de victoria
+
+            if (this.kikaInFinal == true && this.kikoInFinal == true && this.sumaComida == 3) {
+                this.scene.start('FinalScene');
+            }
         });
 
         //coger los personajes

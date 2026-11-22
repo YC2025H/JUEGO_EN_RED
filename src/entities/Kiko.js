@@ -31,8 +31,7 @@ export class Kiko {
         this.sprite.body.setSize(450,500);
         this.sprite.body.setOffset(80,20);
 
-        //this.sprite.body.setGravityY(100);
-
+        this.sprite.setDepth(1);
         // FLY JUMP after INIT JUMP
         this.sprite.on('animationcomplete-initJumpKiko', () => {
             if (this.jumping && this.noGround) {
