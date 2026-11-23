@@ -27,6 +27,7 @@ export class GameScene extends Phaser.Scene {
         this.background = this.add.image(centroX, centroY, 'background_Game').setOrigin(0.5);
 
         this.setUpPlayers();
+        this.timerOn();
 
         //obejtos movibles 
         this.teacupMovable = this.physics.add.image(850, 910, 'teacup').setScale(1.5);
@@ -72,8 +73,61 @@ export class GameScene extends Phaser.Scene {
             this.scene.pause();
             this.scene.launch('PauseScene');
             this.scene.bringToTop('PauseScene');
-        });
+        });       
+        
+    }
 
+    /////////////////////////////////////////////////////////
+    ////// PRUEBA TEMPORIZADOR /////////////////////////////
+    /////////////////////////////////////////////////////////
+
+    timerOn(){
+        this.time = 500;
+
+        const centroX = this.scale.width / 2;
+
+        let timer = this.add.text(centroX, 50, this.time, {
+            fontFamily: 'Font',
+            fontSize: '50px',
+            color: '#000000'
+        }).setScale(0.8).setOrigin(0.5);
+
+
+        this.interval = setInterval(() => {
+            
+            this.time--;
+
+            timer.setText(this.time);
+
+            if (this.time <= 0) {
+                clearInterval(this.interval);
+                timer.setText("0");
+                this.scene.start('MenuScene');
+            }
+
+        }, 1000);
+    }
+
+    timerPause(){
+        clearInterval(this.interval);
+        this.interval = null
+    }
+
+    timerResume(){
+        if (this.interval == null) {
+            this.interval = setInterval(() => {
+            
+                this.time--;
+
+                this.timer.setText(this.time);
+
+                if (this.time <= 0) {
+                    clearInterval(this.interval);
+                    this.timer = null;
+                    this.scene.start('MenuScene');
+                }
+            }, 1000);
+        }
     }
 
     setUpPlayers() {
