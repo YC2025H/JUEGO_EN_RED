@@ -14,6 +14,9 @@ export class SettingsScene extends Phaser.Scene
 		this.load.image('menuBtn', 'assets/img/menu_btn.png');
 		this.load.audio('audio', 'assets/audio/audio_prueba.mp3');
 		this.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
+		this.load.image('-', 'assets/img/INSTRUCTION_ASSETS/-.png');
+		this.load.image('+', 'assets/img/INSTRUCTION_ASSETS/+.png');
+
 	}
 	create()
 	{
@@ -34,19 +37,21 @@ export class SettingsScene extends Phaser.Scene
 		//titulo
 		const SettingsText = this.add.text(centroX + 50, centroY - 260, 'AJUSTES', { fontFamily: 'Font', fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
 
-		const MenuBtn = this.add.image(centroX, centroY + 120, 'menuBtn').setOrigin(0.5).setScale(0.2).setInteractive({ useHandCursor: true });;
-		const MenuBtnText =  this.add.text(centroX + 50, centroY + 120, 'ATRÁS', {fontFamily: 'Font', fontSize: '60px', color: '#070707'  }).setOrigin(0.5);
+		this.add.text(centroX + 50, centroY - 100, 'Música', { fontFamily: 'Font', fontSize: '65px', color: '#070707'  }).setOrigin(0.5);
+		
 		const MusicText = this.add.text(centroX + 50, centroY - 10, `${MusicVolume}`, { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setOrigin(0.5);
 		
-		
+		//Boton atras
+		const MenuBtn = this.add.image(centroX + 350, centroY + 180, 'pauseBtn').setOrigin(0.5).setScale(0.3).setInteractive({ useHandCursor: true });;
+		const MenuBtnText =  this.add.text(centroX + 350, centroY + 180, 'ATRÁS', {fontFamily: 'Font', fontSize: '30px', color: '#070707'  }).setOrigin(0.5);
 		
 		//Botones de audio
-		const MusicBtnUp = this.add.image(centroX + 260, centroY - 20, 'pauseBtn')
-		.setOrigin(0.5).setScale(0.7)
+		const MusicBtnUp = this.add.image(centroX + 260, centroY - 20, '+')
+		.setOrigin(0.5).setScale(0.08)
 		.setInteractive({ useHandCursor: true });
 
-		const MusicBtnDown = this.add.image(centroX - 200, centroY - 20, 'pauseBtn')
-		.setOrigin(0.5).setScale(0.7)
+		const MusicBtnDown = this.add.image(centroX - 200, centroY - 20, '-')
+		.setOrigin(0.5).setScale(0.08)
 		.setInteractive({ useHandCursor: true });
 
 		//Control de Subir y bajar el volumen

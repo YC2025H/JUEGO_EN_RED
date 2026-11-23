@@ -19,6 +19,7 @@ export class PauseScene extends Phaser.Scene
 		const centroY = this.scale.height / 2;
 
 		//fondo nota
+		
 		this.add.image(centroX, centroY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7);
 
 		this.add.text(centroX + 50, centroY - 260, 'PAUSA', { fontFamily: 'Font',  fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
