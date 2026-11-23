@@ -9,7 +9,7 @@ export class FinalScene extends Phaser.Scene {
 
     preload() {
         AssetsPreloader.preload(this);
-        this.load.font('Font', 'assets/fonts/kindergarten.ttf', 'truetype');
+        this.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
     }
 
     create() {
@@ -25,6 +25,13 @@ export class FinalScene extends Phaser.Scene {
         }).setOrigin(0.5);
 
         this.add.text(centroX + 630, 350, 'Puntuación:', {
+            fontFamily: 'Font',
+            fontSize: '100px',
+            color: '#000000'
+        }).setOrigin(0.5);
+
+        const time = this.registry.get('Score') * 100;
+        this.add.text(centroX + 630, 500, time, {
             fontFamily: 'Font',
             fontSize: '100px',
             color: '#000000'

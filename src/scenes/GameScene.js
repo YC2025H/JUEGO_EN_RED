@@ -58,13 +58,6 @@ export class GameScene extends Phaser.Scene {
         this.kikaInFinal = false;
         this.kikoInFinal = false;
 
-        this.physics.add.overlap(this.pot_final, this.kika.sprite, () => {
-            this.kikaInFinal = true;
-        });
-        this.physics.add.overlap(this.pot_final, this.kiko.sprite, () => {
-            this.kikoInFinal = true;
-        });
-
         //
         //Sofi
         const menuSettingsBtn = this.add.image(1800, 80, 'menu_settings_Btn').setScale(0.1).setInteractive({ useHandCursor: true });
@@ -73,15 +66,15 @@ export class GameScene extends Phaser.Scene {
             this.timerPause();
             this.scene.launch('PauseScene');
             this.scene.bringToTop('PauseScene');
-        }).setScrollFactor(0);       
-        
+        }).setScrollFactor(0);
+
     }
 
     /////////////////////////////////////////////////////////
     ////// PRUEBA TEMPORIZADOR /////////////////////////////
     /////////////////////////////////////////////////////////
 
-    timerOn(){
+    timerOn() {
         this.time = 50;
         const camera = this.cameras.main;
 
@@ -89,14 +82,14 @@ export class GameScene extends Phaser.Scene {
             50,
             40,
             this.time, {
-                fontFamily: 'Font',
-                fontSize: '100px',
-                color: '#000000'
+            fontFamily: 'Font',
+            fontSize: '100px',
+            color: '#000000'
         }).setScale(1).setScrollFactor(0);
 
 
         this.interval = setInterval(() => {
-            
+
             this.time--;
 
             this.timer.setText(this.time);
@@ -110,15 +103,15 @@ export class GameScene extends Phaser.Scene {
         }, 1000);
     }
 
-    timerPause(){
+    timerPause() {
         clearInterval(this.interval);
         this.interval = null
     }
 
-    timerResume(){
+    timerResume() {
         if (this.interval == null) {
             this.interval = setInterval(() => {
-            
+
                 this.time--;
 
                 this.timer.setText(this.time);
@@ -221,7 +214,7 @@ export class GameScene extends Phaser.Scene {
         const platform4 = platforms.create(1850, 600, 'platform3');
         platform4.body.setSize(395, 110);
         platform4.body.setOffset(5, 45);
-        const platform5 = platforms.create(700, 720, 'platform2');
+        const platform5 = platforms.create(720, 720, 'platform2');
         platform5.body.setSize(400, 110);
         platform5.body.setOffset(10, 20);
         const platform6 = platforms.create(200, 550, 'platform3');
@@ -242,6 +235,9 @@ export class GameScene extends Phaser.Scene {
         const vase = platforms.create(650, 165, 'vase');
         vase.body.setSize(225, 195);
         vase.body.setOffset(25, 20);
+        const can2 = platforms.create(850, 525, 'can');
+        can2.body.setSize(120, 260);
+        can2.body.setOffset(22, 30);
 
         //colisiones entre objetosplataformas
         this.physics.add.collider(platforms, this.teacupMovable);
@@ -304,9 +300,10 @@ export class GameScene extends Phaser.Scene {
             this.sumaComida++;
         });
 
+        /*
         if (this.sumaComida == 5) {
             this.scene.start('CreditScene');
-        }
+        }*/
 
     }
     teacup()//método que añade la colisión de kika con la taza
@@ -362,8 +359,23 @@ export class GameScene extends Phaser.Scene {
 
             //Condición de victoria
 
-            if (this.kikaInFinal == true && this.kikoInFinal == true && this.sumaComida == 3) {
+            if (this.sumaComida >= 5) {
+                this.physics.add.overlap(this.pot_final, this.kika.sprite, () => {
+                    this.kikaInFinal = true;
+                });
+                this.physics.add.overlap(this.pot_final, this.kiko.sprite, () => {
+                    this.kikoInFinal = true;
+                });
+            } else {
+                this.kikaInFinal = false;
+                this.kikoInFinal = false;
+            }
+            if (this.kikaInFinal == true && this.kikoInFinal == true) {
+                this.registry.set('Score',this.time);
                 this.scene.start('FinalScene');
+
+                clearInterval(this.interval);
+                this.timer = null;
             }
         });
 
