@@ -92,6 +92,10 @@ export class AssetsPreloader {
 
         // PAUSE SCENE
 
+        scene.load.image('pauseNote', 'assets/img/pause_note.png');
+		scene.load.image('pauseBtn', 'assets/img/pause_btn.png');
+		scene.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
+
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         // CREDITS SCENE
@@ -102,7 +106,6 @@ export class AssetsPreloader {
 
         // FINALSCENE
         scene.load.image('final_background', 'assets/img/FINAL_ASSETS/final_background.png');
-
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -126,8 +129,15 @@ export class AssetsPreloader {
         scene.load.image('pot_final', 'assets/img/GAME_ASSETS/pot_final.png');
 
         // FOOD
+        
         scene.load.image('carrot', 'assets/img/FOOD_ASSETS/Carrot.png');
         scene.load.image('pasta', 'assets/img/FOOD_ASSETS/Pasta.png');
         scene.load.image('tomato', 'assets/img/FOOD_ASSETS/Tomato.png');
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // FONTS
+
+        scene.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
     }
 }

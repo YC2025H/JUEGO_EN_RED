@@ -16,7 +16,6 @@ export class GameScene extends Phaser.Scene {
 
     preload() {
         AssetsPreloader.preload(this);
-        this.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
     }
 
     create() {
@@ -68,12 +67,13 @@ export class GameScene extends Phaser.Scene {
 
         //
         //Sofi
-        const menuSettingsBtn = this.add.image(1500, 60, 'menu_settings_Btn').setOrigin(0.5).setScale(0.1).setInteractive({ useHandCursor: true });
+        const menuSettingsBtn = this.add.image(1800, 80, 'menu_settings_Btn').setScale(0.1).setInteractive({ useHandCursor: true });
         menuSettingsBtn.on('pointerdown', () => {
             this.scene.pause();
+            this.timerPause();
             this.scene.launch('PauseScene');
             this.scene.bringToTop('PauseScene');
-        });       
+        }).setScrollFactor(0);       
         
     }
 
@@ -82,26 +82,28 @@ export class GameScene extends Phaser.Scene {
     /////////////////////////////////////////////////////////
 
     timerOn(){
-        this.time = 500;
+        this.time = 50;
+        const camera = this.cameras.main;
 
-        const centroX = this.scale.width / 2;
-
-        let timer = this.add.text(centroX, 50, this.time, {
-            fontFamily: 'Font',
-            fontSize: '50px',
-            color: '#000000'
-        }).setScale(0.8).setOrigin(0.5);
+        this.timer = this.add.text(
+            50,
+            40,
+            this.time, {
+                fontFamily: 'Font',
+                fontSize: '100px',
+                color: '#000000'
+        }).setScale(1).setScrollFactor(0);
 
 
         this.interval = setInterval(() => {
             
             this.time--;
 
-            timer.setText(this.time);
+            this.timer.setText(this.time);
 
             if (this.time <= 0) {
                 clearInterval(this.interval);
-                timer.setText("0");
+                this.timer.setText("0");
                 this.scene.start('MenuScene');
             }
 

@@ -1,5 +1,7 @@
 import Phaser from 'phaser';
 
+import { AssetsPreloader } from '../preloader/AssetsPreloader.js';
+
 export class PauseScene extends Phaser.Scene
 {
 	constructor()
@@ -9,9 +11,7 @@ export class PauseScene extends Phaser.Scene
 
 	preload()
 	{
-		this.load.image('pauseNote', 'assets/img/pause_note.png');
-		this.load.image('pauseBtn', 'assets/img/pause_btn.png');
-		this.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
+		AssetsPreloader.preload(this);
 	}
 	create()
 	{
@@ -51,6 +51,7 @@ export class PauseScene extends Phaser.Scene
 		pauseBtn.on('pointerdown', () => {
 			this.scene.stop();
             this.scene.resume('GameScene');
+			this.scene.get('GameScene').timerResume();
         });
 
 		
