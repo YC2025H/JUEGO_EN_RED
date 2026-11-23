@@ -1,0 +1,52 @@
+import Phaser from 'phaser';
+
+import { AssetsPreloader } from '../preloader/AssetsPreloader.js';
+
+export class InstrucMoveScene extends Phaser.Scene
+{
+	constructor()
+	{
+		super('InstrucMoveScene');
+	}
+
+	preload()
+	{
+		this.load.image('pauseNote', 'assets/img/INSTRUCTION_ASSETS/instruc_aim.png');
+		this.load.image('move', 'assets/img/INSTRUCTION_ASSETS/move.png');
+		this.load.image('next_btn', 'assets/img/INSTRUCTION_ASSETS/next_btn.png');
+
+		this.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
+	}
+	create()
+	{
+		const centroX = this.scale.width / 2;
+		const centroY = this.scale.height / 2;
+
+		//fondo nota
+		this.add.image(centroX, centroY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7);
+		this.add.image(centroX, centroY - 50, 'move').setOrigin(0.5).setScale(0.7);
+
+		//this.add.text(centroX + 50, centroY - 260, 'PAUSA', { fontFamily: 'Font',  fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
+		this.add.text(centroX + 50, centroY - 260, 'CONTROLES', { fontFamily: 'Font',  fontSize: '62px', color: '#070707'  }).setOrigin(0.5);
+
+
+		//Boton Aim - Move
+		const next_btn = this.add.image(centroX + 390, centroY + 190, 'next_btn')
+		.setOrigin(0.5).setScale(0.7)
+		.setInteractive({ useHandCursor: true });
+
+		//HOVER
+		next_btn.on('pointerover', () => {
+			next_btn.setScale(0.8);
+		});
+
+		next_btn.on('pointerout', () => {
+			next_btn.setScale(0.7);
+		});
+
+		next_btn.on('pointerdown', () => {
+			this.scene.start('GameScene');
+            this.scene.stop();
+		});
+	}
+}
