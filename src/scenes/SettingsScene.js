@@ -24,8 +24,8 @@ export class SettingsScene extends Phaser.Scene
 			'coinEffect'
 		];
 
-		const centroX = this.scale.width / 2;
-		const centroY = this.scale.height / 2;
+		const centerX = this.scale.width / 2;
+		const centerY = this.scale.height / 2;
 
 		//Audio
 		const MAX_MUSIC_VALUE = 10;
@@ -34,32 +34,32 @@ export class SettingsScene extends Phaser.Scene
 		let SoundVolume = 10; //variable de efectos
 
 		//fondo nota
-		this.add.image(centroX, centroY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7);
-		const btn_sound = this.add.image(centroX + 480, centroY + 20, 'btn_move').setOrigin(0.5).setScale(0.7).setInteractive({ useHandCursor: true });
-		const btn_move = this.add.image(centroX + 480, centroY - 100, 'btn_sound').setOrigin(0.5).setScale(0.7).setInteractive({ useHandCursor: true });
+		this.add.image(centerX, centerY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7);
+		const btn_sound = this.add.image(centerX + 480, centerY + 20, 'btn_move').setOrigin(0.5).setScale(0.7).setInteractive({ useHandCursor: true });
+		const btn_move = this.add.image(centerX + 480, centerY - 100, 'btn_sound').setOrigin(0.5).setScale(0.7).setInteractive({ useHandCursor: true });
 
 		//titulo
-		const SettingsText = this.add.text(centroX + 50, centroY - 260, 'AJUSTES', { fontFamily: 'Font', fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
+		const SettingsText = this.add.text(centerX + 50, centerY - 260, 'AJUSTES', { fontFamily: 'Font', fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
 
 		// Texto Musica
-		this.add.text(centroX + 50, centroY - 100, 'Música', { fontFamily: 'Font', fontSize: '40px', color: '#070707'  }).setOrigin(0.5);
-		this.add.text(centroX + 50, centroY + 50, 'Efectos de sonido', { fontFamily: 'Font', fontSize: '40px', color: '#070707'  }).setOrigin(0.5);
+		this.add.text(centerX + 50, centerY - 100, 'Música', { fontFamily: 'Font', fontSize: '40px', color: '#070707'  }).setOrigin(0.5);
+		this.add.text(centerX + 50, centerY + 50, 'Efectos de sonido', { fontFamily: 'Font', fontSize: '40px', color: '#070707'  }).setOrigin(0.5);
 
-		const MusicText = this.add.text(centroX + 50, centroY - 25, `${MusicVolume}`, { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setOrigin(0.5);
-		const SoundText = this.add.text(centroX + 50, centroY + 150, `${MusicVolume}`, { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setOrigin(0.5);
+		const MusicText = this.add.text(centerX + 50, centerY - 25, `${MusicVolume}`, { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setOrigin(0.5);
+		const SoundText = this.add.text(centerX + 50, centerY + 150, `${SoundVolume}`, { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setOrigin(0.5);
 
 		//Boton atras
-		const MenuBtn = this.add.image(centroX + 350, centroY + 180, 'pauseBtn').setOrigin(0.5).setScale(0.3).setInteractive({ useHandCursor: true });
-		const MenuBtnText =  this.add.text(centroX + 350, centroY + 180, 'ATRÁS', 
+		const MenuBtn = this.add.image(centerX + 350, centerY + 180, 'pauseBtn').setOrigin(0.5).setScale(0.3).setInteractive({ useHandCursor: true });
+		const MenuBtnText =  this.add.text(centerX + 350, centerY + 180, 'ATRÁS', 
 			{fontFamily: 'Font', fontSize: '30px', color: '#070707'  }).setOrigin(0.5);
 		MenuBtn.on('pointerdown', () => this.scene.start('MenuScene'));
 		
 		//Botones de audio
-		const MusicBtnUp = this.add.image(centroX + 120, centroY - 25, '+')
+		const MusicBtnUp = this.add.image(centerX + 120, centerY - 25, '+')
 		.setOrigin(0.5).setScale(0.05)
 		.setInteractive({ useHandCursor: true });
 
-		const MusicBtnDown = this.add.image(centroX - 20, centroY - 25, '-')
+		const MusicBtnDown = this.add.image(centerX - 20, centerY - 25, '-')
 		.setOrigin(0.5).setScale(0.05)
 		.setInteractive({ useHandCursor: true });
 
@@ -84,11 +84,11 @@ export class SettingsScene extends Phaser.Scene
 		//Control de Subir y bajar el volumen Efectos
 
 		//Botones de audio
-		const MusicBtnUpSound = this.add.image(centroX + 120, centroY + 150, '+')
+		const MusicBtnUpSound = this.add.image(centerX + 120, centerY + 150, '+')
 		.setOrigin(0.5).setScale(0.05)
 		.setInteractive({ useHandCursor: true });
 
-		const MusicBtnDownSound = this.add.image(centroX - 20, centroY + 150, '-')
+		const MusicBtnDownSound = this.add.image(centerX - 20, centerY + 150, '-')
 		.setOrigin(0.5).setScale(0.05)
 		.setInteractive({ useHandCursor: true });
 			
@@ -117,7 +117,6 @@ export class SettingsScene extends Phaser.Scene
 				}
 			}
 		});
-
 				
 		// Pause - Settings
 		btn_move.on('pointerover', () => {

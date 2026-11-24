@@ -19,13 +19,16 @@ export class GameScene extends Phaser.Scene {
     }
 
     create() {
+
+        const controls = this.registry.get('moveControls');
+
         const audio = this.sound.add('pageEffect', { loop: false, volume: 1 });
-		audio.play();
+        audio.play();
 
-        const centroX = this.scale.width / 2;
-        const centroY = this.scale.height / 2;
+        const centerX = this.scale.width / 2;
+        const centerY = this.scale.height / 2;
 
-        this.background = this.add.image(centroX, centroY, 'background_Game').setOrigin(0.5);
+        this.background = this.add.image(centerX, centerY, 'background_Game').setOrigin(0.5);
 
         this.setUpPlayers();
         this.timerOn();
@@ -77,7 +80,7 @@ export class GameScene extends Phaser.Scene {
     /////////////////////////////////////////////////////////
 
     timerOn() {
-        this.time = 10;
+        this.time = 50;
         const camera = this.cameras.main;
 
         this.timer = this.add.text(
@@ -155,14 +158,14 @@ export class GameScene extends Phaser.Scene {
         );
 
 
-        const centroX = this.scale.width / 2;
-        const centroY = this.scale.height / 2;
+        const centerX = this.scale.width / 2;
+        const centerY = this.scale.height / 2;
 
         //los jugadores
         this.kika = new Kika(this, 'kika', -300, 200);
         //this.kika = new Kika(this, 'kika', 1000, 200);
-        this.kiko = new Kiko(this, 'kiko', centroX - 600, centroY);
-        //this.kiko = new Kiko(this, 'kiko', centroX + 500, centroY);
+        this.kiko = new Kiko(this, 'kiko', centerX - 600, centerY);
+        //this.kiko = new Kiko(this, 'kiko', centerX + 500, centerY);
 
         /*
                 this.ground = this.physics.add.staticImage(
@@ -173,6 +176,7 @@ export class GameScene extends Phaser.Scene {
         */
 
         //las teclas de movimiento
+        /*
         const Keys = Phaser.Input.Keyboard.KeyCodes;
         this.inputMappings = [
             { players: this.kiko, up: Keys.W, left: Keys.A, right: Keys.D },
@@ -182,19 +186,31 @@ export class GameScene extends Phaser.Scene {
             upKey: this.input.keyboard.addKey(mapping.up),
             leftKey: this.input.keyboard.addKey(mapping.left),
             rightKey: this.input.keyboard.addKey(mapping.right),
+        }));*/
+
+        const controls = this.registry.get('moveControls');
+
+        this.inputMappings = [
+            { players: this.kiko, controls: controls.kiko },
+            { players: this.kika, controls: controls.kika }
+        ].map(mapping => ({
+            players: mapping.players,
+            upKey: this.input.keyboard.addKey(mapping.controls.up),
+            leftKey: this.input.keyboard.addKey(mapping.controls.left),
+            rightKey: this.input.keyboard.addKey(mapping.controls.right)
         }));
     }
 
     setUpPlatforms() {
         let platforms = this.physics.add.staticGroup();
         // Añadir plataformas
-        const centroX = this.scale.width / 2;
+        const centerX = this.scale.width / 2;
 
-        const floor = platforms.create(centroX, 540, 'floor');
+        const floor = platforms.create(centerX, 540, 'floor');
         floor.body.setSize(0, 100);
         floor.body.setOffset(0, 1000);
 
-        const floor1 = platforms.create(centroX, 540, 'floor');
+        const floor1 = platforms.create(centerX, 540, 'floor');
         floor1.body.setSize(500, 500);
         floor1.body.setOffset(456, 930);
         //plataforma con los utensilios
@@ -237,7 +253,7 @@ export class GameScene extends Phaser.Scene {
         //const vase = platforms.create(650, 165, 'vase');
         //vase.body.setSize(225, 195);
         //vase.body.setOffset(25, 20);
-        
+
 
         //colisiones entre objetosplataformas
         this.physics.add.collider(platforms, this.teacupMovable);
@@ -259,65 +275,65 @@ export class GameScene extends Phaser.Scene {
             p.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
             const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
-		    audio.play();
+            audio.play();
         });
         this.physics.add.overlap(this.kika.sprite, this.pasta, (j, p) => {
             p.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
             const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
-		    audio.play();
+            audio.play();
         });
         //tomate
         this.physics.add.overlap(this.kiko.sprite, this.tomato, (j, t) => {
             t.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
             const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
-		    audio.play();
+            audio.play();
         });
         this.physics.add.overlap(this.kika.sprite, this.tomato, (j, t) => {
             t.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
             const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
-		    audio.play();
+            audio.play();
         });
         //zanahoria
         this.physics.add.overlap(this.kiko.sprite, this.carrot, (j, c) => {
             c.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
             const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
-		    audio.play();
+            audio.play();
         });
         this.physics.add.overlap(this.kika.sprite, this.carrot, (j, c) => {
             c.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
             const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
-		    audio.play();
+            audio.play();
         });
         //carne
         this.physics.add.overlap(this.kiko.sprite, this.meat, (j, m) => {
             m.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
             const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
-		    audio.play();
+            audio.play();
         });
         this.physics.add.overlap(this.kika.sprite, this.meat, (j, m) => {
             m.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
             const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
-		    audio.play();
+            audio.play();
         });
         //queso
         this.physics.add.overlap(this.kiko.sprite, this.cheese, (j, c) => {
             c.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
             const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
-		    audio.play();
+            audio.play();
         });
         this.physics.add.overlap(this.kika.sprite, this.carrot, (j, c) => {
             c.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
             const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
-		    audio.play();
+            audio.play();
         });
 
         /*
@@ -363,7 +379,7 @@ export class GameScene extends Phaser.Scene {
             if (Phaser.Input.Keyboard.JustDown(mapping.upKey) && players.sprite.body.onFloor()) {
                 //if (players.jump) {
                 const audio = this.sound.add('jumpEffect', { loop: false, volume: 0.3 });
-		        audio.play();
+                audio.play();
 
                 players.jump();
                 /*} else {
@@ -394,7 +410,7 @@ export class GameScene extends Phaser.Scene {
                 this.kikoInFinal = false;
             }
             if (this.kikaInFinal == true && this.kikoInFinal == true) {
-                this.registry.set('Score',this.time);
+                this.registry.set('Score', this.time);
                 this.scene.start('FinalScene');
 
                 clearInterval(this.interval);

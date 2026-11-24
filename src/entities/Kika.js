@@ -32,6 +32,7 @@ export class Kika {
         this.sprite.body.setSize(400,400);
         this.sprite.body.setOffset(130,120);
 
+        //personaje por delante de los objetos
         this.sprite.setDepth(1);
         //this.sprite.body.setGravityY(300);
         // FLY JUMP after INIT JUMP

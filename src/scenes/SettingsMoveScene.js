@@ -29,8 +29,8 @@ export class SettingsMoveScene extends Phaser.Scene
 		const audio = this.sound.add('pageEffect', { loop: false, volume: 1 });
 		audio.play();
 
-		const centroX = this.scale.width / 2;
-		const centroY = this.scale.height / 2;
+		const centerX = this.scale.width / 2;
+		const centerY = this.scale.height / 2;
 		this.waitingBinding = null;
 
 		const KeyCodes = Phaser.Input.Keyboard.KeyCodes;
@@ -47,26 +47,26 @@ export class SettingsMoveScene extends Phaser.Scene
 		this.registry.set('moveControls', controls);
 
 		// Fondo nota y pestañas
-		this.add.image(centroX, centroY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7);
+		this.add.image(centerX, centerY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7);
 
-		const btnSound = this.add.image(centroX + 480, centroY + 20, 'btn_sound')
+		const btnSound = this.add.image(centerX + 480, centerY + 20, 'btn_sound')
 			.setOrigin(0.5)
 			.setScale(0.7)
 			.setInteractive({ useHandCursor: true });
 
-		const btnMove = this.add.image(centroX + 480, centroY - 100, 'btn_move')
+		const btnMove = this.add.image(centerX + 480, centerY - 100, 'btn_move')
 			.setOrigin(0.5)
 			.setScale(0.7)
 			.setInteractive({ useHandCursor: true });
 
 		// Título
-		this.add.text(centroX + 50, centroY - 260, 'CONTROLES', {
+		this.add.text(centerX + 50, centerY - 260, 'CONTROLES', {
 			fontFamily: 'Font',
 			fontSize: '80px',
 			color: '#070707'
 		}).setOrigin(0.5);
 
-		const statusText = this.add.text(centroX + 30, centroY + 150, 'Haz clic en una tecla para cambiarla', {
+		const statusText = this.add.text(centerX + 30, centerY + 150, 'Haz clic en una tecla para cambiarla', {
 			fontFamily: 'Font',
 			fontSize: '28px',
 			color: '#070707'
@@ -102,26 +102,26 @@ export class SettingsMoveScene extends Phaser.Scene
 		};
 
 		// Columna Kiko
-		this.add.text(centroX - 110, centroY - 150, 'KIKO', {
+		this.add.text(centerX - 110, centerY - 150, 'KIKO', {
 			fontFamily: 'Font',
 			fontSize: '38px',
 			color: '#070707'
 		}).setOrigin(0.5);
 
-		createRebindRow('kiko', 'up', 'Arriba', centroX - 130, centroY - 85);
-		createRebindRow('kiko', 'left', 'Izq.', centroX - 130, centroY - 25);
-		createRebindRow('kiko', 'right', 'Der.', centroX - 130, centroY + 35);
+		createRebindRow('kiko', 'up', 'Arriba', centerX - 130, centerY - 85);
+		createRebindRow('kiko', 'left', 'Izq.', centerX - 130, centerY - 25);
+		createRebindRow('kiko', 'right', 'Der.', centerX - 130, centerY + 35);
 
 		// Columna Kika
-		this.add.text(centroX + 230, centroY - 150, 'KIKA', {
+		this.add.text(centerX + 230, centerY - 150, 'KIKA', {
 			fontFamily: 'Font',
 			fontSize: '38px',
 			color: '#070707'
 		}).setOrigin(0.5);
 
-		createRebindRow('kika', 'up', 'Arriba', centroX + 210, centroY - 85);
-		createRebindRow('kika', 'left', 'Izq.', centroX + 210, centroY - 25);
-		createRebindRow('kika', 'right', 'Der.', centroX + 210, centroY + 35);
+		createRebindRow('kika', 'up', 'Arriba', centerX + 210, centerY - 85);
+		createRebindRow('kika', 'left', 'Izq.', centerX + 210, centerY - 25);
+		createRebindRow('kika', 'right', 'Der.', centerX + 210, centerY + 35);
 
 		// Escuchar la siguiente tecla pulsada
 		this.input.keyboard.on('keydown', (event) => {
@@ -146,12 +146,12 @@ export class SettingsMoveScene extends Phaser.Scene
 		});
 
 		// Botón atrás hacia PauseScene
-		const menuBtn = this.add.image(centroX + 350, centroY + 180, 'pauseBtn')
+		const menuBtn = this.add.image(centerX + 350, centerY + 180, 'pauseBtn')
 			.setOrigin(0.5)
 			.setScale(0.3)
 			.setInteractive({ useHandCursor: true });
 
-		this.add.text(centroX + 350, centroY + 180, 'ATRÁS', {
+		this.add.text(centerX + 350, centerY + 180, 'ATRÁS', {
 			fontFamily: 'Font',
 			fontSize: '30px',
 			color: '#070707'

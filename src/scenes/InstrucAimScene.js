@@ -18,19 +18,19 @@ export class InstrucAimScene extends Phaser.Scene
 		const audio = this.sound.add('buttonEffect', { loop: false, volume: 1 });
 		audio.play();
 
-		const centroX = this.scale.width / 2;
-		const centroY = this.scale.height / 2;
+		const centerX = this.scale.width / 2;
+		const centerY = this.scale.height / 2;
 
 		//fondo nota
-		this.add.image(centroX, centroY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7); 
-		this.add.image(centroX, centroY - 50, 'food').setOrigin(0.5).setScale(0.7); 
+		this.add.image(centerX, centerY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7); 
+		this.add.image(centerX, centerY - 50, 'food').setOrigin(0.5).setScale(0.7); 
 
 		//texto
-		this.add.text(centroX + 50, centroY - 260, 'OBJETIVO', { fontFamily: 'Font',  fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
-		this.add.text(centroX + 245, centroY - 100, '¡PREPARA LA LASAÑA!', { fontFamily: 'Font',  fontSize: '45px', color: '#070707'  }).setOrigin(0.5);
-		this.add.text(centroX + 160, centroY + 90 , 'INGREDIENTES:', { fontFamily: 'Font',  fontSize: '30px', color: '#070707'  }).setOrigin(0.5);
+		this.add.text(centerX + 50, centerY - 260, 'OBJETIVO', { fontFamily: 'Font',  fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
+		this.add.text(centerX + 245, centerY - 100, '¡PREPARA LA LASAÑA!', { fontFamily: 'Font',  fontSize: '45px', color: '#070707'  }).setOrigin(0.5);
+		this.add.text(centerX + 160, centerY + 90 , 'INGREDIENTES:', { fontFamily: 'Font',  fontSize: '30px', color: '#070707'  }).setOrigin(0.5);
 
-		this.add.text(centroX + 245, centroY - 10, 'Recoge todos los ingredientes y llevalos a la olla antes de que se termine el tiempo', {
+		this.add.text(centerX + 245, centerY - 10, 'Recoge todos los ingredientes y llevalos a la olla antes de que se termine el tiempo', {
 		fontFamily: 'Font',
 		fontSize: '27px',
 		color: '#070707',
@@ -40,7 +40,7 @@ export class InstrucAimScene extends Phaser.Scene
 		}).setOrigin(0.5);
 
 		//Boton Aim - Move
-		const next_btn = this.add.image(centroX + 390, centroY + 190, 'next_btn')
+		const next_btn = this.add.image(centerX + 390, centerY + 190, 'next_btn')
 		.setOrigin(0.5).setScale(0.7)
 		.setInteractive({ useHandCursor: true });
 

@@ -15,28 +15,28 @@ export class PauseScene extends Phaser.Scene
 	}
 	create()
 	{
-		const centroX = this.scale.width / 2;
-		const centroY = this.scale.height / 2;
+		const centerX = this.scale.width / 2;
+		const centerY = this.scale.height / 2;
 
 		//fondo nota
 		
-		this.add.image(centroX, centroY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7);
+		this.add.image(centerX, centerY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7);
 
-		this.add.text(centroX + 50, centroY - 260, 'PAUSA', { fontFamily: 'Font',  fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
+		this.add.text(centerX + 50, centerY - 260, 'PAUSA', { fontFamily: 'Font',  fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
 		
 		//Botones
-		const pauseBtn = this.add.image(centroX, centroY - 60, 'pauseBtn')
+		const pauseBtn = this.add.image(centerX, centerY - 60, 'pauseBtn')
 		.setOrigin(0.5).setScale(0.7)
 		.setInteractive({ useHandCursor: true });
 
-		const pauseBtn2 = this.add.image(centroX, centroY + 60, 'pauseBtn')
+		const pauseBtn2 = this.add.image(centerX, centerY + 60, 'pauseBtn')
 		.setOrigin(0.5).setScale(0.7)
 		.setInteractive({ useHandCursor: true });
 		
 		//HOVER BUTTONS
 
 		// Pause - Continue
-		const pause_Game_Btn = this.add.text(centroX, centroY - 60, 'Reanudar', { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setScale(0.8).setOrigin(0.5);
+		const pause_Game_Btn = this.add.text(centerX, centerY - 60, 'Reanudar', { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setScale(0.8).setOrigin(0.5);
 		pauseBtn.on('pointerover', () => {
 			pauseBtn.setScale(0.8);
 			pause_Game_Btn.setScale(0.9);
@@ -57,7 +57,7 @@ export class PauseScene extends Phaser.Scene
 		
 		// Pause - Settings
 		/*
-		const pause_Settings_Btn = this.add.text(centroX + 20, centroY + 20, 'Ajustes', { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setScale(0.8).setOrigin(0.5);
+		const pause_Settings_Btn = this.add.text(centerX + 20, centerY + 20, 'Ajustes', { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setScale(0.8).setOrigin(0.5);
 		pauseBtn2.on('pointerover', () => {
 			pauseBtn2.setScale(0.8);
 			pause_Settings_Btn.setScale(0.8);
@@ -76,7 +76,7 @@ export class PauseScene extends Phaser.Scene
 		*/
 
 		// Pause - Menu
-		const pause_Menu_Btn = this.add.text(centroX , centroY + 60, 'Menu', { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setScale(0.8).setOrigin(0.5);
+		const pause_Menu_Btn = this.add.text(centerX , centerY + 60, 'Menu', { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setScale(0.8).setOrigin(0.5);
 		pauseBtn2.on('pointerover', () => {
 			pauseBtn2.setScale(0.8);
 			pause_Menu_Btn.setScale(0.8);

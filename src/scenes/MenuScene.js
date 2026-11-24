@@ -18,30 +18,30 @@ export class MenuScene extends Phaser.Scene {
             this.audio.play();
         }
 
-        const centroX = this.scale.width / 2;
-        const centroY = this.scale.height / 2;
+        const centerX = this.scale.width / 2;
+        const centerY = this.scale.height / 2;
 
-        this.add.image(centroX, centroY, 'menu_background').setOrigin(0.5);
+        this.add.image(centerX, centerY, 'menu_background').setOrigin(0.5);
 
-        this.add.text(centroX + 400, 270, 'Menú', {
+        this.add.text(centerX + 400, 270, 'Menú', {
             fontFamily: 'Font',
             fontSize: '100px',
             color: '#000000'
         }).setOrigin(0.5);
 
-        const localBtn = this.add.image(centroX + 400, 460, 'Button')
+        const localBtn = this.add.image(centerX + 400, 460, 'Button')
             .setOrigin(0.5)
             .setInteractive({ useHandCursor: true });
 
-        const creditsBtn = this.add.image(centroX + 400, 760, 'Button')
+        const creditsBtn = this.add.image(centerX + 400, 760, 'Button')
             .setOrigin(0.5)
             .setInteractive({ useHandCursor: true });
 
-        const optionsBtn = this.add.image(centroX + 400, 610, 'Button')
+        const optionsBtn = this.add.image(centerX + 400, 610, 'Button')
             .setOrigin(0.5)
             .setInteractive({ useHandCursor: true });
 
-        const LocalBotton = this.add.text(centroX + 400, 450, 'Juego local', {
+        const LocalBotton = this.add.text(centerX + 400, 450, 'Juego local', {
             fontFamily: 'Font', 
             fontSize: '40px',
             color: '#000000'
@@ -59,7 +59,7 @@ export class MenuScene extends Phaser.Scene {
         const audiob = this.sound.add('buttonEffect', { loop: false, volume: 1 });
 		audiob.play();
 
-        const CreditsButton = this.add.text(centroX + 400, 750, 'Créditos', {
+        const CreditsButton = this.add.text(centerX + 400, 750, 'Créditos', {
             fontFamily: 'Font',
             fontSize: '40px',
             color: '#000000'
@@ -77,7 +77,7 @@ export class MenuScene extends Phaser.Scene {
         const audioc = this.sound.add('buttonEffect', { loop: false, volume: 1 });
 		audioc.play();
 
-        const OpcionesBotton = this.add.text(centroX + 400, 600, 'Opciones', {
+        const OpcionesBotton = this.add.text(centerX + 400, 600, 'Opciones', {
             fontFamily: 'Font', 
             fontSize: '40px',
             color: '#000000'
