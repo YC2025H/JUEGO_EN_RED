@@ -20,7 +20,7 @@ export class MenuScene extends Phaser.Scene {
             kika: { up: KeyCodes.UP, left: KeyCodes.LEFT, right: KeyCodes.RIGHT }
         };
 
-        if(this.registry.get('moveControls'==null)){
+        if(this.registry.get('moveControls')==null){
             this.registry.set('moveControls', defaultControls);
         }
         

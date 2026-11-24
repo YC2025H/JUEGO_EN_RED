@@ -122,7 +122,7 @@ export class GameScene extends Phaser.Scene {
                 if (this.time <= 0) {
                     clearInterval(this.interval);
                     this.timer = null;
-                    this.scene.start('MenuScene');
+                    this.scene.start('FailScene');
                 }
             }, 1000);
         }
