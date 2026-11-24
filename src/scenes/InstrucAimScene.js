@@ -21,6 +21,9 @@ export class InstrucAimScene extends Phaser.Scene
 		const centerX = this.scale.width / 2;
 		const centerY = this.scale.height / 2;
 
+		//fondo
+		this.add.image(centerX, centerY, 'credits_background').setOrigin(0.5);
+
 		//fondo nota
 		this.add.image(centerX, centerY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7); 
 		this.add.image(centerX, centerY - 50, 'food').setOrigin(0.5).setScale(0.7); 

@@ -16,6 +16,9 @@ export class SettingsScene extends Phaser.Scene
 
 	create()
 	{
+		//fondo
+		this.add.image(centerX, centerY, 'credits_background').setOrigin(0.5);
+
 		this.audio = this.sound.get('music');
 		this.soundEffects = [
 			'buttonEffect',

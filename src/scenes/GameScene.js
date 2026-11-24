@@ -176,7 +176,7 @@ export class GameScene extends Phaser.Scene {
         */
 
         //las teclas de movimiento
-        /*
+        
         const Keys = Phaser.Input.Keyboard.KeyCodes;
         this.inputMappings = [
             { players: this.kiko, up: Keys.W, left: Keys.A, right: Keys.D },
@@ -186,8 +186,8 @@ export class GameScene extends Phaser.Scene {
             upKey: this.input.keyboard.addKey(mapping.up),
             leftKey: this.input.keyboard.addKey(mapping.left),
             rightKey: this.input.keyboard.addKey(mapping.right),
-        }));*/
-
+        }));
+/*
         const controls = this.registry.get('moveControls');
 
         this.inputMappings = [
@@ -198,7 +198,7 @@ export class GameScene extends Phaser.Scene {
             upKey: this.input.keyboard.addKey(mapping.controls.up),
             leftKey: this.input.keyboard.addKey(mapping.controls.left),
             rightKey: this.input.keyboard.addKey(mapping.controls.right)
-        }));
+        }));*/
     }
 
     setUpPlatforms() {
