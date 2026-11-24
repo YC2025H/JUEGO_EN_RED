@@ -204,7 +204,6 @@ Tipografía usada: https://www.dafont.com/es/cheese-burger-4.font?l[]=10&l[]=1&t
 *Figura 8. Boceto de la pantalla de juego: Se visualiza el nivel/los niveles donde habrá una cámara que se alejará y acercará en función de la posición de los jugadores.*
 
 ![Pantalla de juego](/public/assets/img/GAME_ASSETS/Background_Game.PNG)
-
 *Figura 9. Diseño final de la pantalla de juego: Tiene el diseño de una cocina con una estufa de gas.*
 
 
@@ -212,67 +211,43 @@ Tipografía usada: https://www.dafont.com/es/cheese-burger-4.font?l[]=10&l[]=1&t
 
 
 ![Boceto de la pantalla de créditos](/public/assets/img/SKETCHES/sketch_credits.png)
-
 *Figura 10. Boceto de la pantalla créditos: Pantalla donde se muestra el nombre de todos las colaboradoras.*
 
 ![Pantalla de créditos](/public/assets/img/CREDITS_ASSETS/credits_background.png)
-
 *Figura 11. Diseño final de la pantalla créditos: Tiene el diseño de una mesa con un mantel de cuadros y un plato con comida.*
 
 
 **Pantalla final VICTORIA**
 
 
-![Boceto victoria](/public/assets/img/SKETCHES/sketch_final.png)
+![Boceto de la pantalla victoria](/public/assets/img/SKETCHES/sketch_final.png)
+*Figura 12. Boceto de la pantalla de victoria: Pantalla donde se ve a la abuelita cocinando con las ratitas junto a la puntuación obtenida.*
 
-*Figura 8. Pantalla final: Pantalla donde se ve a la abuelita cocinando con las ratitas.*
-
-
-**Pantalla final derrota**
-
-
-![Boceto finalmalo](img/boceto_pantalla_final.png)
+![Pantalla de victoria](/public/assets/img/FINAL_ASSETS/final_background.png)
+*Figura 13. Diseño final de la pantalla de victoria.*
 
 
-*Figura 9. Pantalla final: Pantalla donde se ven platos vacíos.*
+**Pantalla final DERROTA**
+Pantalla con un mensaje de "Se te ha acabo el tiempo".
 
 
 **Pantalla historia**
-
-
-![Boceto finalmalo](img/boceto_pantalla_final.png)
-
-
-*Figura 10. Pantalla historia: Pantalla donde se cuenta la historia del juego*
+Pantalla donde se cuenta la historia del juego y el objetivo del juego.
 
 
 **Pantalla tutorial**
-
-
-![Boceto finalmalo](img/boceto_pantalla_final.png)
-
-
-*Figura 11. Pantalla tutorial: Pantalla donde se enseñan los controles de los personajes.*
+![Pantalla del tutorial](/public/assets/img/INSTRUCTION_ASSETS/move.png)
+*Figura 14. Pantalla del tutorial:Pantalla donde se enseñan los controles de los personajes de manera visual.*
 
 
 **Pantalla pausa**
 
-
-![Boceto finalmalo](img/boceto_pantalla_final.png)
-
-
-*Figura 12. Pantalla pausa: Pantalla donde encontramos dos botones: reanudar y menú.*
+![Pantalla de pausa](/public/assets/img/INSTRUCTION_ASSETS/instruc_aim.png)
+*Figura 15. Pantalla de pausa: Pantalla donde encontramos dos botones: reanudar y menú.*
 
 
 **Pantalla opciones**
-
-
-![Boceto finalmalo](img/boceto_pantalla_final.png)
-
-
-*Figura 8. Pantalla opciones: Pantalla donde podemos cambiar el volumen a la música y a los efectos de sonido, al igual que cambiar las teclas del juego.*
-
-
+Pantalla donde podemos cambiar el volumen a la música y a los efectos de sonido, al igual que cambiar las teclas del juego.
 
 
 ### 6.2. Diagrama de flujo
@@ -287,6 +262,8 @@ flowchart TD
     D --> A
     B --> I[Historia y tutorial]
     I --> E[Partida]
+    E --> J[Pausa]
+    J --> E
     C --> A
     E --> |Condición de victoria| F[Pantalla victoria]
     E --> |Condición de derrota| G[Pantalla derrota]

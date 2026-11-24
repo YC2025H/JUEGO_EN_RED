@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/logo_chimis.png" alt="Logotipo de Empresa" width="400">
+  <img src="/public/assets/img/LOGOTYPE/logotype.png" alt="Logotipo de Empresa" width="400">
 </p>
 
 
@@ -67,24 +67,23 @@ Apartados principales:
 | Fase | Contenido | Estado |
 | :--- | :--- | :--- |
 | Fase 1 | Equipo, temática y GDD | ✅ Entregada (tag `fase-1`) |
-| Fase 2 | Juego en local | ✅ Entregada (tag `fase-1`)|
+| Fase 2 | Juego en local | ✅ Entregada (tag `fase-2`)|
 | Fase 3 | API REST | ⏳ Pendiente |
 | Fase 4 | WebSockets | ⏳ Pendiente |
 
 
-### Fase 2:
-
+### Fase 2: 
+Pequeño resumen de lo realizado en esta fase
 
 ### Menú principal
 
 
-Se ha hecho un menú principal con dos botones, uno para iniciar el juego y otro para el de los créditos. Además del botón de opciones.
-
-
+Se ha hecho un menú principal con tres botones, uno para iniciar el juego, el de los créditos y el botón de opciones.
 En cuanto a la ayuda/tutorial se han añadido varias escenas tras darle a jugar, donde se narra un poco la historia del juego además de indicar los controles de cada personaje.
 
 
 ### Mecánicas de juego
+
 
 En cuanto a las mecánicas, los personajes se mueven con AWD y las flechas según lo dicho en el gdd. A parte, siguiendo el gdd se ha añadido una olla final para finalizar el juego, los dos personajes tendrán que llegar y estar juntos para terminarlo. Y para perder el nivel, tienen un temporizador de 50 segundos.
 
@@ -92,7 +91,7 @@ En cuanto a las mecánicas, los personajes se mueven con AWD y las flechas segú
 ### Sistema de escenas
 
 
-Hemos implementado dieza escenas para poder llevar a cabo el juego con todas las funcionalidades necesarias.
+Hemos implementado diez escenas para poder llevar a cabo el juego con todas las funcionalidades necesarias.
 
 
 ### Gestión de recursos
@@ -114,5 +113,6 @@ En cuanto a los controles, el movimiento de los personajes se hace con teclado y
 
 
 ### Sistema de puntuación
+
 
 La puntuación obtenida es en función del tiempo restante, puesto que el tiempo multiplicado por 100.
