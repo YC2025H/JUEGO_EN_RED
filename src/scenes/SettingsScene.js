@@ -16,9 +16,6 @@ export class SettingsScene extends Phaser.Scene
 
 	create()
 	{
-		//fondo
-		this.add.image(centerX, centerY, 'credits_background').setOrigin(0.5);
-
 		this.audio = this.sound.get('music');
 		this.soundEffects = [
 			'buttonEffect',
@@ -36,6 +33,7 @@ export class SettingsScene extends Phaser.Scene
 		let MusicVolume = 10; //variable del volumen
 		let SoundVolume = 10; //variable de efectos
 
+		this.add.image(centerX, centerY, 'credits_background').setOrigin(0.5);
 		//fondo nota
 		this.add.image(centerX, centerY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7);
 		const btn_sound = this.add.image(centerX + 480, centerY + 20, 'btn_move').setOrigin(0.5).setScale(0.7).setInteractive({ useHandCursor: true });

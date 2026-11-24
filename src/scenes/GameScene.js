@@ -20,7 +20,7 @@ export class GameScene extends Phaser.Scene {
 
     create() {
 
-        const controls = this.registry.get('moveControls');
+        //const controls = this.registry.get('moveControls');
 
         const audio = this.sound.add('pageEffect', { loop: false, volume: 1 });
         audio.play();

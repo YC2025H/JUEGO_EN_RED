@@ -2,38 +2,34 @@ import Phaser from 'phaser';
 
 import { AssetsPreloader } from '../preloader/AssetsPreloader.js';
 
-export class SettingsMoveScene extends Phaser.Scene
-{
-	constructor()
-	{
+export class SettingsMoveScene extends Phaser.Scene {
+	constructor() {
 		super('SettingsMoveScene');
 	}
 
-	preload()
-	{
+	preload() {
 		AssetsPreloader.preload(this);
 	}
 
-	getKeyName(keyCode)
-	{
+	getKeyName(keyCode) {
 		const KeyCodes = Phaser.Input.Keyboard.KeyCodes;
-		for (const [name, code] of Object.entries(KeyCodes))
-		{
+		for (const [name, code] of Object.entries(KeyCodes)) {
 			if (code === keyCode) return name;
 		}
 		return `KEY_${keyCode}`;
 	}
 
-	create()
-	{
-		//fondo
-		this.add.image(centerX, centerY, 'credits_background').setOrigin(0.5);
-		
-		const audio = this.sound.add('pageEffect', { loop: false, volume: 1 });
-		audio.play();
+	create() {
 
 		const centerX = this.scale.width / 2;
 		const centerY = this.scale.height / 2;
+		//fondo
+		this.add.image(centerX, centerY, 'credits_background').setOrigin(0.5);
+
+		const audio = this.sound.add('pageEffect', { loop: false, volume: 1 });
+		audio.play();
+
+
 		this.waitingBinding = null;
 
 		const KeyCodes = Phaser.Input.Keyboard.KeyCodes;
@@ -91,8 +87,7 @@ export class SettingsMoveScene extends Phaser.Scene
 			}).setOrigin(0.5).setInteractive({ useHandCursor: true });
 
 			keyBtn.on('pointerdown', () => {
-				if (this.waitingBinding)
-				{
+				if (this.waitingBinding) {
 					this.waitingBinding.textObj.setText(
 						this.getKeyName(controls[this.waitingBinding.player][this.waitingBinding.dir])
 					);
