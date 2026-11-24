@@ -13,6 +13,18 @@ export class MenuScene extends Phaser.Scene {
 
     create() {
 
+        const KeyCodes = Phaser.Input.Keyboard.KeyCodes;
+
+        const defaultControls = {
+            kiko: { up: KeyCodes.W, left: KeyCodes.A, right: KeyCodes.D },
+            kika: { up: KeyCodes.UP, left: KeyCodes.LEFT, right: KeyCodes.RIGHT }
+        };
+
+        if(this.registry.get('moveControls'==null)){
+            this.registry.set('moveControls', defaultControls);
+        }
+        
+
         if (!this.sound.get('music')) {
             this.audio = this.sound.add('music', { loop: true, volume: 0.5 });
             this.audio.play();
@@ -42,7 +54,7 @@ export class MenuScene extends Phaser.Scene {
             .setInteractive({ useHandCursor: true });
 
         const LocalBotton = this.add.text(centerX + 400, 450, 'Juego local', {
-            fontFamily: 'Font', 
+            fontFamily: 'Font',
             fontSize: '40px',
             color: '#000000'
         }).setOrigin(0.5)
@@ -57,7 +69,7 @@ export class MenuScene extends Phaser.Scene {
         })
         localBtn.on('pointerdown', () => this.scene.start('InstrucAimScene'));
         const audiob = this.sound.add('buttonEffect', { loop: false, volume: 1 });
-		audiob.play();
+        audiob.play();
 
         const CreditsButton = this.add.text(centerX + 400, 750, 'Créditos', {
             fontFamily: 'Font',
@@ -75,10 +87,10 @@ export class MenuScene extends Phaser.Scene {
         })
         creditsBtn.on('pointerdown', () => this.scene.start('CreditsScene'));
         const audioc = this.sound.add('buttonEffect', { loop: false, volume: 1 });
-		audioc.play();
+        audioc.play();
 
         const OpcionesBotton = this.add.text(centerX + 400, 600, 'Opciones', {
-            fontFamily: 'Font', 
+            fontFamily: 'Font',
             fontSize: '40px',
             color: '#000000'
         }).setOrigin(0.5)
@@ -93,7 +105,7 @@ export class MenuScene extends Phaser.Scene {
         })
         optionsBtn.on('pointerdown', () => this.scene.start('SettingsMoveScene'));
         const audiod = this.sound.add('buttonEffect', { loop: false, volume: 1 });
-		audiod.play();
+        audiod.play();
 
         //Sofi
         //const settingsBtn = this.add.image(960, 540, 'settingsBtn').setOrigin(0.5).setInteractive({ useHandCursor: true });
