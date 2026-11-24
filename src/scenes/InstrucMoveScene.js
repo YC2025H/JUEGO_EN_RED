@@ -19,6 +19,8 @@ export class InstrucMoveScene extends Phaser.Scene
 		const centerY = this.scale.height / 2;
 
 		//fondo nota
+		this.add.image(centerX, centerY, 'credits_background').setOrigin(0.5);
+		
 		this.add.image(centerX, centerY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7);
 		this.add.image(centerX, centerY - 50, 'move').setOrigin(0.5).setScale(0.7);
 

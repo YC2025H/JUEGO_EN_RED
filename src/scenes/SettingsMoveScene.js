@@ -26,6 +26,9 @@ export class SettingsMoveScene extends Phaser.Scene
 
 	create()
 	{
+		//fondo
+		this.add.image(centerX, centerY, 'credits_background').setOrigin(0.5);
+		
 		const audio = this.sound.add('pageEffect', { loop: false, volume: 1 });
 		audio.play();
 
