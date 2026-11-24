@@ -7,6 +7,7 @@ import { CreditsScene } from './scenes/CreditsScene.js';
 import { FinalScene } from './scenes/FinalScene.js';
 import { InstrucMoveScene } from './scenes/InstrucMoveScene.js';
 import { InstrucAimScene } from './scenes/InstrucAimScene.js';
+import { SettingsMoveScene } from './scenes/SettingsMoveScene.js';
 
 const config = {
     type: Phaser.AUTO,      // WebGL if available; otherwise, Canvas
@@ -23,7 +24,7 @@ const config = {
             gravity: { y: 300 }, debug: true
         }
     },
-    scene: [ SettingsScene,  PauseScene, GameScene, MenuScene, InstrucAimScene,InstrucMoveScene,  FinalScene, CreditsScene]      // The first scene starts automatically
+    scene: [MenuScene, SettingsScene,  InstrucAimScene, PauseScene, SettingsMoveScene, GameScene, InstrucMoveScene,  FinalScene, CreditsScene]      // The first scene starts automatically
 };
 
 const game = new Phaser.Game(config);
