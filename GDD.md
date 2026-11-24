@@ -7,7 +7,7 @@
 **Grupo C** ·  Yi Chen, Sofía García de Vinuesa Castaño, Luisa Baeza Rodríguez, Mireya Vargas Sánchez
 
 
-![Logo](img/logo_chimis.png)
+![Logo](/public/assets/img/LOGOTYPE/logotype.png)
 *Figura 1. Logo de empresa*
 
 
@@ -27,7 +27,7 @@
 ## 1. Introducción
 
 
-![Título juego](img/titulo_juego.PNG)
+![Título juego](/public/assets/img/LOGOTYPE/title.PNG)
 
 
 *Figura 2. Logo del juego*
@@ -48,18 +48,15 @@ Las características principales del juego serían que dos personajes, Kiko y Ki
 ### 1.3. Propósito y público objetivo
 
 
-El principal propósito del juego sería intentar impulsar la comunicación y la cooperación entre
-los jugadores para poder superar los niveles en equipo.
+El principal propósito del juego sería intentar impulsar la comunicación y la cooperación entre los jugadores para poder superar los niveles en equipo.
+
 El público objetivo serían las personas que disfruten los juegos cooperativos/multijugador.
 
 
 ### 1.4. Estilo visual
 
 
-El estilo visual del juego se basa en intentar transmitir una estética tierna y graciosa
-mediante el diseño de nuestros personajes caricaturizados y unos colores pastel, además, todo el fondo y los niveles estarán
-ambientados en una cocina, siendo esta muy grande a comparación de los personajes principales que son
-dos ratitas, donde transcurrirá todo el juego.  
+El estilo visual del juego se basa en intentar transmitir una estética tierna y graciosa mediante el diseño de nuestros personajes caricaturizados y unos colores pastel, además, todo el fondo y los niveles estarán ambientados en una cocina, siendo esta muy grande a comparación de los personajes principales que son dos ratitas, donde transcurrirá todo el juego.  
 
 
 ## 2. Especificaciones básicas
@@ -90,7 +87,7 @@ Haciendo uso de sus habilidades, ambos ratones deberán colaborar en equipo para
 La ratoncita más pequeña (Kika) podrá saltar más alto pero tendrá menos fuerza. Ello permitirá sobrepasar obstáculos altos y entrar por recovecos que se puedan encontrar en el escenario fácilmente.
 
 
-El ratón más grande (Kiko) tendrá más fuerza pero no podrá saltar más alto. Esto le permitirá empujar bloques pesados o abrir puertas que se puedan presentar en los niveles
+El ratón más grande (Kiko) tendrá más fuerza pero no podrá saltar más alto. Esto le permitirá empujar bloques pesados que se puedan presentar en los niveles.
 
 
 ### 3.2. Controles
@@ -115,6 +112,7 @@ Ambos jugadores deberán recoger todos los ingredientes del escenario sobrepasan
 
 
 ### 3.4. ¿Cómo perder?
+
 
 Los jugadores tienen un temporizador de 50 segundos para conseguir superar el nivel. Si el temporizador llega a 0, se pierde el nivel.
 
@@ -145,9 +143,16 @@ Kiko tiene una composición corporal robusta con un pelaje claro y grueso. Respe
 
 Kika es una ratona pequeña con unas orejas grandes. Ella es muy energética y valiente. Gracias a su pequeña altura y ligereza puede entrar en sitios pequeños, correr más rápido y saltar más alto.
 
+BOCETOS:
+![Kiko y Kika](/public/assets/img/SKETCHES/designs_kiko_kika.jpg)
+*Figura 3. Bocetos de personajes de Kiko y Kika*
 
-![Kiko y Kika](img/diseño_kiko_kika.jpg)
-*Figura 3. Diseño de personajes de Kiko y Kika*
+DISEÑOS FINALES:
+![Kika Diseño Final](</public/assets/img/ASSETS KIKA & KIKO/KIKA/IDLE Kika/IDLE Kika_1.PNG>)
+*Figura 4. Diseño final de Kika*
+
+![Kiko Diseño Final](</public/assets/img/ASSETS KIKA & KIKO/KIKO/IDLE Kiko/IDLE Kiko_1.PNG>)
+*Figura 5. Diseño final de Kiko*
 
 
 #### ABUELITA (Personaje secundario)
@@ -157,22 +162,26 @@ Esperanza es una persona anciana con el pelo corto rizado y gris. Ella es muy ge
 
 
 ## 5. Sonido
+
+
 ### 5.1. Música general del juego
 
 
-Se ha añadido una música de fondo creada por Luisa, una de las integrantes del grupo. Se ha creado una música feliz y adecuada acorde a la estética general del videojuego.
+Se ha añadido una música de fondo original creada por Luisa, una de las integrantes del grupo. 
+La música creada se ha ambientado en un entorno alegre y adecuada a la estética general del videojuego.
 
 
 ### 5.2. Efectos de sonido
 
 
-Además se han añadido efectos de sonido para cuando los personajes salten, cuando recogen los alimentos, cuando se hace clic a los botones, cuando pasan de página en el menú de opciones.
+Además se han añadido efectos de sonido sin derechos de autor para: cuando los personajes salten, cuando los personajes recogen los alimentos, cuando se hace clic a los botones y cuando pasan de página en el menú de opciones.
 
 
 ## 6. Interfaz y diagrama de flujo
 
 
-Tipografía: https://www.dafont.com/es/cheese-burger-4.font?l[]=10&l[]=1&text=Men%FA
+Se ha escogido una tipografía redonda y simple para el videojuego.
+Tipografía usada: https://www.dafont.com/es/cheese-burger-4.font?l[]=10&l[]=1&text=Men%FA
 
 
 ### 6.1. Pantallas
@@ -181,43 +190,40 @@ Tipografía: https://www.dafont.com/es/cheese-burger-4.font?l[]=10&l[]=1&text=Me
 **Menú principal**
 
 
-![Boceto del menú principal](img/boceto_menu_principal.PNG)
+![Boceto del menú principal](/public/assets/img/SKETCHES/sketch_menu.png)
+*Figura 6. Boceto del menú principal: Inicio del juego, cuenta con el título y 3 botones: (cooperativo local, créditos y opciones).*
 
-
-*Figura 4. Menú principal: Inicio del juego, cuenta con el título y 3 botones: (cooperativo local, créditos y opciones)*
+![Menú principal](/public/assets/img/MENU_ASSETS/Menu_Background.png)
+*Figura 7. Diseño final del menú principal: Tiene el diseño de un libro de cocina.*
 
 
 **Pantalla de juego (HUD)**
 
 
-![Boceto de la pantalla de juego](img/boceto_pantalla_juego.png)
+![Boceto de la pantalla de juego](/public/assets/img/SKETCHES/sketch_tutorial.png)
+*Figura 8. Boceto de la pantalla de juego: Se visualiza el nivel/los niveles donde habrá una cámara que se alejará y acercará en función de la posición de los jugadores.*
 
+![Pantalla de juego](/public/assets/img/GAME_ASSETS/Background_Game.PNG)
 
-*Figura 5. Pantalla de juego: Se visualiza el nivel/los niveles donde habrá una cámara que se alejará y acercará en función de la posición de los jugadores.*
-
-
-![Boceto de la pantalla de juego](img/boceto_pantalla_juego_ruta_trazada.png)
-
-
-
-
-*Figura 6. Pantalla de juego: Se visualiza el nivel con los alimentos a recoger al igual que la olla final*
+*Figura 9. Diseño final de la pantalla de juego: Tiene el diseño de una cocina con una estufa de gas.*
 
 
 **Pantalla de créditos**
 
 
-![Boceto de la pantalla de créditos](img/boceto_pantalla_créditos.png)
+![Boceto de la pantalla de créditos](/public/assets/img/SKETCHES/sketch_credits.png)
+
+*Figura 10. Boceto de la pantalla créditos: Pantalla donde se muestra el nombre de todos las colaboradoras.*
+
+![Pantalla de créditos](/public/assets/img/CREDITS_ASSETS/credits_background.png)
+
+*Figura 11. Diseño final de la pantalla créditos: Tiene el diseño de una mesa con un mantel de cuadros y un plato con comida.*
 
 
-*Figura 7. Pantalla créditos: Pantalla donde se muestra el nombre de todos las colaboradoras.*
+**Pantalla final VICTORIA**
 
 
-**Pantalla final victoria**
-
-
-![Boceto final](img/boceto_pantalla_final.png)
-
+![Boceto victoria](/public/assets/img/SKETCHES/sketch_final.png)
 
 *Figura 8. Pantalla final: Pantalla donde se ve a la abuelita cocinando con las ratitas.*
 
