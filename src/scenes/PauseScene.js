@@ -25,22 +25,18 @@ export class PauseScene extends Phaser.Scene
 		this.add.text(centroX + 50, centroY - 260, 'PAUSA', { fontFamily: 'Font',  fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
 		
 		//Botones
-		const pauseBtn = this.add.image(centroX, centroY - 80, 'pauseBtn')
+		const pauseBtn = this.add.image(centroX, centroY - 60, 'pauseBtn')
 		.setOrigin(0.5).setScale(0.7)
 		.setInteractive({ useHandCursor: true });
 
-		const pauseBtn2 = this.add.image(centroX, centroY + 20, 'pauseBtn')
-		.setOrigin(0.5).setScale(0.7)
-		.setInteractive({ useHandCursor: true });
-
-		const pauseBtn3 = this.add.image(centroX, centroY + 120, 'pauseBtn')
+		const pauseBtn2 = this.add.image(centroX, centroY + 60, 'pauseBtn')
 		.setOrigin(0.5).setScale(0.7)
 		.setInteractive({ useHandCursor: true });
 		
 		//HOVER BUTTONS
 
 		// Pause - Continue
-		const pause_Game_Btn = this.add.text(centroX + 20, centroY - 70, 'Reanudar', { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setScale(0.8).setOrigin(0.5);
+		const pause_Game_Btn = this.add.text(centroX, centroY - 60, 'Reanudar', { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setScale(0.8).setOrigin(0.5);
 		pauseBtn.on('pointerover', () => {
 			pauseBtn.setScale(0.8);
 			pause_Game_Btn.setScale(0.9);
@@ -60,6 +56,7 @@ export class PauseScene extends Phaser.Scene
 		
 		
 		// Pause - Settings
+		/*
 		const pause_Settings_Btn = this.add.text(centroX + 20, centroY + 20, 'Ajustes', { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setScale(0.8).setOrigin(0.5);
 		pauseBtn2.on('pointerover', () => {
 			pauseBtn2.setScale(0.8);
@@ -76,20 +73,22 @@ export class PauseScene extends Phaser.Scene
 			const audio = this.sound.add('buttonEffect', { loop: false, volume: 1 });
 		    audio.play();
         });
+		*/
 
 		// Pause - Menu
-		const pause_Menu_Btn = this.add.text(centroX + 20, centroY + 110, 'Menu', { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setScale(0.8).setOrigin(0.5);
-		pauseBtn3.on('pointerover', () => {
-			pauseBtn3.setScale(0.8);
+		const pause_Menu_Btn = this.add.text(centroX , centroY + 60, 'Menu', { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setScale(0.8).setOrigin(0.5);
+		pauseBtn2.on('pointerover', () => {
+			pauseBtn2.setScale(0.8);
 			pause_Menu_Btn.setScale(0.8);
 		});
-		pauseBtn3.on('pointerout', () => {
-			pauseBtn3.setScale(0.7);
+		pauseBtn2.on('pointerout', () => {
+			pauseBtn2.setScale(0.7);
 			pause_Menu_Btn.setScale(0.7);
 		});
-		pauseBtn3.on('pointerdown', () => {
-            this.scene.launch('MenuScene');
-            this.scene.stop();
+		pauseBtn2.on('pointerdown', () => {
+            this.scene.stop('PauseScene');
+			this.scene.stop('GameScene');
+			this.scene.launch('MenuScene');
 			const audio = this.sound.add('buttonEffect', { loop: false, volume: 1 });
 		    audio.play();
         });

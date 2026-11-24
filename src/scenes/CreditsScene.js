@@ -17,9 +17,33 @@ export class CreditsScene extends Phaser.Scene {
 
         this.background = this.add.image(centroX, centroY, 'credits_background').setOrigin(0.5);
 
-        this.add.text(centroX + 300, 200, 'Credits', {
+        this.add.text(centroX + 300, 200, 'Créditos', {
             fontFamily: 'Font',
             fontSize: '250px',
+            color: '#000000'
+        }).setOrigin(0.5);
+
+        this.add.text(centroX , 450, 'Luisa Baeza Rodríguez', {
+            fontFamily: 'Font',
+            fontSize: '70px',
+            color: '#000000'
+        }).setOrigin(0.5);
+
+        this.add.text(centroX , 550, 'Yi Chen', {
+            fontFamily: 'Font',
+            fontSize: '70px',
+            color: '#000000'
+        }).setOrigin(0.5);
+
+        this.add.text(centroX , 650, 'Sofía García de Vinuesa', {
+            fontFamily: 'Font',
+            fontSize: '70px',
+            color: '#000000'
+        }).setOrigin(0.5);
+
+        this.add.text(centroX , 750, 'Mireya Vargas Sánchez', {
+            fontFamily: 'Font',
+            fontSize: '70px',
             color: '#000000'
         }).setOrigin(0.5);
 
@@ -27,9 +51,9 @@ export class CreditsScene extends Phaser.Scene {
             .setOrigin(0.5)
             .setInteractive({ useHandCursor: true });
 
-        const MenuButton = this.add.text(centroX + 760, 990, 'Menu', {
+        const MenuButton = this.add.text(centroX + 760, 990, 'Menú', {
             fontFamily: 'Font',
-            fontSize: '40px',
+            fontSize: '50px',
             color: '#000000'
         }).setOrigin(0.5)
             .setInteractive({ useHandCursor: true })

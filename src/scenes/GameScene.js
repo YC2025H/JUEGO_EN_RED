@@ -40,8 +40,8 @@ export class GameScene extends Phaser.Scene {
         this.pasta = this.physics.add.image(400, 200, 'pasta').setScale(0.2).refreshBody();
         this.pasta.body.setSize(880, 700);
         this.tomato = this.physics.add.image(2200, 50, 'tomato').setScale(0.15).refreshBody();
-        this.meat = this.physics.add.image(1900, 190, 'tomato').setScale(0.15).refreshBody();
-        this.cheese = this.physics.add.image(1900, 190, 'tomato').setScale(0.15).refreshBody();
+        this.meat = this.physics.add.image(1100, 920, 'tomato').setScale(0.15).refreshBody();
+        this.cheese = this.physics.add.image(1800, 920, 'tomato').setScale(0.15).refreshBody();
 
         //cambiar tamaño colliders
         this.tomato.body.setSize(720, 800);
@@ -77,7 +77,7 @@ export class GameScene extends Phaser.Scene {
     /////////////////////////////////////////////////////////
 
     timerOn() {
-        this.time = 50;
+        this.time = 10;
         const camera = this.cameras.main;
 
         this.timer = this.add.text(
@@ -99,7 +99,7 @@ export class GameScene extends Phaser.Scene {
             if (this.time <= 0) {
                 clearInterval(this.interval);
                 this.timer.setText("0");
-                this.scene.start('MenuScene');
+                this.scene.start('FailScene');
             }
 
         }, 1000);

@@ -35,8 +35,8 @@ export class SettingsScene extends Phaser.Scene
 
 		//fondo nota
 		this.add.image(centroX, centroY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7);
-		const btn_sound = this.add.image(centroX + 480, centroY + 20, 'btn_move').setOrigin(0.5).setScale(0.7).setInteractive({ useHandCursor: true });;;
-		const btn_move = this.add.image(centroX + 480, centroY - 100, 'btn_sound').setOrigin(0.5).setScale(0.7).setInteractive({ useHandCursor: true });;;
+		const btn_sound = this.add.image(centroX + 480, centroY + 20, 'btn_move').setOrigin(0.5).setScale(0.7).setInteractive({ useHandCursor: true });
+		const btn_move = this.add.image(centroX + 480, centroY - 100, 'btn_sound').setOrigin(0.5).setScale(0.7).setInteractive({ useHandCursor: true });
 
 		//titulo
 		const SettingsText = this.add.text(centroX + 50, centroY - 260, 'AJUSTES', { fontFamily: 'Font', fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
@@ -49,8 +49,10 @@ export class SettingsScene extends Phaser.Scene
 		const SoundText = this.add.text(centroX + 50, centroY + 150, `${MusicVolume}`, { fontFamily: 'Font', fontSize: '50px', color: '#070707'  }).setOrigin(0.5);
 
 		//Boton atras
-		const MenuBtn = this.add.image(centroX + 350, centroY + 180, 'pauseBtn').setOrigin(0.5).setScale(0.3).setInteractive({ useHandCursor: true });;
-		const MenuBtnText =  this.add.text(centroX + 350, centroY + 180, 'ATRÁS', {fontFamily: 'Font', fontSize: '30px', color: '#070707'  }).setOrigin(0.5);
+		const MenuBtn = this.add.image(centroX + 350, centroY + 180, 'pauseBtn').setOrigin(0.5).setScale(0.3).setInteractive({ useHandCursor: true });
+		const MenuBtnText =  this.add.text(centroX + 350, centroY + 180, 'ATRÁS', 
+			{fontFamily: 'Font', fontSize: '30px', color: '#070707'  }).setOrigin(0.5);
+		MenuBtn.on('pointerdown', () => this.scene.start('MenuScene'));
 		
 		//Botones de audio
 		const MusicBtnUp = this.add.image(centroX + 120, centroY - 25, '+')

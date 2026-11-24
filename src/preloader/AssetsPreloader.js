@@ -119,6 +119,7 @@ export class AssetsPreloader {
 		scene.load.image('+', 'assets/img/INSTRUCTION_ASSETS/+.png');
 		scene.load.image('btn_move', 'assets/img/SETTINGS_ASSETS/btn_move.png');
 		scene.load.image('btn_sound', 'assets/img/SETTINGS_ASSETS/btn_sound.png');
+        
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

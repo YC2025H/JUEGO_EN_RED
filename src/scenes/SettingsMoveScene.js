@@ -1,5 +1,7 @@
 import Phaser from 'phaser';
 
+import { AssetsPreloader } from '../preloader/AssetsPreloader.js';
+
 export class SettingsMoveScene extends Phaser.Scene
 {
 	constructor()
@@ -9,15 +11,7 @@ export class SettingsMoveScene extends Phaser.Scene
 
 	preload()
 	{
-		this.load.image('pauseNote', 'assets/img/pause_note.png');
-		this.load.image('pauseBtn', 'assets/img/pause_btn.png');
-		this.load.image('menuBtn', 'assets/img/menu_btn.png');
-		this.load.audio('audio', 'assets/audio/audio_prueba.mp3');
-		this.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
-		this.load.image('-', 'assets/img/INSTRUCTION_ASSETS/-.png');
-		this.load.image('+', 'assets/img/INSTRUCTION_ASSETS/+.png');
-		this.load.image('btn_move', 'assets/img/SETTINGS_ASSETS/btn_move.png');
-		this.load.image('btn_sound', 'assets/img/SETTINGS_ASSETS/btn_sound.png');
+		AssetsPreloader.preload(this);
 	}
 
 	getKeyName(keyCode)
@@ -72,7 +66,7 @@ export class SettingsMoveScene extends Phaser.Scene
 			color: '#070707'
 		}).setOrigin(0.5);
 
-		const statusText = this.add.text(centroX + 50, centroY + 230, 'Haz clic en una tecla para cambiarla', {
+		const statusText = this.add.text(centroX + 30, centroY + 150, 'Haz clic en una tecla para cambiarla', {
 			fontFamily: 'Font',
 			fontSize: '28px',
 			color: '#070707'
@@ -163,9 +157,6 @@ export class SettingsMoveScene extends Phaser.Scene
 			color: '#070707'
 		}).setOrigin(0.5);
 
-		menuBtn.on('pointerdown', () => {
-			this.scene.launch('PauseScene');
-			this.scene.stop();
-		});
+		menuBtn.on('pointerdown', () => this.scene.start('MenuScene'));
 	}
 }

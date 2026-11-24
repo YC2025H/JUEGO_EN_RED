@@ -25,7 +25,6 @@ export class InstrucMoveScene extends Phaser.Scene
 		//this.add.text(centroX + 50, centroY - 260, 'PAUSA', { fontFamily: 'Font',  fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
 		this.add.text(centroX + 50, centroY - 260, 'CONTROLES', { fontFamily: 'Font',  fontSize: '62px', color: '#070707'  }).setOrigin(0.5);
 
-
 		//Boton Aim - Move
 		const next_btn = this.add.image(centroX + 390, centroY + 190, 'next_btn')
 		.setOrigin(0.5).setScale(0.7)

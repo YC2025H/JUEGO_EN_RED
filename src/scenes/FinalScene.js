@@ -9,7 +9,6 @@ export class FinalScene extends Phaser.Scene {
 
     preload() {
         AssetsPreloader.preload(this);
-        this.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
     }
 
     create() {
@@ -18,9 +17,9 @@ export class FinalScene extends Phaser.Scene {
 
         this.background = this.add.image(centroX, centroY, 'final_background').setOrigin(0.5);
 
-        this.add.text(centroX + 630, 200, 'Thanks', {
+        this.add.text(centroX + 630, 200, '¡Gracias por jugar!', {
             fontFamily: 'Font',
-            fontSize: '200px',
+            fontSize: '85px',
             color: '#000000'
         }).setOrigin(0.5);
 
@@ -41,9 +40,9 @@ export class FinalScene extends Phaser.Scene {
             .setOrigin(0.5)
             .setInteractive({ useHandCursor: true });
 
-        const MenuButton = this.add.text(centroX + 760, 990, 'Menu', {
+        const MenuButton = this.add.text(centroX + 760, 990, 'Menú', {
             fontFamily: 'Font',
-            fontSize: '40px',
+            fontSize: '50px',
             color: '#000000'
         }).setOrigin(0.5)
             .setInteractive({ useHandCursor: true })
