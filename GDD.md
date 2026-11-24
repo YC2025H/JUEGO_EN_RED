@@ -279,7 +279,8 @@ flowchart TD
     A --> C[Opciones]
     A --> D[Créditos]
     D --> A
-    B --> E[Partida]
+    B --> I[Historia y tutorial]
+    I --> E[Partida]
     C --> A
     E --> |Condición de victoria| F[Pantalla victoria]
     E --> |Condición de derrota| G[Pantalla derrota]
