@@ -32,6 +32,9 @@ export class SettingsMoveScene extends Phaser.Scene
 
 	create()
 	{
+		const audio = this.sound.add('pageEffect', { loop: false, volume: 1 });
+		audio.play();
+
 		const centroX = this.scale.width / 2;
 		const centroY = this.scale.height / 2;
 		this.waitingBinding = null;

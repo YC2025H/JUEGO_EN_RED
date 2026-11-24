@@ -9,7 +9,6 @@ export class CreditsScene extends Phaser.Scene {
 
     preload() {
         AssetsPreloader.preload(this);
-        this.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
     }
 
     create() {
@@ -43,6 +42,8 @@ export class CreditsScene extends Phaser.Scene {
             menuBtn.setScale(1);
         })
         menuBtn.on('pointerdown', () => this.scene.start('MenuScene'));
+        this.audio = this.sound.add('buttonEffect', { loop: false, volume: 1 });
+        this.audio.play();
 
     }
 }

@@ -19,6 +19,8 @@ export class GameScene extends Phaser.Scene {
     }
 
     create() {
+        const audio = this.sound.add('pageEffect', { loop: false, volume: 1 });
+		audio.play();
 
         const centroX = this.scale.width / 2;
         const centroY = this.scale.height / 2;
@@ -214,12 +216,12 @@ export class GameScene extends Phaser.Scene {
         const platform4 = platforms.create(1850, 600, 'platform3');
         platform4.body.setSize(395, 110);
         platform4.body.setOffset(5, 45);
-        const platform5 = platforms.create(720, 720, 'platform2');
-        platform5.body.setSize(400, 110);
-        platform5.body.setOffset(10, 20);
-        const platform6 = platforms.create(200, 550, 'platform3');
-        platform6.body.setSize(395, 110);
-        platform6.body.setOffset(5, 45);
+        //const platform5 = platforms.create(720, 720, 'platform2');
+        //platform5.body.setSize(400, 110);
+        //platform5.body.setOffset(10, 20);
+        //const platform6 = platforms.create(200, 550, 'platform3');
+        //platform6.body.setSize(395, 110);
+        //platform6.body.setOffset(5, 45);
 
         const pot = platforms.create(1150, 310, 'pot').setScale(0.7);
         pot.body.setSize(200, 125);
@@ -232,12 +234,10 @@ export class GameScene extends Phaser.Scene {
         const can = platforms.create(1555, 945, 'can').setRotation(Math.PI / 2);
         can.body.setSize(250, 120);
         can.body.setOffset(-40, 93);
-        const vase = platforms.create(650, 165, 'vase');
-        vase.body.setSize(225, 195);
-        vase.body.setOffset(25, 20);
-        const can2 = platforms.create(850, 525, 'can');
-        can2.body.setSize(120, 260);
-        can2.body.setOffset(22, 30);
+        //const vase = platforms.create(650, 165, 'vase');
+        //vase.body.setSize(225, 195);
+        //vase.body.setOffset(25, 20);
+        
 
         //colisiones entre objetosplataformas
         this.physics.add.collider(platforms, this.teacupMovable);
@@ -258,46 +258,66 @@ export class GameScene extends Phaser.Scene {
         this.physics.add.overlap(this.kiko.sprite, this.pasta, (j, p) => {
             p.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
+            const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
+		    audio.play();
         });
         this.physics.add.overlap(this.kika.sprite, this.pasta, (j, p) => {
             p.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
+            const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
+		    audio.play();
         });
         //tomate
         this.physics.add.overlap(this.kiko.sprite, this.tomato, (j, t) => {
             t.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
+            const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
+		    audio.play();
         });
         this.physics.add.overlap(this.kika.sprite, this.tomato, (j, t) => {
             t.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
+            const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
+		    audio.play();
         });
         //zanahoria
         this.physics.add.overlap(this.kiko.sprite, this.carrot, (j, c) => {
             c.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
+            const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
+		    audio.play();
         });
         this.physics.add.overlap(this.kika.sprite, this.carrot, (j, c) => {
             c.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
+            const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
+		    audio.play();
         });
         //carne
         this.physics.add.overlap(this.kiko.sprite, this.meat, (j, m) => {
             m.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
+            const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
+		    audio.play();
         });
         this.physics.add.overlap(this.kika.sprite, this.meat, (j, m) => {
             m.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
+            const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
+		    audio.play();
         });
         //queso
         this.physics.add.overlap(this.kiko.sprite, this.cheese, (j, c) => {
             c.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
+            const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
+		    audio.play();
         });
         this.physics.add.overlap(this.kika.sprite, this.carrot, (j, c) => {
             c.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
+            const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
+		    audio.play();
         });
 
         /*
@@ -342,6 +362,9 @@ export class GameScene extends Phaser.Scene {
 
             if (Phaser.Input.Keyboard.JustDown(mapping.upKey) && players.sprite.body.onFloor()) {
                 //if (players.jump) {
+                const audio = this.sound.add('jumpEffect', { loop: false, volume: 0.3 });
+		        audio.play();
+
                 players.jump();
                 /*} else {
                     players.sprite.setVelocityY(-players.speedY);

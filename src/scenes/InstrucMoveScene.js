@@ -11,11 +11,7 @@ export class InstrucMoveScene extends Phaser.Scene
 
 	preload()
 	{
-		this.load.image('pauseNote', 'assets/img/INSTRUCTION_ASSETS/instruc_aim.png');
-		this.load.image('move', 'assets/img/INSTRUCTION_ASSETS/move.png');
-		this.load.image('next_btn', 'assets/img/INSTRUCTION_ASSETS/next_btn.png');
-
-		this.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
+		AssetsPreloader.preload(this);
 	}
 	create()
 	{
@@ -47,6 +43,8 @@ export class InstrucMoveScene extends Phaser.Scene
 		next_btn.on('pointerdown', () => {
 			this.scene.start('GameScene');
             this.scene.stop();
+			const audio = this.sound.add('buttonEffect', { loop: false, volume: 1 });
+		    audio.play();
 		});
 	}
 }

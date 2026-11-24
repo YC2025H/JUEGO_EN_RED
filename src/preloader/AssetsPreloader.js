@@ -111,6 +111,15 @@ export class AssetsPreloader {
 
         // SETTINGS SCENE
 
+        scene.load.image('pauseNote', 'assets/img/pause_note.png');
+		scene.load.image('pauseBtn', 'assets/img/pause_btn.png');
+		scene.load.image('menuBtn', 'assets/img/menu_btn.png');
+		scene.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
+		scene.load.image('-', 'assets/img/INSTRUCTION_ASSETS/-.png');
+		scene.load.image('+', 'assets/img/INSTRUCTION_ASSETS/+.png');
+		scene.load.image('btn_move', 'assets/img/SETTINGS_ASSETS/btn_move.png');
+		scene.load.image('btn_sound', 'assets/img/SETTINGS_ASSETS/btn_sound.png');
+
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         // GAME SCENE
@@ -139,5 +148,31 @@ export class AssetsPreloader {
         // FONTS
 
         scene.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // MUSIC
+
+        scene.load.audio('music', 'assets/audio/Kika & Kiko THEME LOOP.mp3');
+        scene.load.audio('buttonEffect', 'assets/audio/SOUND EFFECTS/BUTTON EFFECT.mp3');
+        scene.load.audio('jumpEffect', 'assets/audio/SOUND EFFECTS/JUMP EFFECT.mp3');
+        scene.load.audio('pageEffect', 'assets/audio/SOUND EFFECTS/PAGE EFFECT.mp3');
+        scene.load.audio('pickEffect', 'assets/audio/SOUND EFFECTS/PICK EFFECT.mp3');
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // INSTRUCTIONS
+
+        scene.load.image('pauseNote', 'assets/img/INSTRUCTION_ASSETS/instruc_aim.png');
+		scene.load.image('food', 'assets/img/INSTRUCTION_ASSETS/instruc_food.png');
+		scene.load.image('next_btn', 'assets/img/INSTRUCTION_ASSETS/next_btn.png');
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // INSTRUCTIONS2
+
+        scene.load.image('pauseNote', 'assets/img/INSTRUCTION_ASSETS/instruc_aim.png');
+		scene.load.image('move', 'assets/img/INSTRUCTION_ASSETS/move.png');
+		scene.load.image('next_btn', 'assets/img/INSTRUCTION_ASSETS/next_btn.png');
     }
 }

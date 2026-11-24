@@ -1,5 +1,7 @@
 import Phaser from 'phaser';
 
+import { AssetsPreloader } from '../preloader/AssetsPreloader.js';
+
 export class SettingsScene extends Phaser.Scene
 {
 	constructor()
@@ -9,29 +11,27 @@ export class SettingsScene extends Phaser.Scene
 
 	preload()
 	{
-		this.load.image('pauseNote', 'assets/img/pause_note.png');
-		this.load.image('pauseBtn', 'assets/img/pause_btn.png');
-		this.load.image('menuBtn', 'assets/img/menu_btn.png');
-		this.load.audio('audio', 'assets/audio/audio_prueba.mp3');
-		this.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
-		this.load.image('-', 'assets/img/INSTRUCTION_ASSETS/-.png');
-		this.load.image('+', 'assets/img/INSTRUCTION_ASSETS/+.png');
-		this.load.image('btn_move', 'assets/img/SETTINGS_ASSETS/btn_move.png');
-		this.load.image('btn_sound', 'assets/img/SETTINGS_ASSETS/btn_sound.png');
+		AssetsPreloader.preload(this);
 	}
+
 	create()
 	{
+		this.audio = this.sound.get('music');
+		this.soundEffects = [
+			'buttonEffect',
+			'pageEffect',
+			'jumpEffect',
+			'coinEffect'
+		];
+
 		const centroX = this.scale.width / 2;
 		const centroY = this.scale.height / 2;
 
 		//Audio
 		const MAX_MUSIC_VALUE = 10;
 		const MIN_MUSIC_VALUE = 0;
-		let MusicVolume = 3; //variable del volumen
-
-		const audio = this.sound.add('audio', { loop: true, volume: 0.3 });
-		//audio.play(); // comentado por el bien de mi salud
-
+		let MusicVolume = 10; //variable del volumen
+		let SoundVolume = 10; //variable de efectos
 
 		//fondo nota
 		this.add.image(centroX, centroY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7);
@@ -68,7 +68,7 @@ export class SettingsScene extends Phaser.Scene
 			if(MusicVolume < MIN_MUSIC_VALUE)
 				MusicVolume = MIN_MUSIC_VALUE;
 			MusicText.setText(`${MusicVolume}`);
-			audio.setVolume(MusicVolume / 10);
+			this.audio.setVolume(MusicVolume / 10);
 		});
 
 		MusicBtnUp.on('pointerdown', () => {
@@ -76,7 +76,7 @@ export class SettingsScene extends Phaser.Scene
 			if(MusicVolume > MAX_MUSIC_VALUE)
 				MusicVolume = MAX_MUSIC_VALUE;
 			MusicText.setText(`${MusicVolume}`);
-			audio.setVolume(MusicVolume / 10);
+			this.audio.setVolume(MusicVolume / 10);
 		});
 
 		//Control de Subir y bajar el volumen Efectos
@@ -89,28 +89,32 @@ export class SettingsScene extends Phaser.Scene
 		const MusicBtnDownSound = this.add.image(centroX - 20, centroY + 150, '-')
 		.setOrigin(0.5).setScale(0.05)
 		.setInteractive({ useHandCursor: true });
-
-				MusicBtnDownSound.on('pointerdown', () => {
-			MusicVolume = MusicVolume - 1;
-			if(MusicVolume < MIN_MUSIC_VALUE)
-				MusicVolume = MIN_MUSIC_VALUE;
-			SoundText.setText(`${MusicVolume}`);
-			audio.setVolume(MusicVolume / 10);
-		});
-
+			
 		MusicBtnDownSound.on('pointerdown', () => {
-			MusicVolume = MusicVolume + 1;
-			if(MusicVolume > MAX_MUSIC_VALUE)
-				MusicVolume = MAX_MUSIC_VALUE;
-			SoundText.setText(`${MusicVolume}`);
-			audio.setVolume(MusicVolume / 10);
+			SoundVolume = SoundVolume -1 ;
+			if (SoundVolume < MIN_MUSIC_VALUE)
+				SoundVolume = MIN_MUSIC_VALUE;
+			SoundText.setText(`${SoundVolume}`);
+			for (let i = 0; i < this.soundEffects.length; i++) {
+				let sounds = this.sound.getAll(this.soundEffects[i]);
+				for (let j = 0; j < sounds.length; j++) {
+					sounds[j].setVolume(SoundVolume / 10);
+				}
+			}
 		});
 
-		//Boton salir
-		MenuBtn.on('pointerdown', () => {
-            this.scene.launch('PauseScene');
-			this.scene.stop();
-		})
+		MusicBtnUpSound.on('pointerdown', () => {
+			SoundVolume = SoundVolume + 1;
+			if (SoundVolume > MAX_MUSIC_VALUE)
+				SoundVolume = MAX_MUSIC_VALUE;
+			SoundText.setText(`${SoundVolume}`);
+			for (let i = 0; i < this.soundEffects.length; i++) {
+				let sounds = this.sound.getAll(this.soundEffects[i]);
+				for (let j = 0; j < sounds.length; j++) {
+					sounds[j].setVolume(SoundVolume / 10);
+				}
+			}
+		});
 
 				
 		// Pause - Settings
@@ -123,6 +127,8 @@ export class SettingsScene extends Phaser.Scene
 		btn_move.on('pointerdown', () => {
             this.scene.launch('SettingsMoveScene');
 			this.scene.bringToTop('SettingsMoveScene');
+			const audio = this.sound.add('pageEffect', { loop: false, volume: 1 });
+		    audio.play();
             this.scene.stop();
         });
 

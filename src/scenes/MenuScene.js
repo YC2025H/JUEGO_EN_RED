@@ -9,9 +9,14 @@ export class MenuScene extends Phaser.Scene {
 
     preload() {
         AssetsPreloader.preload(this);
-        this.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
     }
+
     create() {
+
+        if (!this.sound.get('music')) {
+            this.audio = this.sound.add('music', { loop: true, volume: 0.5 });
+            this.audio.play();
+        }
 
         const centroX = this.scale.width / 2;
         const centroY = this.scale.height / 2;
@@ -46,7 +51,9 @@ export class MenuScene extends Phaser.Scene {
             LocalBotton.setScale(1);
             localBtn.setScale(1);
         })
-        localBtn.on('pointerdown', () => this.scene.start('GameScene'));
+        localBtn.on('pointerdown', () => this.scene.start('InstrucAimScene'));
+        const audiob = this.sound.add('buttonEffect', { loop: false, volume: 1 });
+		audiob.play();
 
 
         const CreditsButton = this.add.text(centroX + 400, 690, 'Credits', {
@@ -64,6 +71,8 @@ export class MenuScene extends Phaser.Scene {
             creditsBtn.setScale(1);
         })
         creditsBtn.on('pointerdown', () => this.scene.start('CreditsScene'));
+        const audioc = this.sound.add('buttonEffect', { loop: false, volume: 1 });
+		audioc.play();
 
 
         //Sofi

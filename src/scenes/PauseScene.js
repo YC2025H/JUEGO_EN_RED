@@ -53,6 +53,8 @@ export class PauseScene extends Phaser.Scene
 			this.scene.stop();
             this.scene.resume('GameScene');
 			this.scene.get('GameScene').timerResume();
+			const audio = this.sound.add('buttonEffect', { loop: false, volume: 1 });
+		    audio.play();
         });
 
 		
@@ -71,6 +73,8 @@ export class PauseScene extends Phaser.Scene
             this.scene.launch('SettingsScene');
 			this.scene.bringToTop('SettingsScene');
             this.scene.stop();
+			const audio = this.sound.add('buttonEffect', { loop: false, volume: 1 });
+		    audio.play();
         });
 
 		// Pause - Menu
@@ -86,6 +90,8 @@ export class PauseScene extends Phaser.Scene
 		pauseBtn3.on('pointerdown', () => {
             this.scene.launch('MenuScene');
             this.scene.stop();
+			const audio = this.sound.add('buttonEffect', { loop: false, volume: 1 });
+		    audio.play();
         });
 		
 		
