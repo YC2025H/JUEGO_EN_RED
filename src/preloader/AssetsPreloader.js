@@ -113,7 +113,7 @@ export class AssetsPreloader {
 
         scene.load.image('pauseNote', 'assets/img/pause_note.png');
 		scene.load.image('pauseBtn', 'assets/img/pause_btn.png');
-		scene.load.image('menuBtn', 'assets/img/menu_btn.png');
+		//scene.load.image('menuBtn', 'assets/img/menu_btn.png');
 		scene.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
 		scene.load.image('-', 'assets/img/INSTRUCTION_ASSETS/-.png');
 		scene.load.image('+', 'assets/img/INSTRUCTION_ASSETS/+.png');
