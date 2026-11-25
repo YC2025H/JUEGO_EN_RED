@@ -15,17 +15,11 @@ export class FailScene extends Phaser.Scene {
         const centerX = this.scale.width / 2;
         const centerY = this.scale.height / 2;
 
-        this.background = this.add.image(centerX, centerY, 'final_background').setOrigin(0.5);
+        this.background = this.add.image(centerX, centerY, 'fail_background').setOrigin(0.5);
 
-        this.add.text(centerX + 630, 200, '¡Se te ha acabo', {
+        this.add.text(1000, 550, '¡Se te ha acabo el tiempo!', {
             fontFamily: 'Font',
-            fontSize: '85px',
-            color: '#000000'
-        }).setOrigin(0.5);
-
-        this.add.text(centerX + 630, 350, 'el tiempo!', {
-            fontFamily: 'Font',
-            fontSize: '85px',
+            fontSize: '90px',
             color: '#000000'
         }).setOrigin(0.5);
 
