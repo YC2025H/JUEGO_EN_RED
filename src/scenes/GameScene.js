@@ -327,17 +327,12 @@ export class GameScene extends Phaser.Scene {
             const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
             audio.play();
         });
-        this.physics.add.overlap(this.kika.sprite, this.carrot, (j, c) => {
+         this.physics.add.overlap(this.kika.sprite, this.cheese, (j, c) => {
             c.destroy();// Lo destruye ya que no se vuelve a usar
             this.sumaComida++;
             const audio = this.sound.add('pickEffect', { loop: false, volume: 1 });
             audio.play();
         });
-
-        /*
-        if (this.sumaComida == 5) {
-            this.scene.start('CreditScene');
-        }*/
 
     }
     teacup()//método que añade la colisión de kika con la taza
@@ -423,7 +418,7 @@ export class GameScene extends Phaser.Scene {
         //camera
         const camera = this.cameras.main;
 
-        const maxDisX = this.background.width;
+        const maxDisX = camera.width - 200;
 
         //dis max entre los jugadores 
         const disPlayers = Math.abs(kiko.x - kika.x);
