@@ -35,7 +35,7 @@ export class CreditsScene extends Phaser.Scene {
             color: '#000000'
         }).setOrigin(0.5);
 
-        this.add.text(centerX , 650, 'Sofía García de Vinuesa', {
+        this.add.text(centerX , 650, 'Sofía García de Vinuesa Castaño', {
             fontFamily: 'Font',
             fontSize: '70px',
             color: '#000000'

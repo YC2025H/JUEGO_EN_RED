@@ -21,19 +21,17 @@ export class InstrucAimScene extends Phaser.Scene
 		const centerX = this.scale.width / 2;
 		const centerY = this.scale.height / 2;
 
-		//fondo
+		//background
 		this.add.image(centerX, centerY, 'credits_background').setOrigin(0.5);
 
-		//fondo nota
 		this.add.image(centerX, centerY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7); 
 		this.add.image(centerX, centerY - 50, 'food').setOrigin(0.5).setScale(0.7); 
 
-		//texto
-		this.add.text(centerX + 50, centerY - 260, 'OBJETIVO', { fontFamily: 'Font',  fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
-		this.add.text(centerX + 245, centerY - 100, '¡PREPARA LA LASAÑA!', { fontFamily: 'Font',  fontSize: '45px', color: '#070707'  }).setOrigin(0.5);
-		this.add.text(centerX + 160, centerY + 90 , 'INGREDIENTES:', { fontFamily: 'Font',  fontSize: '30px', color: '#070707'  }).setOrigin(0.5);
-
-		this.add.text(centerX + 245, centerY - 10, 'Recoge todos los ingredientes y llevalos a la olla antes de que se termine el tiempo', {
+		//text
+		this.add.text(centerX + 50, centerY - 240, 'OBJETIVO', { fontFamily: 'Font',  fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
+		this.add.text(centerX + 245, centerY - 60, '¡PREPARA LA LASAÑA!', { fontFamily: 'Font',  fontSize: '45px', color: '#070707'  }).setOrigin(0.5);
+		
+		this.add.text(centerX + 245, centerY + 40, 'Recoge todos los ingredientes y llévalos a la olla antes de que se acabe el tiempo', {
 		fontFamily: 'Font',
 		fontSize: '27px',
 		color: '#070707',

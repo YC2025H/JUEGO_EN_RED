@@ -23,12 +23,12 @@ export class SettingsMoveScene extends Phaser.Scene {
 
 		const centerX = this.scale.width / 2;
 		const centerY = this.scale.height / 2;
-		//fondo
+
+		//background
 		this.add.image(centerX, centerY, 'credits_background').setOrigin(0.5);
 
 		const audio = this.sound.add('pageEffect', { loop: false, volume: 1 });
 		audio.play();
-
 
 		this.waitingBinding = null;
 
@@ -45,7 +45,7 @@ export class SettingsMoveScene extends Phaser.Scene {
 		};
 		this.registry.set('moveControls', controls);
 
-		// Fondo nota y pestañas
+		
 		this.add.image(centerX, centerY - 50, 'pauseNote').setOrigin(0.5).setScale(0.7);
 
 		const btnSound = this.add.image(centerX + 480, centerY + 20, 'btn_sound')
@@ -58,7 +58,7 @@ export class SettingsMoveScene extends Phaser.Scene {
 			.setScale(0.7)
 			.setInteractive({ useHandCursor: true });
 
-		// Título
+		// Title
 		this.add.text(centerX + 50, centerY - 260, 'CONTROLES', {
 			fontFamily: 'Font',
 			fontSize: '80px',
@@ -99,7 +99,7 @@ export class SettingsMoveScene extends Phaser.Scene {
 			});
 		};
 
-		// Columna Kiko
+		// Kiko
 		this.add.text(centerX - 110, centerY - 150, 'KIKO', {
 			fontFamily: 'Font',
 			fontSize: '38px',
@@ -110,7 +110,7 @@ export class SettingsMoveScene extends Phaser.Scene {
 		createRebindRow('kiko', 'left', 'Izq.', centerX - 130, centerY - 25);
 		createRebindRow('kiko', 'right', 'Der.', centerX - 130, centerY + 35);
 
-		// Columna Kika
+		// Kika
 		this.add.text(centerX + 230, centerY - 150, 'KIKA', {
 			fontFamily: 'Font',
 			fontSize: '38px',
@@ -121,7 +121,7 @@ export class SettingsMoveScene extends Phaser.Scene {
 		createRebindRow('kika', 'left', 'Izq.', centerX + 210, centerY - 25);
 		createRebindRow('kika', 'right', 'Der.', centerX + 210, centerY + 35);
 
-		// Escuchar la siguiente tecla pulsada
+		// Read Keys
 		this.input.keyboard.on('keydown', (event) => {
 			if (!this.waitingBinding) return;
 
@@ -136,14 +136,16 @@ export class SettingsMoveScene extends Phaser.Scene {
 			this.waitingBinding = null;
 		});
 
-		// Volver a SettingsScene
+		// Back SettingsScene
 		btnSound.on('pointerdown', () => {
 			this.scene.launch('SettingsScene');
 			this.scene.bringToTop('SettingsScene');
+			const pageEffect = this.sound.add('pageEffect', { loop: false, volume: 1 });
+		    pageEffect.play();
 			this.scene.stop();
 		});
 
-		// Botón atrás hacia PauseScene
+		// Button PauseScene
 		const menuBtn = this.add.image(centerX + 350, centerY + 180, 'pauseBtn')
 			.setOrigin(0.5)
 			.setScale(0.3)

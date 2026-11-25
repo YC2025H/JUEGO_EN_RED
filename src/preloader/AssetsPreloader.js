@@ -92,8 +92,8 @@ export class AssetsPreloader {
 
         // PAUSE SCENE
 
-        scene.load.image('pauseNote', 'assets/img/pause_note.png');
-		scene.load.image('pauseBtn', 'assets/img/pause_btn.png');
+        scene.load.image('pauseNote', 'assets/img/INSTRUCTION_ASSETS/instruc_aim.png');
+		scene.load.image('pauseBtn', 'assets/img/BUTTONS/pause_btn.png');
 		scene.load.font('Font', 'assets/fonts/CheeseBurger.otf', 'truetype');
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -143,6 +143,8 @@ export class AssetsPreloader {
         scene.load.image('carrot', 'assets/img/FOOD_ASSETS/Carrot.png');
         scene.load.image('pasta', 'assets/img/FOOD_ASSETS/Pasta.png');
         scene.load.image('tomato', 'assets/img/FOOD_ASSETS/Tomato.png');
+		scene.load.image('cheese', 'assets/img/FOOD_ASSETS/Cheese.png');
+		scene.load.image('meat', 'assets/img/FOOD_ASSETS/Meat.png');
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

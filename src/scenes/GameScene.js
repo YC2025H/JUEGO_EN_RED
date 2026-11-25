@@ -41,8 +41,8 @@ export class GameScene extends Phaser.Scene {
         this.pasta = this.physics.add.image(400, 200, 'pasta').setScale(0.2).refreshBody();
         this.pasta.body.setSize(880, 700);
         this.tomato = this.physics.add.image(2200, 50, 'tomato').setScale(0.15).refreshBody();
-        this.meat = this.physics.add.image(1100, 920, 'tomato').setScale(0.15).refreshBody();
-        this.cheese = this.physics.add.image(1800, 920, 'tomato').setScale(0.15).refreshBody();
+        this.meat = this.physics.add.image(1100, 920, 'meat').setScale(0.15).refreshBody();
+        this.cheese = this.physics.add.image(1800, 920, 'cheese').setScale(0.15).refreshBody();
 
         //cambiar tamaño colliders
         this.tomato.body.setSize(720, 800);
@@ -162,7 +162,7 @@ export class GameScene extends Phaser.Scene {
         //los jugadores
         this.kika = new Kika(this, 'kika', -300, 200);
         //this.kika = new Kika(this, 'kika', 1000, 200);
-        this.kiko = new Kiko(this, 'kiko', centerX - 600, centerY);
+        this.kiko = new Kiko(this, 'kiko', -300, 700);
         //this.kiko = new Kiko(this, 'kiko', centerX + 500, centerY);
 
         /*
