@@ -31,7 +31,7 @@ export class InstrucAimScene extends Phaser.Scene
 		this.add.text(centerX + 50, centerY - 240, 'OBJETIVO', { fontFamily: 'Font',  fontSize: '90px', color: '#070707'  }).setOrigin(0.5);
 		this.add.text(centerX + 245, centerY - 60, '¡PREPARA LA LASAÑA!', { fontFamily: 'Font',  fontSize: '45px', color: '#070707'  }).setOrigin(0.5);
 		
-		this.add.text(centerX + 245, centerY + 40, 'Recoge todos los ingredientes y llévalos a la olla antes de que se acabe el tiempo', {
+		this.add.text(centerX + 245, centerY + 60, 'La abuela se ha puesto mala. Ayúdala a cocinar. Recoge todos los ingredientes y llévalos a la olla antes de que se acabe el tiempo', {
 		fontFamily: 'Font',
 		fontSize: '27px',
 		color: '#070707',
