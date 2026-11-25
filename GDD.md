@@ -149,6 +149,7 @@ BOCETOS:
 
 DISEÑOS FINALES:
 ![Kika Diseño Final](</public/assets/img/ASSETS KIKA & KIKO/KIKA/IDLE Kika/IDLE Kika_1.PNG>)
+
 *Figura 4. Diseño final de Kika*
 
 ![Kiko Diseño Final](</public/assets/img/ASSETS KIKA & KIKO/KIKO/IDLE Kiko/IDLE Kiko_1.PNG>)
