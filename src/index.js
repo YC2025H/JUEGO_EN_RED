@@ -25,7 +25,7 @@ const config = {
             gravity: { y: 300 }, debug: false
         }
     },
-    scene: [SettingsScene,MenuScene,  FailScene,  GameScene,  InstrucAimScene, PauseScene, SettingsMoveScene, InstrucMoveScene,  FinalScene, CreditsScene]      // The first scene starts automatically
+    scene: [MenuScene,  FailScene,  GameScene,  InstrucAimScene, PauseScene, SettingsMoveScene, InstrucMoveScene,  FinalScene, SettingsScene, CreditsScene]      // The first scene starts automatically
 };
 
 const game = new Phaser.Game(config);
